@@ -33,8 +33,4 @@ As a **role** I can **capability** so that **received benefit**
 - [ ] Task 3
 - [ ] Task 4
 
-## Iteration:
-
-## Points:
-
 ## Epic:
