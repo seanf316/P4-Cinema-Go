@@ -1,0 +1,1 @@
+web: web: gunicorn cinemago.wsgi:application
