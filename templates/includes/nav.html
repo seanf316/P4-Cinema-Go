@@ -1,7 +1,7 @@
 {% load static %}
 <header>
     <!-- Navbar -->
-    <nav class="navbar mb-3 navbar-expand-sm navbar-dark bg-black">
+    <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-black">
         <div class="container-fluid">
             <!-- Nav Logo -->
             <a class="navbar-brand text-white" href="#"><span>Cinema</span> | <span>Go</span></a>
@@ -18,6 +18,12 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
+                        <a class="nav-link" href="#">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Reviews</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#">Logout</a>
                     </li>
                     {% else %}
@@ -30,7 +36,7 @@
                     {% endif %}
                 </ul>
                 <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <input class="form-control me-2" type="search" placeholder="Movie Search...." aria-label="Search">
                     <button class="btn btn-outline-warning" type="submit">Search</button>
                 </form>
             </div>

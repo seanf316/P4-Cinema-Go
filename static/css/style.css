@@ -9,10 +9,17 @@
 }
 
 :root {
-    --main-color: #edb304;
+    --main-color: #eda704;
     --light-color: white;
     --dark-color: black;
-    --accent-color: #071157;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul li {
+    list-style: none;
 }
 
 h1 {
@@ -25,6 +32,11 @@ h1 {
 i.fa-solid.fa-bars {
     color: var(--main-color);
     font-size: 1.5rem;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 .navbar-brand span {
@@ -49,9 +61,78 @@ a.nav-link:hover {
 /* About */
 
 .about {
-    margin-top: 6rem;
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.about h1 {
+    padding: 0 1rem;
 }
 
 .about span {
+    color: var(--main-color);
+}
+
+.about p {
+    text-align: justify;
+}
+
+.about button {
+    background-color: var(--main-color);
+    width: 50%;
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-color);
+}
+
+.social-networks {
+    display: flex;
+    margin: 1rem 0;
+    gap: 2rem;
+    padding: 0;
+}
+
+.social-networks i {
+    font-size: 1.2rem;
+    color: var(--light-color);
+    border: 2px solid var(--main-color);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+}
+
+.social-networks i:hover,
+.social-networks i:focus {
+    color: var(--dark-color);
+    border: 2px solid var(--light-color);
+    background-color: var(--main-color);
+}
+
+.devloped-text {
+    font-size: 1rem;
+    color: var(--light-color);
+    text-align: center;
+}
+
+.devloped-text i {
+    font-size: 1.2rem;
+    color: var(--light-color);
+}
+
+i.fa-brands.fa-github:hover,
+i.fa-brands.fa-github:focus {
     color: var(--main-color);
 }
