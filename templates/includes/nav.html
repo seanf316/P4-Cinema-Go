@@ -1,7 +1,7 @@
 {% load static %}
 <header>
     <!-- Navbar -->
-    <nav class="navbar fixed-top navbar-expand-sm navbar-dark bg-black">
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-black">
         <div class="container-fluid">
             <!-- Nav Logo -->
             <a class="navbar-brand text-white" href="{% url 'home' %}"><span>Cinema</span> | <span>Go</span></a>
@@ -35,10 +35,6 @@
                     </li>
                     {% endif %}
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Movie Search...." aria-label="Search">
-                    <button class="btn btn-outline-warning" type="submit">Search</button>
-                </form>
             </div>
         </div>
     </nav>

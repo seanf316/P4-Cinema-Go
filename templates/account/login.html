@@ -6,25 +6,22 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-<section>
-  <div class="container d-flex justify-content-center align-items-center log-in">
-    <div class="row gx-5">
+<section class="log-in text-white">
+  <div class="container">
+    <div class="row justify-content-center">
       <div class="col-lg-6">
-        <img src="https://res.cloudinary.com/seanf316/image/upload/v1676255128/toy-story-41224_bpggfk.png" width="100%"
-          alt="">
-      </div>
-      <div class="col-lg-6">
-        <h1>{% trans "Sign In" %}</h1>
-        <p>{% blocktrans %}If you have not created an account yet, then please
+        <h1 class="text-center">{% trans "Sign-In" %}</h1>
+        <p>{% blocktrans %}If you have not joined the <span>Cinema</span> | <span>Go</span> family
+          yet, then please take
+          sometime to
           <a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
         <form class="login" method="POST" action="{% url 'account_login' %}">
           {% csrf_token %}
-          {{ form.as_p }}
+          {{ form|crispy }}
           {% if redirect_field_value %}
           <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
           {% endif %}
-          <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-          <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+          <button class="btn" type="submit">{% trans "Sign In" %}</button>
         </form>
       </div>
     </div>

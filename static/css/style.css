@@ -9,9 +9,12 @@
 }
 
 :root {
-    --main-color: #eda704;
+    --main-color: #66fcf1;
     --light-color: white;
     --dark-color: black;
+    --bg-color: #222629;
+    --bg1-color: #86C232;
+    --bg2-color: #474B4F;
 }
 
 a {
@@ -31,7 +34,15 @@ header {
     height: 4rem;
 }
 
+.back-color {
+    background-color: var(--bg-color);
+}
+
 /* Navbar */
+
+nav {
+    background-color: var(--bg1-color);
+}
 
 i.fa-solid.fa-bars {
     color: var(--main-color);
@@ -64,10 +75,6 @@ a.nav-link:hover {
 
 /* About */
 
-.about {
-    height: 80vh;
-}
-
 .about h1 {
     padding: 0 1rem;
     font-size: 2rem;
@@ -82,17 +89,19 @@ a.nav-link:hover {
 }
 
 .about a {
-    background-color: var(--main-color);
-    border: 2px solid var(--dark-color);
-    border-radius: .2rem;
+    background-color: var(--dark-color);
+    border: 2px solid var(--light-color);
+    border-radius: 2rem;
     padding: .5rem 3rem;
     font-weight: 600;
-    color: var(--dark-color);
+    color: var(--main-color);
+    margin-bottom: 1rem;
 }
 
 .about a:hover {
-    background-color: var(--light-color);
-    border: 2px solid var(--main-color);
+    background-color: var(--main-color);
+    border: 2px solid var(--light-color);
+    color: var(--dark-color);
 }
 
 /* Footer */
@@ -104,6 +113,7 @@ footer {
     align-items: center;
     justify-content: center;
     color: var(--light-color);
+    border-top: 1px solid var(--main-color);
 }
 
 .social-networks {
@@ -114,11 +124,11 @@ footer {
 }
 
 .social-networks i {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: var(--light-color);
     border: 2px solid var(--main-color);
-    width: 35px;
-    height: 35px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     text-align: center;
     line-height: 30px;
@@ -149,15 +159,67 @@ i.fa-brands.fa-github:focus {
 
 /* Allauth */
 
-.log-in {
-    height: 80vh;
+/* Login */
+
+.log-in h1 {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    color: var(--main-color);
+}
+
+.log-in span {
+    color: var(--main-color);
+}
+
+.log-in p span {
+    font-weight: 700;
+}
+
+.log-in a {
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+.login button.btn {
+    background-color: var(--dark-color);
+    color: var(--main-color);
+    border-radius: 2rem;
+    padding: .5rem 5rem;
+    width: 100%;
+    font-weight: 700;
+    border: 2px solid var(--light-color);
+}
+
+.login button.btn:hover {
+    background-color: var(--main-color);
+    border: 2px solid var(--light-color);
+    color: var(--dark-color);
 }
 
 
 /* Media queries */
 @media screen and (min-width: 576px) {
 
+    .about {
+        margin: 2rem 0;
+    }
+
     .about h1 {
         font-size: 3rem;
     }
+}
+
+@media screen and (min-width: 768px) {}
+
+@media screen and (min-width: 992px) {
+
+    .about {
+        margin: 6rem 0;
+    }
+
+    .log-in {
+        margin: 6rem 0;
+    }
+
 }
