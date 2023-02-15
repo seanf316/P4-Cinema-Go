@@ -25,9 +25,14 @@ ul li {
     list-style: none;
 }
 
+.current {
+    text-decoration-line: underline;
+    text-decoration-color: #66fcf1;
+    text-underline-offset: 8px;
+}
+
 h1 {
-    font-size: 3rem;
-    font-weight: bold;
+    font-weight: 700;
 }
 
 header {
@@ -71,6 +76,15 @@ a.nav-link.active {
 
 a.nav-link:hover {
     color: var(--main-color);
+}
+
+/* Toast */
+.toast {
+    background-color: var(--dark-color);
+    border: 2px solid var(--main-color);
+    border-radius: 1rem;
+    color: var(--light-color);
+    font-weight: 600;
 }
 
 /* About */
@@ -159,44 +173,54 @@ i.fa-brands.fa-github:focus {
 
 /* Allauth */
 
-/* Login */
-
-.log-in h1 {
+.auth-h1 {
     font-size: 2rem;
-    margin-top: 1rem;
+    margin-top: 3rem;
     margin-bottom: 1rem;
     color: var(--main-color);
 }
 
-.log-in span {
-    color: var(--main-color);
-}
-
-.log-in p span {
-    font-weight: 700;
-}
-
-.log-in a {
+.auth-link {
     font-weight: 700;
     color: var(--main-color);
 }
 
-.login button.btn {
+.auth-btn {
     background-color: var(--dark-color);
     color: var(--main-color);
     border-radius: 2rem;
-    padding: .5rem 5rem;
-    width: 100%;
+    padding: .5rem 2rem;
+    width: 50%;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
     font-weight: 700;
     border: 2px solid var(--light-color);
 }
 
-.login button.btn:hover {
+.auth-btn:hover {
     background-color: var(--main-color);
     border: 2px solid var(--light-color);
     color: var(--dark-color);
 }
 
+/* Login */
+
+.log-in p span {
+    font-weight: 700;
+    color: var(--main-color);
+}
+
+/* Sign Up */
+
+.sign-up span {
+    color: var(--main-color);
+}
+
+/* Logout */
+
+.log-out {
+    margin-top: 6rem;
+}
 
 /* Media queries */
 @media screen and (min-width: 576px) {
@@ -210,7 +234,17 @@ i.fa-brands.fa-github:focus {
     }
 }
 
-@media screen and (min-width: 768px) {}
+@media screen and (min-width: 768px) {
+
+    .auth-h1 {
+        font-size: 3rem;
+    }
+
+    .log-in p {
+        padding: 0 2rem;
+    }
+
+}
 
 @media screen and (min-width: 992px) {
 
@@ -218,8 +252,7 @@ i.fa-brands.fa-github:focus {
         margin: 6rem 0;
     }
 
-    .log-in {
-        margin: 6rem 0;
+    .log-in p {
+        padding: 0 3rem;
     }
-
 }

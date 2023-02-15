@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,6 +29,21 @@
     <!-- Header -->
     {% include 'includes/nav.html' %}
 
+    {% if messages %}
+    <!-- messages -->
+    <div class="container">
+        <div class="row">
+            <div class="col mt-3">
+                {% for message in messages %}
+                <div class="alert toast {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                    {{ message | safe}}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
     <main>
         {% block content %}
         <!-- Content Goes here -->
@@ -38,6 +52,16 @@
 
     <!-- Footer -->
     {% include 'includes/footer.html' %}
+
+    {% block extra_js %}
+    <script>
+        setTimeout(function () {
+            let messages = document.getElementById("msg");
+            let alert = new bootstrap.Alert(messages);
+            alert.close();
+        }, 2000);
+    </script>
+    {% endblock %}
 </body>
 
 </html>

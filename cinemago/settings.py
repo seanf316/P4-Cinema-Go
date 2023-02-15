@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     "cloudinary_storage",
     "django.contrib.staticfiles",
     # Other
+    "active_link",
     "crispy_forms",
     "crispy_bootstrap5",
     "cloudinary",
