@@ -244,6 +244,11 @@ i.fa-brands.fa-github:focus {
     color: var(--dark-color);
 }
 
+.blue {
+    border: 1px solid var(--main-color);
+}
+
+
 /* Media queries */
 @media screen and (min-width: 576px) {
 

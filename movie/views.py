@@ -6,11 +6,12 @@ import requests
 API_KEY = os.environ.get("API_KEY")
 
 
-def trending(request):
+def trending(request, url):
     """
     Call on the TMDB API to provide some trending movies
     """
-    url = f"https://api.themoviedb.org/3/trending/movie/day?api_key={API_KEY}&language=en-US&page=1"
+
+    url = f"https://api.themoviedb.org/3/{url}?api_key={API_KEY}&language=en-US&page=1"
 
     response = requests.get(url)
     movie_data = response.json()
@@ -21,6 +22,23 @@ def trending(request):
     }
 
     return render(request, "movie/trending.html", context)
+
+
+def toprated(request):
+    """
+    Call on the TMDB API to provide some trending movies
+    """
+    url = f"https://api.themoviedb.org/3/movie/top_rated?api_key={API_KEY}&language=en-US&page=1"
+
+    response = requests.get(url)
+    movie_data = response.json()
+
+    context = {
+        "movie_data": movie_data,
+        "page_number": 2,
+    }
+
+    return render(request, "movie/toprated.html", context)
 
 
 def pagination(request, page_number):

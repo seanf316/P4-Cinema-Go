@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="trending">
+<section class="upcoming">
     <div class="container">
         <div class="row pb-5">
-            <a href="{% url 'trending' url=trending//movie//day %}">
-                <h1 class="auth-h1 text-center">Trending</h1>
+            <a href="{% url 'toprated' %}">
+                <h1 class="auth-h1 text-center">Top Rated</h1>
             </a>
             {% for movie in movie_data.results %}
             <div class="col-md-4 col-6 col-lg-2 gx-4 gy-4">
