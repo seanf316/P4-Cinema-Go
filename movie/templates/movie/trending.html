@@ -4,7 +4,9 @@
 <section class="trending">
     <div class="container">
         <div class="row pb-5">
-            <h1 class="auth-h1 text-center">Trending</h1>
+            <a href="{% url 'trending' %}">
+                <h1 class="auth-h1 text-center">Trending</h1>
+            </a>
             {% for movie in movie_data.results %}
             <div class="col-md-4 col-6 col-lg-2 gx-4 gy-4">
                 <div class="card medium">
@@ -17,7 +19,7 @@
             {% endfor %}
             <div class="row">
                 <div class="col text-center mt-5">
-                    <a href="{% url 'pagination' page_number %}">Load More</a>
+                    <a class="load-more" href="{% url 'pagination' page_number %}">Load More</a>
                 </div>
             </div>
         </div>

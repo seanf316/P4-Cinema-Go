@@ -10,11 +10,7 @@ def trending(request):
     """
     Call on the TMDB API to provide some trending movies
     """
-    url = (
-        "https://api.themoviedb.org/3/trending/movie/day?api_key="
-        + API_KEY
-        + "&language=en-US&page=1"
-    )
+    url = f"https://api.themoviedb.org/3/trending/movie/day?api_key={API_KEY}&language=en-US&page=1"
 
     response = requests.get(url)
     movie_data = response.json()
@@ -28,12 +24,7 @@ def trending(request):
 
 
 def pagination(request, page_number):
-    url = (
-        "https://api.themoviedb.org/3/trending/movie/day?api_key="
-        + API_KEY
-        + "&language=en-US&page="
-        + str(page_number)
-    )
+    url = f"https://api.themoviedb.org/3/trending/movie/day?api_key={API_KEY}&language=en-US&page={str(page_number)}"
 
     response = requests.get(url)
     movie_data = response.json()
