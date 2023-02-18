@@ -244,11 +244,17 @@ i.fa-brands.fa-github:focus {
     color: var(--dark-color);
 }
 
+/* Movie Details */
+
+#trailer {
+    height: 18rem;
+}
+
 .movie-details {
     background-size: cover;
     background-color: rgba(0, 0, 0, .1);
     background-position: center;
-    height: 100vh;
+    height: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -269,9 +275,19 @@ i.fa-brands.fa-github:focus {
     border: 1px solid var(--light-color);
 }
 
-.movie-details .card-title {
+h1.m-title {
     color: var(--main-color);
+    font-size: 2rem;
     font-weight: 600;
+}
+
+.movie-details .overview {
+    text-align: justify;
+}
+
+.movie-details span {
+    color: var(--main-color);
+    font-weight: 500;
 }
 
 /* Media queries */
@@ -284,6 +300,7 @@ i.fa-brands.fa-github:focus {
     .about h1 {
         font-size: 3rem;
     }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -305,5 +322,9 @@ i.fa-brands.fa-github:focus {
 
     .log-in p {
         padding: 0 3rem;
+    }
+
+    #trailer {
+        height: 25rem;
     }
 }

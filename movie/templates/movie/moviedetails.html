@@ -5,8 +5,8 @@
     <div class="opaque-overlay">&nbsp;</div>
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-12 col-lg-10 d-none d-sm-block">
-                <div class="card mb-3 bg-trans text-white">
+            <div class="col-md-12 col-lg-12 d-none d-sm-block">
+                <div class="card my-5 bg-trans text-white">
                     <div class="row g-0">
                         <div class="col-4">
                             <img src="https://image.tmdb.org/t/p/w1280/{{ movie_data.poster_path }}"
@@ -14,25 +14,52 @@
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
-                                <h1 class="card-title m-title">{{ movie_data.original_title }}</h1>
-                                <p><i>{{ movie_data.tagline}}</i></p>
-                                <p class="card-text">{{ movie_data.overview }}</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                                <h1 class="m-title">{{ movie_data.original_title }}</h1>
+                                <p class="overview">{{ movie_data.overview }}</p>
+                                <p class="card-text"><span>Rating:
+                                    </span>{{ movie_data.vote_average|floatformat:1}}/10</p>
+                                <p class="card-text"><span>Director: </span>{{ director_name }}</p>
+                                <p class="card-text"><span>Runtime: </span>{{ movie_data.runtime }} min</p>
+                                <p class="card-text"><span>Released:
+                                    </span>{{ movie_data.release_date|slice:":4"}}</p>
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#exampleModal">
+                                    Trailer <i class="fa-solid fa-play"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-12 d-sm-none">
-                <div class="card bg-trans text-white">
-                    <img src="https://image.tmdb.org/t/p/w1280/{{ movie_data.backdrop_path }}" class="card-img-top"
-                        alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ movie_data.original_title }}</h5>
-                        <p class="card-text">{{ movie_data.overview }}</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                    </div>
+        </div>
+        <div class="col-12 d-sm-none">
+            <div class="card bg-trans text-white my-5">
+                <img src="https://image.tmdb.org/t/p/w1280/{{ movie_data.backdrop_path }}" class="card-img-top"
+                    alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{ movie_data.original_title }}</h5>
+                    <p class="card-text">{{ movie_data.overview }}</p>
+                    <p class="card-text">Rating: {{ movie_data.vote_average|floatformat:1}}/10</p>
+                    <p class="card-text">Director: {{ director_name }}</p>
+                    <p class="card-text">Runtime: {{ movie_data.runtime }} min</p>
+                    <p class="card-text">Released: {{ movie_data.release_date|slice:":4"}}</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Trailer <i class="fa-solid fa-play"></i>
+                    </button>
                 </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- Modal -->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-md modal-lg modal-xl">
+            <div class="modal-content">
+                <iframe id="trailer" title="Trailer" src="https://www.youtube.com/embed/{{ trailer }}?modestbranding=1"
+                    class="rounded-lg" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                    style="border: 2px solid white; border-radius: .5rem;"></iframe>
             </div>
         </div>
     </div>
