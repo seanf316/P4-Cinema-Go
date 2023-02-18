@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="movie-details" style="background-image: url('{{hero}}');">
+<section class="movie-details min-vh-100" style="background-image: url('{{hero}}');">
     <div class="opaque-overlay">&nbsp;</div>
     <div class="container">
         <div class="row justify-content-center">
@@ -16,15 +16,20 @@
                             <div class="card-body">
                                 <h1 class="m-title">{{ movie_data.original_title }}</h1>
                                 <p class="overview">{{ movie_data.overview }}</p>
-                                <p class="card-text"><span>Rating:
-                                    </span>{{ movie_data.vote_average|floatformat:1}}/10</p>
                                 <p class="card-text"><span>Director: </span>{{ director_name }}</p>
                                 <p class="card-text"><span>Runtime: </span>{{ movie_data.runtime }} min</p>
                                 <p class="card-text"><span>Released:
                                     </span>{{ movie_data.release_date|slice:":4"}}</p>
+                                <p class="card-text"><span>Rating:
+                                    </span>{{ movie_data.vote_average|floatformat:1}}/10</p>
                                 <button type="button" class="site-btn" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal">
                                     Trailer <i class="fa-solid fa-play"></i>
+                                </button>
+                                <a class="site-btn" href="https://www.imdb.com/title/{{ movie_data.imdb_id }}"
+                                    target="_blank">IMDb</a>
+                                <button type="button" class="site-btn">
+                                    Review <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
                             </div>
                         </div>
