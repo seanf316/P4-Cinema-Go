@@ -6,11 +6,19 @@ import requests
 API_KEY = os.environ.get("API_KEY")
 
 
-def trending(request):
+def movies(request, category):
     """
-    Call on the TMDB API to provide some trending movies
+    Call on the TMDB API to provide some movies based on the category
     """
-    url = f"https://api.themoviedb.org/3/trending/movie/week?api_key={API_KEY}&language=en-US&page=1"
+    if category == "trending":
+        url = f"https://api.themoviedb.org/3/trending/movie/week?api_key={API_KEY}&language=en-US&page=1"
+        template_name = "movie/trending.html"
+    elif category == "toprated":
+        url = f"https://api.themoviedb.org/3/movie/top_rated?api_key={API_KEY}&language=en-US&page=1"
+        template_name = "movie/toprated.html"
+    else:
+        # handle other categories
+        pass
 
     response = requests.get(url)
     movie_data = response.json()
@@ -20,28 +28,20 @@ def trending(request):
         "page_number": 2,
     }
 
-    return render(request, "movie/trending.html", context)
+    return render(request, template_name, context)
 
 
-def toprated(request):
-    """
-    Call on the TMDB API to provide some trending movies
-    """
-    url = f"https://api.themoviedb.org/3/movie/top_rated?api_key={API_KEY}&language=en-US&page=1"
+def pagination(request, page_number, category):
 
-    response = requests.get(url)
-    movie_data = response.json()
-
-    context = {
-        "movie_data": movie_data,
-        "page_number": 2,
-    }
-
-    return render(request, "movie/toprated.html", context)
-
-
-def pagination(request, page_number):
-    url = f"https://api.themoviedb.org/3/trending/movie/week?api_key={API_KEY}&language=en-US&page=1{str(page_number)}"
+    if category == "trending":
+        url = f"https://api.themoviedb.org/3/trending/movie/week?api_key={API_KEY}&language=en-US&page={page_number}"
+        template_name = "movie/trending.html"
+    elif category == "toprated":
+        url = f"https://api.themoviedb.org/3/movie/top_rated?api_key={API_KEY}&language=en-US&page={page_number}"
+        template_name = "movie/toprated.html"
+    else:
+        # handle other categories
+        pass
 
     response = requests.get(url)
     movie_data = response.json()
@@ -52,7 +52,7 @@ def pagination(request, page_number):
         "page_number": page_number,
     }
 
-    return render(request, "movie/trending.html", context)
+    return render(request, template_name, context)
 
 
 def moviedetails(request, movie_id):

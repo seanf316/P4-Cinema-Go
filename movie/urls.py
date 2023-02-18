@@ -2,13 +2,23 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path("trending/", views.trending, name="trending"),
     path(
-        "trending/page/<page_number>/",
+        "trending/",
+        views.movies,
+        {"category": "trending"},
+        name="trending",
+    ),
+    path(
+        "toprated/",
+        views.movies,
+        {"category": "toprated"},
+        name="toprated",
+    ),
+    path(
+        "pagination/<int:page_number>/<str:category>/",
         views.pagination,
         name="pagination",
     ),
-    path("toprated/", views.toprated, name="toprated"),
     path(
         "moviedetails/<int:movie_id>", views.moviedetails, name="moviedetails"
     ),

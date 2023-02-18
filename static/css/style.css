@@ -290,6 +290,13 @@ h1.m-title {
     font-weight: 500;
 }
 
+.site-btn {
+    background-color: var(--dark-color);
+    color: var(--main-color);
+    border: 1px solid var(--light-color);
+    padding: .5rem 2rem;
+}
+
 /* Media queries */
 @media screen and (min-width: 576px) {
 

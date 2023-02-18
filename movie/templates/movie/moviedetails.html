@@ -22,7 +22,7 @@
                                 <p class="card-text"><span>Runtime: </span>{{ movie_data.runtime }} min</p>
                                 <p class="card-text"><span>Released:
                                     </span>{{ movie_data.release_date|slice:":4"}}</p>
-                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                <button type="button" class="site-btn" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal">
                                     Trailer <i class="fa-solid fa-play"></i>
                                 </button>
@@ -32,6 +32,7 @@
                 </div>
             </div>
         </div>
+        <!-- Mobile View -->
         <div class="col-12 d-sm-none">
             <div class="card bg-trans text-white my-5">
                 <img src="https://image.tmdb.org/t/p/w1280/{{ movie_data.backdrop_path }}" class="card-img-top"
@@ -43,16 +44,20 @@
                     <p class="card-text">Director: {{ director_name }}</p>
                     <p class="card-text">Runtime: {{ movie_data.runtime }} min</p>
                     <p class="card-text">Released: {{ movie_data.release_date|slice:":4"}}</p>
+                    {% if trailer %}
                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Trailer <i class="fa-solid fa-play"></i>
                     </button>
+                    {% else %}
+                    <p>No Trailer Available</p>
+                    {% endif %}
                 </div>
             </div>
         </div>
     </div>
     </div>
-    <!-- Modal -->
 
+    <!-- TrailerModal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md modal-lg modal-xl">
             <div class="modal-content">
