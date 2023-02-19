@@ -4,9 +4,9 @@
 <section class="movie-details min-vh-100" style="background-image: url('{{hero}}');">
     <div class="opaque-overlay">&nbsp;</div>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 col-lg-12 d-none d-sm-block">
-                <div class="card my-5 bg-trans text-white">
+        <div class="row justify-content-center mt-5">
+            <div class="col-12 d-none d-lg-block">
+                <div class="card bg-trans text-white">
                     <div class="row g-0">
                         <div class="col-4">
                             <img src="https://image.tmdb.org/t/p/w1280/{{ movie_data.poster_path }}"
@@ -22,13 +22,15 @@
                                     </span>{{ movie_data.release_date|slice:":4"}}</p>
                                 <p class="card-text"><span>Rating:
                                     </span>{{ movie_data.vote_average|floatformat:1}}/10</p>
-                                <button type="button" class="site-btn" data-bs-toggle="modal"
+                                {% if trailer %}
+                                <button type="button" class="site-btn flex-grow-1" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal">
                                     Trailer <i class="fa-solid fa-play"></i>
                                 </button>
-                                <a class="site-btn" href="https://www.imdb.com/title/{{ movie_data.imdb_id }}"
-                                    target="_blank">IMDb</a>
-                                <button type="button" class="site-btn">
+                                {% endif %}
+                                <a class="site-btn flex-grow-1"
+                                    href="https://www.imdb.com/title/{{ movie_data.imdb_id }}" target="_blank">IMDb</a>
+                                <button type="button" class="site-btn flex-grow-1">
                                     Review <i class="fa-solid fa-magnifying-glass"></i>
                                 </button>
                             </div>
@@ -38,24 +40,34 @@
             </div>
         </div>
         <!-- Mobile View -->
-        <div class="col-12 d-sm-none">
-            <div class="card bg-trans text-white my-5">
+        <div class="col-12 d-lg-none my-5">
+            <div class="card bg-trans text-white">
                 <img src="https://image.tmdb.org/t/p/w1280/{{ movie_data.backdrop_path }}" class="card-img-top"
                     alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">{{ movie_data.original_title }}</h5>
-                    <p class="card-text">{{ movie_data.overview }}</p>
-                    <p class="card-text">Rating: {{ movie_data.vote_average|floatformat:1}}/10</p>
-                    <p class="card-text">Director: {{ director_name }}</p>
-                    <p class="card-text">Runtime: {{ movie_data.runtime }} min</p>
-                    <p class="card-text">Released: {{ movie_data.release_date|slice:":4"}}</p>
-                    {% if trailer %}
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                        Trailer <i class="fa-solid fa-play"></i>
-                    </button>
-                    {% else %}
-                    <p>No Trailer Available</p>
-                    {% endif %}
+                    <h1 class="m-title">{{ movie_data.original_title }}</h1>
+                    <p class="overview">{{ movie_data.overview }}</p>
+                    <p class="card-text"><span>Director: </span>{{ director_name }}</p>
+                    <p class="card-text"><span>Runtime: </span>{{ movie_data.runtime }} min</p>
+                    <p class="card-text"><span>Released:
+                        </span>{{ movie_data.release_date|slice:":4"}}</p>
+                    <p class="card-text"><span>Rating:
+                        </span>{{ movie_data.vote_average|floatformat:1}}/10</p>
+                    <div class="row">
+                        <div class="col d-flex flex-wrap">
+                            {% if trailer %}
+                            <button type="button" class="site-btn flex-grow-1" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Trailer <i class="fa-solid fa-play"></i>
+                            </button>
+                            {% endif %}
+                            <a class="site-btn flex-grow-1 text-center"
+                                href="https://www.imdb.com/title/{{ movie_data.imdb_id }}" target="_blank">IMDb</a>
+                            <button type="button" class="site-btn flex-grow-1">
+                                Review <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

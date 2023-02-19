@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-<section class="upcoming">
+<section class="toprated">
     <div class="container">
         <div class="row pb-5">
             <a href="{% url 'toprated' %}">
                 <h1 class="auth-h1 text-center">Top Rated</h1>
             </a>
             {% for movie in movie_data.results %}
+            {% if forloop.counter0 < 18 %}
             <div class="col-md-4 col-6 col-lg-2 gx-4 gy-4">
                 <div class="card medium">
                     <div class="card-image">
@@ -16,6 +17,7 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
             {% endfor %}
             <div class="row">
                 <div class="col text-center mt-5">
