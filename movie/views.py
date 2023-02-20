@@ -1,9 +1,35 @@
 import os
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.template import loader
 import requests
 
 API_KEY = os.environ.get("API_KEY")
+
+
+def search(request):
+    query = request.GET.get("query")
+
+    if query:
+        print(query)
+        return redirect("searchresults", query=query)
+
+    return render(request, "movie/search.html")
+
+
+def searchresults(request, query, page_number=1):
+    url = f"https://api.themoviedb.org/3/search/movie?api_key={API_KEY}&language=en-US&query={query}&page={page_number}"
+
+    response = requests.get(url)
+    movie_data = response.json()
+    page_number = int(page_number) + 1
+
+    context = {
+        "query": query,
+        "movie_data": movie_data,
+        "page_number": page_number,
+    }
+
+    return render(request, "movie/searchresults.html", context)
 
 
 def movies(request, category):

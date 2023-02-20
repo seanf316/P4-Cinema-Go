@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="search-results">
+    <div class="container">
+        <div class="row pb-5">
+            <a href="{% url 'searchresults' query=query %}">
+                <h1 class="auth-h1 text-center">Results: {{ query }}</h1>
+            </a>
+            {% for movie in movie_data.results %}
+            {% if forloop.counter0 < 16 %}
+            <div class="col-6 col-md-4 col-lg-3 gx-4 gy-4">
+                <div class="card text-center">
+                    {% if movie.backdrop_path %}
+                    <img src="https://image.tmdb.org/t/p/w500/{{ movie.backdrop_path }}" class="card-img-top"
+                        height="180px" alt="...">
+                    {% else %}
+                    <img src="https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg"
+                        height="180" alt="">
+                    {% endif %}
+                    <div class="card-body d-flex flex-column" style="height: 10rem;">
+                        <h5 class="card-title mb-3" style="font-size: 1em;">{{ movie.original_title }}
+                            ({{ movie.release_date|slice:":4"}})</h5>
+                        <a href="{% url 'moviedetails' movie.id %}" class="site-btn mt-auto">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+            {% endfor %}
+            <div class="row">
+                <div class="col text-center mt-5">
+                    <a class="load-more" href="{% url 'searchresults_page' query=query page_number=page_number %}">Load
+                        More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock%}

@@ -3,6 +3,21 @@ from . import views
 
 urlpatterns = [
     path(
+        "search/",
+        views.search,
+        name="search",
+    ),
+    path(
+        "searchresults/<str:query>/",
+        views.searchresults,
+        name="searchresults",
+    ),
+    path(
+        "searchresults/<str:query>/<int:page_number>/",
+        views.searchresults,
+        name="searchresults_page",
+    ),
+    path(
         "trending/",
         views.movies,
         {"category": "trending"},

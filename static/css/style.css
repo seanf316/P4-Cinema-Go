@@ -13,8 +13,6 @@
     --light-color: white;
     --dark-color: black;
     --bg-color: #222629;
-    --bg1-color: #86C232;
-    --bg2-color: #474B4F;
 }
 
 a {
@@ -44,10 +42,6 @@ header {
 }
 
 /* Navbar */
-
-nav {
-    background-color: var(--bg1-color);
-}
 
 i.fa-solid.fa-bars {
     color: var(--main-color);
@@ -246,16 +240,43 @@ i.fa-brands.fa-github:focus {
 
 /* Movie Details */
 
+/* Search */
+.movie-search {
+    margin: 4rem 0;
+}
+
+.movie-search span {
+    color: var(--main-color);
+}
+
+.movie-search form input {
+    height: 2.6rem;
+    margin-top: .5rem;
+    border-radius: 0;
+}
+
+.movie-search form input:focus {
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 1px var(--main-color);
+}
+
+.movie-search form input::placeholder {
+    color: var(--main-color);
+    font-style: italic;
+}
+
+/* Search Results */
+
 #trailer {
     height: 18rem;
 }
 
 .movie-details {
+    background-image: url('https://res.cloudinary.com/seanf316/image/upload/v1676835777/desktop-1920x1080_doksg8.jpg');
     background-size: cover;
     background-color: rgba(0, 0, 0, .1);
     background-position: center;
     display: flex;
-    /* justify-content: center; */
     position: relative;
 }
 
@@ -268,7 +289,7 @@ i.fa-brands.fa-github:focus {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.movie-details .bg-trans {
+.bg-trans {
     background-color: rgba(0, 0, 0, 0.5);
     border: 1px solid var(--light-color);
 }
@@ -321,6 +342,9 @@ a.site-btn:hover {
         font-size: 3rem;
     }
 
+    .movie-search h1 {
+        font-size: 3rem;
+    }
 }
 
 @media screen and (min-width: 768px) {
@@ -338,6 +362,10 @@ a.site-btn:hover {
 
     .about {
         margin: 6rem 0;
+    }
+
+    .movie-search {
+        margin: 8rem 0;
     }
 
     .log-in p {
