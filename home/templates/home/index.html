@@ -5,6 +5,21 @@
     <div class="container">
         <div class="row g-0 flex-wrap-reverse">
             <div class="col-lg-5 mb-2 d-flex flex-column justify-content-center align-items-center text-center">
+                {% if user.is_authenticated %}
+                <h1><span>Cinema</span> | <span>Go</span></h1>
+                <p class="text-center"><i>Like the Cinema? Love Movies?</i></p>
+                <p>Thank you for joining the <span><strong>Cinema</strong></span> | <span><strong>Go</strong></span>
+                    family. Below you will find links to get you started, we have Search where you can search for any
+                    movie you wish, Trending to see the most popular movies of the week & Top Rated to see the highest
+                    rated movies from the TMDB website.</p>
+                <div class="row">
+                    <div class="col-12 d-flex">
+                        <a href="{% url 'search' %}">Search</a>
+                        <a href="{% url 'trending' %}">Trending</a>
+                        <a href="{% url 'toprated' %}">Top Rated</a>
+                    </div>
+                </div>
+                {% else %}
                 <h1>Welcome to<br><span>Cinema</span> | <span>Go</span></h1>
                 <p class="text-center"><i>Like the Cinema? Love Movies?</i></p>
                 <p>Here at <span><strong>Cinema</strong></span> | <span><strong>Go</strong></span> we want to bring
@@ -14,6 +29,7 @@
                     provide your thoughts on it. You can check out other reviews too on Movies you where thinking of
                     going too see and provide feedback via our comment section. Sign up below to get started....</p>
                 <a href="{% url 'account_signup' %}">SIGN UP</a>
+                {% endif %}
             </div>
             <div class="col-lg-7 pt-3 d-flex align-items-center">
                 <img src="https://res.cloudinary.com/seanf316/image/upload/v1676237278/pngfind.com-movie-png-485365_riaxjl.png"

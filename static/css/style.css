@@ -104,6 +104,7 @@ a.nav-link:hover {
     font-weight: 600;
     color: var(--main-color);
     margin-bottom: 1rem;
+    margin-right: .5rem;
 }
 
 .about a:hover {
@@ -290,7 +291,7 @@ i.fa-brands.fa-github:focus {
 }
 
 .bg-trans {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.3);
     border: 1px solid var(--light-color);
 }
 
@@ -361,7 +362,7 @@ a.site-btn:hover {
 @media screen and (min-width: 992px) {
 
     .about {
-        margin: 6rem 0;
+        margin: 8rem 0;
     }
 
     .movie-search {

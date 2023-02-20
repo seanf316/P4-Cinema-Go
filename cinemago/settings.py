@@ -73,6 +73,9 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+DATE_INPUT_FORMATS = ["%d.%m.%Y"]
+USE_L10N = False
+
 ROOT_URLCONF = "cinemago.urls"
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"

@@ -1,7 +1,8 @@
 import os
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.template import loader
 import requests
+from .models import Movie
 
 API_KEY = os.environ.get("API_KEY")
 
@@ -104,6 +105,15 @@ def moviedetails(request, movie_id):
             break
 
     trailer_key = trailer["key"] if trailer is not None else None
+
+    Movie.objects.get_or_create(
+        Name=movie_data["original_title"],
+        Overview=movie_data["overview"],
+        Director=director_name,
+        Released=movie_data["release_date"],
+        Runtime=movie_data["runtime"],
+        MovieId=movie_data["id"],
+    )
 
     context = {
         "movie_data": movie_data,

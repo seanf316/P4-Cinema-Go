@@ -20,8 +20,6 @@
                                 <p class="card-text"><span>Runtime: </span>{{ movie_data.runtime }} min</p>
                                 <p class="card-text"><span>Released:
                                     </span>{{ movie_data.release_date|slice:":4"}}</p>
-                                <p class="card-text"><span>Rating:
-                                    </span>{{ movie_data.vote_average|floatformat:1}}/10</p>
                                 {% if trailer %}
                                 <button type="button" class="site-btn flex-grow-1" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal">
@@ -51,8 +49,6 @@
                     <p class="card-text"><span>Runtime: </span>{{ movie_data.runtime }} min</p>
                     <p class="card-text"><span>Released:
                         </span>{{ movie_data.release_date|slice:":4"}}</p>
-                    <p class="card-text"><span>Rating:
-                        </span>{{ movie_data.vote_average|floatformat:1}}/10</p>
                     <div class="row">
                         <div class="col d-flex flex-wrap">
                             {% if trailer %}
