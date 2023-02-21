@@ -34,7 +34,7 @@
                                 {% if movie_data.release_date %}
                                 <p class="card-text"><span>Released:
                                     </span>{{ movie_data.release_date|slice:":4"}}</p>
-                                % endif %}
+                                {% endif %}
                                 {% if trailer %}
                                 <button type="button" class="site-btn flex-grow-1" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal">
