@@ -9,17 +9,32 @@
                 <div class="card bg-trans text-white">
                     <div class="row g-0">
                         <div class="col-4">
+                            {% if movie_data.poster_path %}
                             <img src="https://image.tmdb.org/t/p/w1280/{{ movie_data.poster_path }}"
                                 class="img-fluid rounded-start" alt="...">
+                            {% else %}
+                            <img src="https://res.cloudinary.com/seanf316/image/upload/v1676856077/no_poster_eh3lli.jpg"
+                                width="100%" alt="">
+                            {% endif %}
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
+                                {% if movie_data.original_title %}
                                 <h1 class="m-title">{{ movie_data.original_title }}</h1>
+                                {% endif %}
+                                {% if movie_data.overview %}
                                 <p class="overview">{{ movie_data.overview }}</p>
+                                {% endif %}
+                                {% if movie_data.director_name %}
                                 <p class="card-text"><span>Director: </span>{{ director_name }}</p>
+                                {% endif %}
+                                {% if movie_data.runtime %}
                                 <p class="card-text"><span>Runtime: </span>{{ movie_data.runtime }} min</p>
+                                {% endif %}
+                                {% if movie_data.release_date %}
                                 <p class="card-text"><span>Released:
                                     </span>{{ movie_data.release_date|slice:":4"}}</p>
+                                % endif %}
                                 {% if trailer %}
                                 <button type="button" class="site-btn flex-grow-1" data-bs-toggle="modal"
                                     data-bs-target="#exampleModal">

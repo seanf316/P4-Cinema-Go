@@ -88,7 +88,10 @@ def moviedetails(request, movie_id):
     response = requests.get(url)
     movie_data = response.json()
     backdrop = movie_data["backdrop_path"]
-    hero = "https://image.tmdb.org/t/p/w1280/" + backdrop
+    if backdrop:
+        hero = "https://image.tmdb.org/t/p/w1280/" + backdrop
+    else:
+        hero = "https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg"
 
     director = None
     for person in movie_data["credits"]["crew"]:
