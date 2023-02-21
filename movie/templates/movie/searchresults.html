@@ -27,11 +27,19 @@
             </div>
             {% endif %}
             {% endfor %}
-            <div class="row">
+            <div class="row text-center">
+                {% if prev_page %}
                 <div class="col text-center mt-5">
-                    <a class="load-more" href="{% url 'searchresults_page' query=query page_number=page_number %}">Load
-                        More</a>
+                    <a class="load-more"
+                        href="{% url 'searchresults_page' page_number=prev_page query=query %}">Prev</a>
                 </div>
+                {% endif %}
+                {% if next_page %}
+                <div class="col text-center mt-5">
+                    <a class="load-more"
+                        href="{% url 'searchresults_page' page_number=next_page query=query %}">Next</a>
+                </div>
+                {% endif %}
             </div>
         </div>
     </div>

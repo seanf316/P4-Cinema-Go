@@ -30,7 +30,7 @@ urlpatterns = [
         name="toprated",
     ),
     path(
-        "pagination/<int:page_number>/<str:category>/",
+        "pagination/<str:category>/<int:page_number>/",
         views.pagination,
         name="pagination",
     ),

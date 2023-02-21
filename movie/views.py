@@ -22,26 +22,32 @@ def searchresults(request, query, page_number=1):
 
     response = requests.get(url)
     movie_data = response.json()
-    page_number = int(page_number) + 1
+    page_number = int(page_number)
+    prev_page = page_number - 1 if page_number > 1 else None
+    next_page = (
+        page_number + 1 if movie_data["total_pages"] > page_number else None
+    )
 
     context = {
         "query": query,
         "movie_data": movie_data,
         "page_number": page_number,
+        "prev_page": prev_page,
+        "next_page": next_page,
     }
 
     return render(request, "movie/searchresults.html", context)
 
 
-def movies(request, category):
+def movies(request, category, page_number=1):
     """
     Call on the TMDB API to provide some movies based on the category
     """
     if category == "trending":
-        url = f"https://api.themoviedb.org/3/trending/movie/week?api_key={API_KEY}&language=en-US&page=1"
+        url = f"https://api.themoviedb.org/3/trending/movie/week?api_key={API_KEY}&language=en-US&page={page_number}"
         template_name = "movie/trending.html"
     elif category == "toprated":
-        url = f"https://api.themoviedb.org/3/movie/top_rated?api_key={API_KEY}&language=en-US&page=1"
+        url = f"https://api.themoviedb.org/3/movie/top_rated?api_key={API_KEY}&language=en-US&page={page_number}"
         template_name = "movie/toprated.html"
     else:
         # handle other categories
@@ -49,16 +55,23 @@ def movies(request, category):
 
     response = requests.get(url)
     movie_data = response.json()
+    page_number = int(page_number)
+    prev_page = page_number - 1 if page_number > 1 else None
+    next_page = (
+        page_number + 1 if movie_data["total_pages"] > page_number else None
+    )
 
     context = {
         "movie_data": movie_data,
-        "page_number": 2,
+        "page_number": page_number,
+        "prev_page": prev_page,
+        "next_page": next_page,
     }
 
     return render(request, template_name, context)
 
 
-def pagination(request, page_number, category):
+def pagination(request, category, page_number=1):
 
     if category == "trending":
         url = f"https://api.themoviedb.org/3/trending/movie/week?api_key={API_KEY}&language=en-US&page={page_number}"
@@ -72,11 +85,15 @@ def pagination(request, page_number, category):
 
     response = requests.get(url)
     movie_data = response.json()
-    page_number = int(page_number) + 1
+    page_number = int(page_number)
+    prev_page = page_number - 1 if page_number > 1 else None
+    next_page = page_number + 1
 
     context = {
         "movie_data": movie_data,
         "page_number": page_number,
+        "prev_page": prev_page,
+        "next_page": next_page,
     }
 
     return render(request, template_name, context)
