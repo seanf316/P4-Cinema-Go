@@ -13,10 +13,10 @@
                     movie you wish, Trending to see the most popular movies of the week & Top Rated to see the highest
                     rated movies from the TMDB website.</p>
                 <div class="row">
-                    <div class="col-12 d-flex">
-                        <a href="{% url 'search' %}">Search</a>
-                        <a href="{% url 'trending' %}">Trending</a>
-                        <a href="{% url 'toprated' %}">Top Rated</a>
+                    <div class="col-12 d-flex flex-wrap">
+                        <a class="flex-grow-1" href="{% url 'search' %}">Search</a>
+                        <a class="flex-grow-1" href="{% url 'trending' %}">Trending</a>
+                        <a class="flex-grow-1" href="{% url 'toprated' %}">Top Rated</a>
                     </div>
                 </div>
                 {% else %}
