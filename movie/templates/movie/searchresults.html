@@ -20,7 +20,7 @@
                     {% endif %}
                     <div class="card-body d-flex flex-column bg-black text-white" style="height: 10rem;">
                         <h5 class="card-title mt-3" style="font-size: 1em;">{{ movie.original_title }}
-                            ({{ movie.release_date|slice:":4"}})</h5>
+                            {{ movie.release_date|slice:":4"}})</h5>
                         <a href="{% url 'moviedetails' movie.id %}" class="site-btn mt-auto">Learn More</a>
                     </div>
                 </div>
@@ -28,20 +28,17 @@
             {% endif %}
             {% endfor %}
             <div class="row text-center">
-                {% if prev_page %}
                 <div class="col text-center mt-5">
-                    <a class="load-more"
-                        href="{% url 'searchresults_page' page_number=prev_page query=query %}">Prev</a>
+                    {% if prev_page %}
+                    <a class="load-more" href="{% url 'searchresults_page' page_number=prev_page query=query %}"><i
+                            class="fa-solid fa-circle-chevron-left"></i> Prev</a>
+                    {% endif %}
+                    {% if next_page %}
+                    <a class="load-more" href="{% url 'searchresults_page' page_number=next_page query=query %}">Next <i
+                            class="fa-solid fa-circle-chevron-right"></i></a>
+                    {% endif %}
                 </div>
-                {% endif %}
-                {% if next_page %}
-                <div class="col text-center mt-5">
-                    <a class="load-more"
-                        href="{% url 'searchresults_page' page_number=next_page query=query %}">Next</a>
-                </div>
-                {% endif %}
             </div>
         </div>
-    </div>
 </section>
 {% endblock%}
