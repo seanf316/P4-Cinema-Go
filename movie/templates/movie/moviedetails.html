@@ -104,14 +104,16 @@
     </div>
     </div>
 
-    <!-- TrailerModal -->
+    <!-- Trailer Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-md modal-lg modal-xl">
-            <div class="modal-content">
+        <div class="modal-dialog modal-dialog-centered modal-md modal-lg modal-xl flex-column justify-content-center">
+            <div class="modal-content transparent border-0">
+                <button type="button" class="mb-3 mx-auto modal-btn" data-bs-dismiss="modal"
+                    aria-label="Close">Close</button>
                 <iframe id="trailer" title="Trailer" src="https://www.youtube.com/embed/{{ trailer }}?modestbranding=1"
                     class="rounded-lg" frameborder="0"
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                    style="border: 2px solid white; border-radius: .5rem;"></iframe>
+                    style="border: 2px solid var(--main-color); border-radius: .5rem;"></iframe>
             </div>
         </div>
     </div>
