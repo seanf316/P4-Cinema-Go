@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-placeholder = "https://res.cloudinary.com/seanf316/image/upload/v1677023649/default-profile_fb2lrf_xbtzxc.jpg"
+placeholder = "https://res.cloudinary.com/seanf316/image/upload/v1677195145/Cinema-Go/default_profile_llyxo2.webp"
 
 
 class Profile(models.Model):
@@ -12,7 +12,18 @@ class Profile(models.Model):
     firstname = models.CharField(max_length=50, null=True, blank=True)
     surname = models.CharField(max_length=50, null=True, blank=True)
     about = models.TextField(max_length=200, null=True, blank=True)
-    profile_image = CloudinaryField("image", default=placeholder)
+    profile_image = CloudinaryField(
+        "image",
+        default=placeholder,
+        eager=[{"width": "50", "height": "50", "crop": "crop"}],
+        transformation={
+            "width": "600",
+            "height": "600",
+            "crop": "fill",
+        },
+        folder="/images",
+        format="webp",
+    )
 
     def __str__(self):
         return str(self.user)
