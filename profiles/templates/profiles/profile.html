@@ -1,18 +1,31 @@
 {% extends "base.html" %}
 
 {% block content %}
-<setcion class="profile">
+<section class="profile min-vh-100">
+    <div class="opaque-overlay">&nbsp;</div>
     <div class="container">
-        <div class="row">
-            <div class="col-12 text-white">
-                <h1>Hello</h1>
-                <p>{{ user.username}}</p>
-                <img class="img-fluid" src='{{ profile.profile_image.url }}' alt="default profile photo" height="300"
-                    width="300">
-                <p>{{ profile.firstname|safe}} {{ profile.surname|safe}}</p>
-                <p>{{ profile.about|safe}}</p>
+        <div class="row justify-content-center mt-5">
+            <div class="col-12">
+                <div class="card bg-trans text-white">
+                    <div class="row gx-0">
+                        <div class="col-lg-4 col-md-4">
+                            <img src="{{ profile.profile_image.url }}" class="rounded-circle prof-img" alt="...">
+                        </div>
+                        <div class="col-md-8 d-flex flex-column justify-content-center">
+                            <div class="card-body">
+                                <h1 class="mb-3 text-white"><span>Cinema</span> | <span>Go</span> Profile
+                                </h1>
+                                <p><span>Username: </span>{{ profile.user.username }}</p>
+                                <p><span>Name: </span>{{ profile.firstname }} {{ profile.surname }}</p>
+                                <p><span>About: <br></span>{{ profile.about|safe }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</setcion>
+    </div>
+
+</section>
 {% endblock %}
