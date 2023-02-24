@@ -24,6 +24,8 @@ class Profile(models.Model):
         folder="/images",
         format="webp",
     )
+    fav_movie = models.CharField(max_length=50, null=True, blank=True)
+    director = models.CharField(max_length=50, null=True, blank=True)
 
     def __str__(self):
         return str(self.user)
