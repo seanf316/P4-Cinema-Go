@@ -31,11 +31,11 @@
 
     {% if messages %}
     <!-- messages -->
-    <div class="container">
-        <div class="row">
-            <div class="col mt-3">
+    <div class="alert toast {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+        <div class="container">
+            <div class="row">
                 {% for message in messages %}
-                <div class="alert toast {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                <div class="col-12 mx-auto d-flex justify-content-center">
                     {{ message | safe}}
                 </div>
                 {% endfor %}
