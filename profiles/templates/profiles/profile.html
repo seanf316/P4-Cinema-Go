@@ -4,7 +4,7 @@
 <section class="profile min-vh-100">
     <div class="opaque-overlay">&nbsp;</div>
     <div class="container">
-        <div class="row justify-content-center mt-5">
+        <div class="row justify-content-center my-5">
             <div class="col-12">
                 <div class="card bg-trans text-white">
                     <div class="row gx-0">
@@ -15,9 +15,18 @@
                             <div class="card-body">
                                 <h1 class="mb-3 text-white"><span>Cinema</span> | <span>Go</span> Profile
                                 </h1>
-                                <p><span>Username: </span>{{ profile.user.username }}</p>
-                                <p><span>Name: </span>{{ profile.firstname }} {{ profile.surname }}</p>
-                                <p><span>About: <br></span>{{ profile.about|safe }}</p>
+                                <p><span>Username <br></span>{{ profile.user.username }}</p>
+                                <p><span>Name <br></span>{{ profile.firstname }} {{ profile.surname }}</p>
+                                <p class="mb-0"><span>About</span>{{ profile.about|safe }}</p>
+                                <p><span>Favourite Movie <br></span>{{ profile.fav_movie|safe }}</p>
+                                <p><span>Favourite Director <br></span>{{ profile.director|safe }}</p>
+                                <div class="row">
+                                    <div class="col d-flex flex-wrap">
+                                        <a class="site-btn text-center flex-grow-1"
+                                            href="{% url 'edit_profile' user.username %}">Edit</a>
+                                        <button type="button" class="site-btn flex-grow-1">Delete</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
