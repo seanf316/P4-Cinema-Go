@@ -218,10 +218,30 @@ i.fa-brands.fa-github:focus {
     color: var(--main-color);
 }
 
+.log-in input {
+    margin-bottom: 1rem;
+}
+
+.log-in label {
+    color: var(--main-color);
+    margin-bottom: .4rem;
+    font-weight: 600;
+}
+
 /* Sign Up */
 
 .sign-up span {
     color: var(--main-color);
+}
+
+.sign-up input {
+    margin-bottom: 1rem;
+}
+
+.sign-up label {
+    color: var(--main-color);
+    margin-bottom: .4rem;
+    font-weight: 600;
 }
 
 /* Logout */
