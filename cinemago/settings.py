@@ -195,3 +195,5 @@ SUMMERNOTE_CONFIG = {
         ],
     },
 }
+
+ACCOUNT_EMAIL_VERIFICATION = "none"
