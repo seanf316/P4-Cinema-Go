@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="edit-profile">
+    <div class="container">
+        <div class="row justify-content-center py-5">
+            <div class="col-12 col-lg-6 text-white">
+                <h1 class="mb-3 text-white"><span>Edit</span> Profile
+                </h1>
+                <form method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ edit_user|crispy}}
+                    {{ edit_form|crispy }}
+                    <div class="row justify-content-center">
+                        <div class="col-12 col-lg-4 d-flex flex-wrap">
+                            <button class="flex-grow-1" type="submit">Update</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
