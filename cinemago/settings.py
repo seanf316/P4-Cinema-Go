@@ -50,7 +50,6 @@ INSTALLED_APPS = [
     # Other
     "active_link",
     "crispy_forms",
-    "crispy_bootstrap5",
     "cloudinary",
     "django_summernote",
     # Apps
@@ -79,8 +78,7 @@ USE_L10N = False
 
 ROOT_URLCONF = "cinemago.urls"
 
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 TEMPLATES = [
     {
@@ -171,3 +169,29 @@ DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Resizing summernote fields to 100% - https://stackoverflow.com/questions/61657061/how-do-i-resize-the-width-of-summernote
+# All summernote information
+
+SUMMERNOTE_THEME = "bs5"
+
+SUMMERNOTE_CONFIG = {
+    # You can put custom Summernote settings
+    "summernote": {
+        # Change editor size
+        "width": "100%",
+        "height": "280",
+        # Toolbar
+        "toolbar": [
+            ["style", ["style"]],
+            ["font", ["bold", "underline", "clear"]],
+            ["fontname", ["fontname"]],
+            ["fontsize", ["fontsize"]],
+            ["color", ["color"]],
+            ["para", ["ul", "ol", "paragraph"]],
+            ["table", ["table"]],
+            ["insert", ["link", "picture", "video"]],
+            ["view", ["fullscreen", "codeview", "help"]],
+        ],
+    },
+}
