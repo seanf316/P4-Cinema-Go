@@ -12,11 +12,40 @@
                     {{ edit_user|crispy}}
                     {{ edit_form|crispy }}
                     <div class="row justify-content-center">
-                        <div class="col-12 col-lg-4 d-flex flex-wrap">
+                        <div class="col-12 col-lg-6 d-flex flex-wrap">
                             <button class="flex-grow-1" type="submit">Update</button>
+                            <button type="button" class="flex-grow-1" data-bs-toggle="modal"
+                                data-bs-target="#exampleModal">
+                                Delete
+                            </button>
                         </div>
                     </div>
                 </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="delete-profile">
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content delete text-white">
+                <div class="modal-body">
+                    {% if user.is_authenticated and user == profile.user %}
+                    <form method="post" action="{% url 'delete_profile' user.username %}" role="form">
+                        <!-- Form to confirm Account deletion -->
+                        {% csrf_token %}
+                        <h2 class="mb-3 text-white"><span>Delete</span> Profile
+                        </h2>
+                        <p><i><strong>Are you sure you want to Delete your profile?</strong></i></p>
+                        <p>All information related to your account will be permanently removed and you will not be able
+                            to retrieve it.</p>
+                        <button type="submit" name="action" value="delete" class="site-btn">Delete</button>
+                    </form>
+                    {% else %}
+                    <h3>I'm sorry this is not your profile, please return to your own profile page.</h3>
+                </div>
             </div>
         </div>
     </div>
