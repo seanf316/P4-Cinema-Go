@@ -12,4 +12,9 @@ urlpatterns = [
         views.edit_profile,
         name="edit_profile",
     ),
+    path(
+        "profile/<username>/delete",
+        views.delete_profile,
+        name="delete_profile",
+    ),
 ]
