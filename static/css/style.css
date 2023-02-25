@@ -23,7 +23,7 @@ ul li {
     list-style: none;
 }
 
-.current {
+.nav-link.active {
     text-decoration-line: underline;
     text-decoration-color: #66fcf1;
     text-underline-offset: 8px;
@@ -438,6 +438,21 @@ a.site-btn:hover {
     padding: .5rem 2rem;
 }
 
+/* Delete Profile */
+
+.delete {
+    background-color: var(--bg-color);
+    border: 2px solid var(--main-color);
+}
+
+.delete h2 {
+    font-weight: 600;
+}
+
+.delete span {
+    color: var(--main-color);
+}
+
 /* Media queries */
 @media screen and (min-width: 576px) {
 
@@ -502,6 +517,6 @@ a.site-btn:hover {
     }
 
     .profile p {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
     }
 }
