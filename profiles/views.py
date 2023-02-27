@@ -5,6 +5,7 @@ from django.contrib.auth import logout
 from django.contrib import messages
 from django.contrib.auth.models import User
 from .models import Profile
+from movie.models import Movie
 from .forms import ProfileForm, UserForm
 
 
@@ -34,7 +35,9 @@ def edit_profile(request, username):
         if edit_user.is_valid() and edit_form.is_valid():
             edit_user.save()
             edit_form.save()
-            messages.success(request, "Your Profile has been updated!")
+            messages.success(
+                request, f"{user.username} your profile has been updated!"
+            )
             return redirect(reverse("profile", args=[username]))
     else:
         edit_user = UserForm(instance=request.user)
