@@ -37,4 +37,14 @@ urlpatterns = [
     path(
         "moviedetails/<int:movie_id>", views.moviedetails, name="moviedetails"
     ),
+    path(
+        "watchlist/<int:movie_id>/",
+        views.watchlist,
+        name="watchlist",
+    ),
+    path(
+        "prof_watch/<int:movie_id>/",
+        views.prof_watch,
+        name="prof_watch",
+    ),
 ]
