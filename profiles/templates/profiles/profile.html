@@ -7,22 +7,33 @@
         <div class="row justify-content-center my-5">
             <div class="col-12">
                 <div class="card bg-trans text-white">
+                    <h1 class="my-3 text-center text-white"><span>Cinema</span> | <span>Go</span> Profile
+                    </h1>
                     <div class="row gx-0">
                         <div class="col-lg-4 col-md-4">
                             <img src="{{ profile.profile_image.url }}" class="rounded-circle prof-img" alt="...">
                         </div>
                         <div class="col-md-8 d-flex flex-column justify-content-center">
                             <div class="card-body">
-                                <h1 class="mb-3 text-white"><span>Cinema</span> | <span>Go</span> Profile
-                                </h1>
                                 <p><span>Username<br></span>{{ profile.user.username }}</p>
                                 <p><span>Name<br></span>{{ profile.firstname }} {{ profile.surname }}</p>
                                 <p class="mb-0"><span>About<br></span>{{ profile.about|safe }}</p>
                                 <p><span>Favourite Movie<br></span>{{ profile.fav_movie }}</p>
                                 <p><span>Favourite Director<br></span>{{ profile.director|safe }}</p>
-                                <div class="row">
-                                    <div class="col my-4">
-                                        <a class="site-btn text-center"
+                                <p><span>My Watchlist<br></span></p>
+                                {% if profile.to_watch.exists %}
+                                {% for movie in profile.to_watch.all %}
+                                <p><a class="text-white"
+                                        href="{% url 'moviedetails' movie_id=movie.MovieId %}">{{ movie.Name }}</a> -
+                                    <span><a href="{% url 'prof_watch' movie_id=movie.MovieId %}">Remove X</a></span>
+                                </p>
+                                {% endfor %}
+                                {% else %}
+                                <p>Watchlist list is empty!</p>
+                                {% endif %}
+                                <div class=" row">
+                                    <div class="col-12 col-lg-4 d-flex flex-wrap my-3">
+                                        <a class="site-btn flex-grow-1"
                                             href="{% url 'edit_profile' user.username %}">Edit Profile</a>
                                     </div>
                                 </div>
