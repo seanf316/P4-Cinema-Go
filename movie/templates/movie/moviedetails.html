@@ -45,9 +45,18 @@
                                 <a class="site-btn flex-grow-1"
                                     href="https://www.imdb.com/title/{{ movie_data.imdb_id }}" target="_blank">IMDb</a>
                                 {% endif %}
-                                <button type="button" class="site-btn flex-grow-1">
+                                {% if to_watch == False %}
+                                <a href="{% url 'watchlist' movie_data.id %}" class="site-btn flex-grow-1">
+                                    Add to Watchlist +
+                                </a>
+                                {% else %}
+                                <a href="{% url 'watchlist' movie_data.id %}" class="site-btn flex-grow-1">
+                                    Remove from Watchlist -
+                                </a>
+                                {% endif %}
+                                <a type="button" class="site-btn flex-grow-1">
                                     Review <i class="fa-solid fa-magnifying-glass"></i>
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -93,9 +102,18 @@
                             <a class="site-btn flex-grow-1 text-center"
                                 href="https://www.imdb.com/title/{{ movie_data.imdb_id }}" target="_blank">IMDb</a>
                             {% endif %}
-                            <button type="button" class="site-btn flex-grow-1">
+                            {% if to_watch == False %}
+                            <a href="{% url 'watchlist' movie_data.id %}" class="site-btn flex-grow-1">
+                                Add to Watchlist +
+                            </a>
+                            {% else %}
+                            <a href="{% url 'watchlist' movie_data.id %}" class="site-btn flex-grow-1">
+                                Remove from Watchlist -
+                            </a>
+                            {% endif %}
+                            <a type="button" class="site-btn flex-grow-1">
                                 Review <i class="fa-solid fa-magnifying-glass"></i>
-                            </button>
+                            </a>
                         </div>
                     </div>
                 </div>
