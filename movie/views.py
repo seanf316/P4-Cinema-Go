@@ -1,8 +1,10 @@
 import os
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.template import loader
+from django.contrib import messages
 import requests
 from .models import Movie
+from profiles.models import Profile
 
 API_KEY = os.environ.get("API_KEY")
 
@@ -135,11 +137,55 @@ def moviedetails(request, movie_id):
         MovieId=movie_data["id"],
     )
 
+    movie = Movie.objects.get(MovieId=movie_id)
+    user = request.user
+    profile = Profile.objects.get(user=user)
+
+    if profile.to_watch.filter(MovieId=movie_id).exists():
+        to_watch = True
+    else:
+        to_watch = False
+
     context = {
         "movie_data": movie_data,
         "hero": hero,
         "director_name": director_name,
         "trailer": trailer_key,
+        "to_watch": to_watch,
     }
 
     return render(request, "movie/moviedetails.html", context)
+
+
+def watchlist(request, movie_id):
+    movie = Movie.objects.get(MovieId=movie_id)
+    user = request.user
+    profile = Profile.objects.get(user=user)
+
+    if movie in profile.to_watch.all():
+        profile.to_watch.remove(movie)
+        messages.success(
+            request,
+            f"{user.username} you have removed {movie} from your watchlist",
+        )
+    else:
+        profile.to_watch.add(movie)
+        messages.success(
+            request,
+            f"{user.username} you have added {movie} to your watchlist",
+        )
+    return redirect("moviedetails", movie_id=movie_id)
+
+
+def prof_watch(request, movie_id):
+    movie = Movie.objects.get(MovieId=movie_id)
+    user = request.user
+    profile = Profile.objects.get(user=user)
+
+    if movie in profile.to_watch.all():
+        profile.to_watch.remove(movie)
+        messages.success(
+            request,
+            f"{user.username} you have removed {movie} from your watchlist",
+        )
+    return redirect(reverse("profile", kwargs={"username": user.username}))
