@@ -358,10 +358,7 @@ h1.m-title {
     padding: .5rem 2rem;
     margin-right: .5rem;
     margin-top: .5rem;
-}
-
-.site-btn {
-    color: var(--main-color);
+    text-align: center;
 }
 
 button.site-btn:hover,
@@ -391,10 +388,18 @@ a.site-btn:hover {
     border: 2px solid var(--main-color);
 }
 
-.profile span {
+.profile span,
+.profile span a {
     color: var(--main-color);
     font-weight: 600;
 }
+
+.profile p a:hover {
+    font-style: italic;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
 
 /* Edit Profile */
 
