@@ -400,7 +400,6 @@ a.site-btn:hover {
     text-underline-offset: 5px;
 }
 
-
 /* Edit Profile */
 
 .edit-profile span {
@@ -455,6 +454,17 @@ a.site-btn:hover {
 }
 
 .delete span {
+    color: var(--main-color);
+}
+
+
+/* Errors */
+
+.errors {
+    margin: 4rem 0;
+}
+
+.errors h1 span {
     color: var(--main-color);
 }
 
