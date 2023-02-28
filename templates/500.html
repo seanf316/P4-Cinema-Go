@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="errors">
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-6 col-md-8 text-white">
+                <img src="https://res.cloudinary.com/seanf316/image/upload/v1677195278/Cinema-Go/hero_kzdgct.webp"
+                    width="100%" alt="">
+                <h1><span>Error 500</span> Internal Server Error</h1>
+                <p class="mb-5">Something went wrong! Please return to the homepage.</p>
+
+                <a href="{% url 'home' %}" class="site-btn">Home <i class="fa-solid fa-house"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
