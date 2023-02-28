@@ -8,7 +8,7 @@
                 <h1 class="mb-3 text-white"><span>Edit</span> Profile
                 </h1>
                 <form method="POST" enctype="multipart/form-data">
-                    {% csrf_token %}
+                    <!-- {% csrf_token %} -->
                     {{ edit_user|crispy}}
                     {{ edit_form|crispy }}
                     <div class="row justify-content-center">
