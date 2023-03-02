@@ -5,6 +5,7 @@ from django.contrib import messages
 import requests
 from .models import Movie
 from profiles.models import Profile
+from review.models import Review
 
 API_KEY = os.environ.get("API_KEY")
 
@@ -140,11 +141,17 @@ def moviedetails(request, movie_id):
     movie = Movie.objects.get(MovieId=movie_id)
     user = request.user
     profile = Profile.objects.get(user=user)
+    reviews = Review.objects.filter(movie=movie)
 
     if profile.to_watch.filter(MovieId=movie_id).exists():
         to_watch = True
     else:
         to_watch = False
+
+    if Review.objects.filter(movie=movie, user=user).exists():
+        review_exists = True
+    else:
+        review_exists = False
 
     context = {
         "movie_data": movie_data,
@@ -152,6 +159,8 @@ def moviedetails(request, movie_id):
         "director_name": director_name,
         "trailer": trailer_key,
         "to_watch": to_watch,
+        "review_exists": review_exists,
+        "reviews": reviews,
     }
 
     return render(request, "movie/moviedetails.html", context)
