@@ -30,6 +30,9 @@ class Profile(models.Model):
     to_watch = models.ManyToManyField(
         Movie, related_name="to_watch", blank=True
     )
+    reviewed = models.ManyToManyField(
+        Movie, related_name="reviewed", blank=True
+    )
 
     def __str__(self):
         return str(self.user)
