@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     "home",
     "movie",
     "profiles",
+    "review",
 ]
 
 SITE_ID = 1
