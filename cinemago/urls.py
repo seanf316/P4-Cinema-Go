@@ -23,4 +23,5 @@ urlpatterns = [
     path("movie/", include("movie.urls")),
     path("accounts/", include("allauth.urls")),
     path("profiles/", include("profiles.urls")),
+    path("review/", include("review.urls")),
 ]
