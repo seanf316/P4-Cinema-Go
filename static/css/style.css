@@ -457,6 +457,42 @@ a.site-btn:hover {
     color: var(--main-color);
 }
 
+/* Review */
+
+.review {
+    background-size: cover;
+    background-color: rgba(0, 0, 0, .1);
+    background-position: center;
+    display: flex;
+    position: relative;
+}
+
+.review span {
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.review label {
+    color: var(--main-color);
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: .5rem;
+}
+
+/* Movie Review Details */
+
+.reviews-title {
+    color: var(--main-color);
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.review-img {
+    height: 60px;
+    width: 60px;
+    display: block;
+    border: 1px solid var(--main-color);
+}
 
 /* Errors */
 
@@ -467,6 +503,8 @@ a.site-btn:hover {
 .errors h1 span {
     color: var(--main-color);
 }
+
+
 
 /* Media queries */
 @media screen and (min-width: 576px) {
