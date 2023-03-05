@@ -157,9 +157,10 @@
                             <p class="mx-3">{{ review.review|safe }}</p>
                             <p><span>Rated: </span>{{ review.rating|safe }}/10</p>
                             {% if user.is_authenticated and user == review.user %}
-                            <div class=" row">
+                            <div class="row">
                                 <div class="col-12 col-lg-2 d-flex flex-wrap my-2">
-                                    <a class="site-btn flex-grow-1" href="{% url 'review' movie_data.id %}">Edit
+                                    <a class="site-btn flex-grow-1"
+                                        href="{% url 'edit_review'  movie_data.id review.id %}">Edit
                                         Review</a>
                                 </div>
                             </div>
