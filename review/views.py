@@ -61,6 +61,7 @@ def review(request, movie_id):
     return render(request, "review/review.html", context)
 
 
+@login_required()
 def edit_review(request, movie_id, review_id):
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US&append_to_response=credits,videos,images"
 
@@ -103,3 +104,24 @@ def edit_review(request, movie_id, review_id):
     }
 
     return render(request, "review/review.html", context)
+
+
+@login_required()
+def delete_review(request, movie_id, review_id):
+    review = Review.objects.get(id=review_id)
+    user = request.user
+
+    if review.user != user:
+        messages.error(
+            request, "You are not authorized to delete this review."
+        )
+        return redirect(reverse("review", args=[review.movie.MovieId]))
+
+    profile = Profile.objects.get(user=user)
+    if review.movie in profile.reviewed.all():
+        profile.reviewed.remove(review.movie)
+
+    review.delete()
+    messages.success(request, f"{user.username} your review has been deleted")
+
+    return redirect(reverse("moviedetails", args=[movie_id]))
