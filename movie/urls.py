@@ -47,4 +47,9 @@ urlpatterns = [
         views.prof_watch,
         name="prof_watch",
     ),
+    path(
+        "prof_review/<int:movie_id>/",
+        views.prof_review,
+        name="prof_review",
+    ),
 ]
