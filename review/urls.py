@@ -12,4 +12,9 @@ urlpatterns = [
         views.edit_review,
         name="edit_review",
     ),
+    path(
+        "review/<int:movie_id>/<int:review_id>/delete/",
+        views.delete_review,
+        name="delete_review",
+    ),
 ]
