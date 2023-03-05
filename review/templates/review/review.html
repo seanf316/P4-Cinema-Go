@@ -29,25 +29,26 @@
     </div>
 </section>
 
-<section class="delete-profile">
+<section class="delete-review">
 
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content delete text-white">
                 <div class="modal-body">
-                    {% if user.is_authenticated and user == profile.user %}
-                    <form method="post" action="{% url 'delete_profile' user.username %}" role="form">
+                    {% if user.is_authenticated and user == review.user %}
+                    <form method="post" action="{% url 'delete_review' movie_id=movie.MovieId review_id=review.id %}"
+                        role="form">
                         <!-- Form to confirm Account deletion -->
                         {% csrf_token %}
-                        <h2 class="mb-3 text-white"><span>Delete</span> Profile
+                        <h2 class="mb-3 text-white"><span>Delete</span> Review
                         </h2>
-                        <p><i><strong>Are you sure you want to Delete your profile?</strong></i></p>
-                        <p>All information related to your account will be permanently removed and you will not be able
+                        <p><i><strong>Are you sure you want to Delete this review?</strong></i></p>
+                        <p>This review will be permanently removed and you will not be able
                             to retrieve it.</p>
                         <button type="submit" name="action" value="delete" class="site-btn">Delete</button>
                     </form>
                     {% else %}
-                    <h3>I'm sorry this is not your profile, please return to your own profile page.</h3>
+                    <h3>You are not authorized to delete this review.</h3>
                     {% endif %}
                 </div>
             </div>
