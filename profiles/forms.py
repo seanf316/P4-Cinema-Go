@@ -1,5 +1,5 @@
 from django import forms
-from django_summernote.widgets import SummernoteWidget
+from djrichtextfield.widgets import RichTextWidget
 from django.contrib.auth.models import User
 from .models import Profile
 
@@ -25,4 +25,4 @@ class ProfileForm(forms.ModelForm):
             "director",
         ]
 
-        widgets = {"about": SummernoteWidget()}
+        about = forms.CharField(widget=RichTextWidget())

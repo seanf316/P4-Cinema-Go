@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     "active_link",
     "crispy_forms",
     "cloudinary",
-    "django_summernote",
+    "djrichtextfield",
     # Apps
     "home",
     "movie",
@@ -166,34 +166,21 @@ STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 MEDIA_URL = "/media/"
 DEFAULT_FILE_STORAGE = "cloudinary_storage.storage.MediaCloudinaryStorage"
 
+X_FRAME_OPTIONS = "SAMEORIGIN"
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-# Resizing summernote fields to 100% - https://stackoverflow.com/questions/61657061/how-do-i-resize-the-width-of-summernote
-# All summernote information
-
-SUMMERNOTE_THEME = "bs5"
-
-SUMMERNOTE_CONFIG = {
-    # You can put custom Summernote settings
-    "summernote": {
-        # Change editor size
+DJRICHTEXTFIELD_CONFIG = {
+    "js": ["//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"],
+    "init_template": "djrichtextfield/init/ckeditor.js",
+    "settings": {  # CKEditor
+        "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect",
+        "format_tags": "p;h1;h2;h3",
         "width": "100%",
         "height": "280",
-        # Toolbar
-        "toolbar": [
-            ["style", ["style"]],
-            ["font", ["bold", "underline", "clear"]],
-            ["fontname", ["fontname"]],
-            ["fontsize", ["fontsize"]],
-            ["color", ["color"]],
-            ["para", ["ul", "ol", "paragraph"]],
-            ["table", ["table"]],
-            ["insert", ["link", "picture", "video"]],
-            ["view", ["fullscreen", "codeview", "help"]],
-        ],
     },
 }
 

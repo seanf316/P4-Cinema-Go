@@ -1,5 +1,5 @@
 from django import forms
-from django_summernote.widgets import SummernoteWidget
+from djrichtextfield.widgets import RichTextWidget
 from review.models import Review
 
 
@@ -11,4 +11,4 @@ class ReviewForm(forms.ModelForm):
             "rating",
         ]
 
-        widgets = {"review": SummernoteWidget()}
+    review = forms.CharField(widget=RichTextWidget())

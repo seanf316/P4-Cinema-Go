@@ -11,6 +11,7 @@
                     <h2 class="text-center"><span>Review by: </span>{{user.username}}</h2>
                     <form method="POST" enctype="multipart/form-data">
                         {% csrf_token %}
+                        {{ form.media }}
                         {{ form|crispy}}
                         <div class="row justify-content-center mt-4">
                             <div class="col-12 col-lg-6 d-flex flex-wrap">
