@@ -149,6 +149,11 @@ def moviedetails(request, movie_id):
         to_watch = False
 
     if Review.objects.filter(movie=movie, user=user).exists():
+        user_review_exists = True
+    else:
+        user_review_exists = False
+
+    if Review.objects.filter(movie=movie).exists():
         review_exists = True
     else:
         review_exists = False
@@ -159,6 +164,7 @@ def moviedetails(request, movie_id):
         "director_name": director_name,
         "trailer": trailer_key,
         "to_watch": to_watch,
+        "user_review_exists": user_review_exists,
         "review_exists": review_exists,
         "reviews": reviews,
     }
@@ -198,3 +204,20 @@ def prof_watch(request, movie_id):
             f"{user.username} you have removed {movie} from your watchlist",
         )
     return redirect(reverse("profile", kwargs={"username": user.username}))
+
+
+def prof_review(request, movie_id):
+    movie = Movie.objects.get(MovieId=movie_id)
+    user = request.user
+    profile = Profile.objects.get(user=user)
+    review = Review.objects.filter(user=user, movie=movie)
+
+    if review:
+        if movie in profile.reviewed.all():
+            profile.reviewed.remove(movie)
+            review.delete()
+            messages.success(
+                request,
+                f"{user.username} you have removed {movie} from your reviewed list",
+            )
+        return redirect(reverse("profile", kwargs={"username": user.username}))
