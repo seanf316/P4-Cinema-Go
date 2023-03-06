@@ -11,6 +11,10 @@ API_KEY = os.environ.get("API_KEY")
 
 
 def search(request):
+    """
+    Takes the users query from the search bar and makes a call to the TMDB API
+    and renders the data in the search results page
+    """
     query = request.GET.get("query")
 
     if query:
@@ -21,6 +25,10 @@ def search(request):
 
 
 def searchresults(request, query, page_number=1):
+    """
+    Displays the results of the users query and adds
+    pagination if results contain more then one page
+    """
     url = f"https://api.themoviedb.org/3/search/movie?api_key={API_KEY}&language=en-US&query={query}&page={page_number}"
 
     response = requests.get(url)
@@ -44,7 +52,7 @@ def searchresults(request, query, page_number=1):
 
 def movies(request, category, page_number=1):
     """
-    Call on the TMDB API to provide some movies based on the category
+    Call to the TMDB API to provide some movies based on the category
     """
     if category == "trending":
         url = f"https://api.themoviedb.org/3/trending/movie/week?api_key={API_KEY}&language=en-US&page={page_number}"
@@ -75,7 +83,10 @@ def movies(request, category, page_number=1):
 
 
 def pagination(request, category, page_number=1):
-
+    """
+    Adds pagination to the Movie category pages if they contain
+    more then one page
+    """
     if category == "trending":
         url = f"https://api.themoviedb.org/3/trending/movie/week?api_key={API_KEY}&language=en-US&page={page_number}"
         template_name = "movie/trending.html"
@@ -103,6 +114,14 @@ def pagination(request, category, page_number=1):
 
 
 def moviedetails(request, movie_id):
+    """
+    Renders the details of the Movie selected from the search
+    results or Movie category pages. It will save parts of the Movie details
+    to database for reference with Profile/Reviews. It will also check
+    the users profile to see if they have added to their watchlist or reviewed
+    the movie in question. There is also a check to see if reviews from other users
+    exist and renders those reviews.
+    """
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US&append_to_response=credits,videos,images"
 
     response = requests.get(url)
@@ -173,6 +192,11 @@ def moviedetails(request, movie_id):
 
 
 def watchlist(request, movie_id):
+    """
+    Allows the user to toggle the Add to Watchlist button on
+    the Movie Details page to either add or remove movie
+    from their watchlist
+    """
     movie = Movie.objects.get(MovieId=movie_id)
     user = request.user
     profile = Profile.objects.get(user=user)
@@ -193,6 +217,10 @@ def watchlist(request, movie_id):
 
 
 def prof_watch(request, movie_id):
+    """
+    Allows the user to remove a movie in their watchlist
+    directly from their Profile page
+    """
     movie = Movie.objects.get(MovieId=movie_id)
     user = request.user
     profile = Profile.objects.get(user=user)
@@ -207,6 +235,10 @@ def prof_watch(request, movie_id):
 
 
 def prof_review(request, movie_id):
+    """
+    Allows the user to remove a movie from their reviewed list
+    directly from their Profile page
+    """
     movie = Movie.objects.get(MovieId=movie_id)
     user = request.user
     profile = Profile.objects.get(user=user)

@@ -11,6 +11,9 @@ from .forms import ProfileForm, UserForm
 
 @login_required()
 def profile(request, username):
+    """
+    Renders the users profile, checks that the user matches profile user
+    """
     user = get_object_or_404(User, username=username)
     profile = Profile.objects.get(user=user)
 
@@ -23,7 +26,10 @@ def profile(request, username):
 
 @login_required()
 def edit_profile(request, username):
-
+    """
+    Renders the edit profile page, checks that the user matches profile user
+    and whether the forms are valid before saving to database
+    """
     user = get_object_or_404(User, username=username)
     profile = Profile.objects.get(user=user)
 
@@ -54,6 +60,10 @@ def edit_profile(request, username):
 
 @login_required()
 def delete_profile(request, username):
+    """
+    Querys the database for the User that matches profile user
+    and deletes user & profile
+    """
     user = get_object_or_404(User, username=username)
     if request.method == "POST":
         logout(request)

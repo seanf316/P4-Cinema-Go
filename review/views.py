@@ -14,6 +14,13 @@ API_KEY = os.environ.get("API_KEY")
 
 @login_required()
 def review(request, movie_id):
+    """
+    At the movie details page this function checks if a review for
+    the current selected movie exists, if it does not the user can click the
+    review button and the review page will be rendered containing the review form.
+    If review is made the review will be rendered on the movie details page and also
+    saved to the database for reference later
+    """
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US&append_to_response=credits,videos,images"
 
     response = requests.get(url)
@@ -63,6 +70,10 @@ def review(request, movie_id):
 
 @login_required()
 def edit_review(request, movie_id, review_id):
+    """
+    Checks the database for the Review.id/Movieid and then confirms if
+    user matches the review user before allowing user to edit their review
+    """
     url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US&append_to_response=credits,videos,images"
 
     response = requests.get(url)
@@ -108,6 +119,11 @@ def edit_review(request, movie_id, review_id):
 
 @login_required()
 def delete_review(request, movie_id, review_id):
+    """
+    Querys database for specific review based off id, checks if user
+    matches review.user and then deletes the user if request is valid.
+    Review will also be removed from Profile reviewed list
+    """
     review = Review.objects.get(id=review_id)
     user = request.user
 
