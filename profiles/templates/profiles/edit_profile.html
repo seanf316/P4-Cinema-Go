@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 <section class="edit-profile">
     <div class="container">
@@ -27,7 +27,6 @@
 </section>
 
 <section class="delete-profile">
-
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content delete text-white">
@@ -51,4 +50,7 @@
         </div>
     </div>
 </section>
+
+<!-- Modal JS -->
+<script src="{% static 'javascript/modal.js' %}"></script>
 {% endblock %}

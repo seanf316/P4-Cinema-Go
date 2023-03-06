@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 <section class="review min-vh-100" style="background-image: url('{{hero}}');">
     <div class="opaque-overlay">&nbsp;</div>
@@ -30,7 +30,6 @@
 </section>
 
 <section class="delete-review">
-
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
             <div class="modal-content delete text-white">
@@ -38,7 +37,6 @@
                     {% if user.is_authenticated and user == review.user %}
                     <form method="post" action="{% url 'delete_review' movie_id=movie.MovieId review_id=review.id %}"
                         role="form">
-                        <!-- Form to confirm Account deletion -->
                         {% csrf_token %}
                         <h2 class="mb-3 text-white"><span>Delete</span> Review
                         </h2>
@@ -55,4 +53,7 @@
         </div>
     </div>
 </section>
+
+<!-- Modal JS -->
+<script src="{% static 'javascript/modal.js' %}"></script>
 {% endblock %}
