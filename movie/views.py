@@ -18,7 +18,6 @@ def search(request):
     query = request.GET.get("query")
 
     if query:
-        print(query)
         return redirect("searchresults", query=query)
 
     return render(request, "movie/search.html")
