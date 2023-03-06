@@ -59,18 +59,11 @@
     <script>
         setTimeout(function () {
             let messages = document.getElementById("msg");
-            let alert = new bootstrap.Alert(messages);
-            alert.close();
-        }, 2000);
-
-        var modal = document.getElementById('exampleModal');
-        var iframe = document.getElementById('trailer');
-
-        modal.addEventListener('hide.bs.modal', function (event) {
-            if (event.target === modal) {
-                iframe.src = iframe.src;
+            if (messages) {
+                let alert = new bootstrap.Alert(messages);
+                alert.close();
             }
-        });
+        }, 2000);
     </script>
     {% endblock %}
 </body>
