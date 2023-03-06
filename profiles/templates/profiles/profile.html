@@ -31,6 +31,18 @@
                                 {% else %}
                                 <p>Watchlist list is empty!</p>
                                 {% endif %}
+                                <p><span>My Reviews<br></span></p>
+                                {% if profile.reviewed.exists %}
+                                {% for movie in profile.reviewed.all %}
+                                <p><a class="text-white"
+                                        href="{% url 'moviedetails' movie_id=movie.MovieId %}">{{ movie.Name }}</a> -
+                                    <span><a href="{% url 'prof_review' movie_id=movie.MovieId %}">Remove
+                                            X</a></span>
+                                </p>
+                                {% endfor %}
+                                {% else %}
+                                <p>Review list is empty!</p>
+                                {% endif %}
                                 <div class=" row">
                                     <div class="col-12 col-lg-4 d-flex flex-wrap my-3">
                                         <a class="site-btn flex-grow-1"
