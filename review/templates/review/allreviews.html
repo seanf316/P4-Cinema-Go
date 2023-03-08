@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="allreviews min-vh-100">
+    <div class="container">
+        <h1 class="text-white text-center mb-4"><span>Cinema</span> | <span>Go</span> Reviews</h1>
+        <div class="row mb-5">
+            {% for review in review_content %}
+            <div class="col-lg-4 py-3 px-2">
+                <div class="card bg-trans text-white">
+                    <a href="{% url 'moviedetails' review.movie_data.id %}"><img src="{{ review.hero }}"
+                            class="card-img-top" alt="..."></a>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-4 d-flex justify-content-start">
+                                <img src="{{ review.review.user.profile.profile_image.url }}" alt=""
+                                    class="rounded-circle review-img">
+                            </div>
+                            <div class="col-8 d-flex justify-content-end">
+                                <div class="d-flex flex-column">
+                                    <p class="justify-content-end">{{ review.review.created_on }}</p>
+                                    <p class="justify-content-end"><span>Review by:
+                                        </span>{{ review.review.user.username }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <h2>{{ review.review.movie }}</h2>
+                                <p class="card-text">{{ review.review.review|safe }}</p>
+                                <p><span>Rated: </span>{{ review.review.rating|safe }}/10</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12 my-2">
+                                <a href="{% url 'moviedetails' review.movie_data.id %}" class="site-btn">View
+                                    Movie</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

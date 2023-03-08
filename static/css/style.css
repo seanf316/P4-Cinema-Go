@@ -494,6 +494,30 @@ a.site-btn:hover {
     border: 1px solid var(--main-color);
 }
 
+.allreviews {
+    margin-top: 3rem;
+}
+
+.allreviews .card {
+    height: 30rem;
+    overflow: scroll;
+    cursor: pointer;
+}
+
+.allreviews .card-body {
+    overflow: scroll;
+}
+
+.allreviews span {
+    color: var(--main-color);
+    font-weight: 600;
+}
+
+.allreviews h2 {
+    font-size: 1.5rem;
+    color: var(--main-color);
+}
+
 /* Errors */
 
 .errors {
