@@ -25,4 +25,13 @@ class ProfileForm(forms.ModelForm):
             "director",
         ]
 
+        labels = {
+            "firstname": "First Name",
+            "surname": "Last Name",
+            "about": "About Me",
+            "profile_image": "Profile Image",
+            "fav_movie": "Favorite Movie",
+            "director": "Favorite Director",
+        }
+
         about = forms.CharField(widget=RichTextWidget())
