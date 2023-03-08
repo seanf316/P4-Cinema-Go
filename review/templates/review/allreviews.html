@@ -5,6 +5,7 @@
     <div class="container">
         <h1 class="text-white text-center mb-4"><span>Cinema</span> | <span>Go</span> Reviews</h1>
         <div class="row mb-5">
+            {% if review_content %}
             {% for review in review_content %}
             <div class="col-lg-4 py-3 px-2">
                 <div class="card bg-trans text-white">
@@ -42,6 +43,13 @@
                 </div>
             </div>
             {% endfor %}
+            {% else %}
+            <div class="col-12 text-white text-center">
+                <h2 class="text-white">There are currently no Reviews, maybe you could be the first <i
+                        class="fa-regular fa-face-smile"></i>
+                </h2>
+            </div>
+            {% endif %}
         </div>
     </div>
 </section>

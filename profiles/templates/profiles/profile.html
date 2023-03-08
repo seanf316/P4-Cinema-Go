@@ -18,23 +18,23 @@
                                 <p><span>Username<br></span>{{ profile.user.username }}</p>
                                 <p><span>Name<br></span>{{ profile.firstname }} {{ profile.surname }}</p>
                                 <p class="mb-0"><span>About<br></span>{{ profile.about|safe }}</p>
-                                <p><span>Favourite Movie<br></span>{{ profile.fav_movie }}</p>
+                                <p class="mt-3"><span>Favourite Movie<br></span>{{ profile.fav_movie }}</p>
                                 <p><span>Favourite Director<br></span>{{ profile.director|safe }}</p>
-                                <p><span>My Watchlist<br></span></p>
+                                <p class="mb-0"><span>My Watchlist<br></span></p>
                                 {% if profile.to_watch.exists %}
                                 {% for movie in profile.to_watch.all %}
-                                <p><a class="text-white"
+                                <p class="mb-0"><a class="text-white"
                                         href="{% url 'moviedetails' movie_id=movie.MovieId %}">{{ movie.Name }}</a> -
                                     <span><a href="{% url 'prof_watch' movie_id=movie.MovieId %}">Remove X</a></span>
                                 </p>
                                 {% endfor %}
                                 {% else %}
-                                <p>Watchlist list is empty!</p>
+                                <p>Watchlist is empty!</p>
                                 {% endif %}
-                                <p><span>My Reviews<br></span></p>
+                                <p class="mt-3 mb-0"><span>My Reviews<br></span></p>
                                 {% if profile.reviewed.exists %}
                                 {% for movie in profile.reviewed.all %}
-                                <p><a class="text-white"
+                                <p class="mb-0"><a class="text-white"
                                         href="{% url 'moviedetails' movie_id=movie.MovieId %}">{{ movie.Name }}</a> -
                                     <span><a href="{% url 'prof_review' movie_id=movie.MovieId %}">Remove
                                             X</a></span>
