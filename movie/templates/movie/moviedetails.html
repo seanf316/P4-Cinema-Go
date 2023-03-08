@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 <section class="movie-details min-vh-100" style="background-image: url('{{hero}}');">
     <div class="opaque-overlay">&nbsp;</div>
@@ -190,4 +190,6 @@
     </div>
 </section>
 
+<!-- Modal JS -->
+<script src="{% static 'javascript/modal.js' %}"></script>
 {% endblock %}
