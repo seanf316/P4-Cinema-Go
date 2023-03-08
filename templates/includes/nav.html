@@ -32,7 +32,8 @@
                     </li>
                     {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Reviews</a>
+                        <a class="nav-link {% if request.resolver_match.url_name == 'allreviews' %}active{% endif %}"
+                            href="{% url 'allreviews' %}">Reviews</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {% if request.resolver_match.url_name == 'profile' %}active{% endif %}"
