@@ -5,7 +5,15 @@ from .models import Profile
 
 
 class UserForm(forms.ModelForm):
+    """
+    Form to Edit User-Username
+    """
+
     class Meta:
+        """
+        Define model, form fields
+        """
+
         model = User
         fields = ["username"]
         help_texts = {
@@ -14,7 +22,16 @@ class UserForm(forms.ModelForm):
 
 
 class ProfileForm(forms.ModelForm):
+    """
+    Form to Edit/Delete Profile
+    Deleting Profile deletes User
+    """
+
     class Meta:
+        """
+        Define model, form fields, labels and widgets
+        """
+
         model = Profile
         fields = [
             "firstname",

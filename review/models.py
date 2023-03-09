@@ -6,6 +6,10 @@ from movie.models import Movie
 
 
 class Review(models.Model):
+    """
+    Model for creating a Review
+    """
+
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)
     created_on = models.DateTimeField(
@@ -18,7 +22,14 @@ class Review(models.Model):
     )
 
     class Meta:
+        """
+        Order set to the created on attribute
+        """
+
         ordering = ["-created_on"]
 
     def __str__(self):
+        """
+        Returns the User username and the Movie name as a string representation of the object.
+        """
         return self.user.username + " - " + self.movie.Name

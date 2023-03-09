@@ -6,6 +6,9 @@ from .models import Movie
 
 @admin.register(Movie)
 class MovieAdmin(admin.ModelAdmin):
+    """
+    Class to display Movie items in admin view
+    """
 
     list_display = ("Name",)
     search_fields = ("Name", "Director", "Released")

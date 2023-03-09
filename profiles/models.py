@@ -7,6 +7,10 @@ placeholder = "https://res.cloudinary.com/seanf316/image/upload/v1677195145/Cine
 
 
 class Profile(models.Model):
+    """
+    Model for creating a Profile
+    """
+
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, blank=False, related_name="profile"
     )
@@ -35,4 +39,8 @@ class Profile(models.Model):
     )
 
     def __str__(self):
+        """
+        Returns the username of the profile as a string representation of
+        the object.
+        """
         return str(self.user)

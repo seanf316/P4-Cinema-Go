@@ -4,7 +4,15 @@ from review.models import Review
 
 
 class ReviewForm(forms.ModelForm):
+    """
+    Form to Edit/Delete Review
+    """
+
     class Meta:
+        """
+        Define model, form fields and widgets
+        """
+
         model = Review
         fields = [
             "review",
