@@ -14,9 +14,15 @@ class Profile(models.Model):
     user = models.OneToOneField(
         User, on_delete=models.CASCADE, blank=False, related_name="profile"
     )
-    firstname = models.CharField(max_length=50, null=True, blank=True)
-    surname = models.CharField(max_length=50, null=True, blank=True)
-    about = models.TextField(max_length=200, null=True, blank=True)
+    firstname = models.CharField(
+        max_length=50, null=True, blank=True, default="Firstname"
+    )
+    surname = models.CharField(
+        max_length=50, null=True, blank=True, default="Surname"
+    )
+    about = models.TextField(
+        max_length=200, null=True, blank=True, default="I love Cinema|Go"
+    )
     profile_image = CloudinaryField(
         "image",
         default=placeholder,
@@ -29,8 +35,18 @@ class Profile(models.Model):
         folder="/images",
         format="webp",
     )
-    fav_movie = models.CharField(max_length=50, null=True, blank=True)
-    director = models.CharField(max_length=50, null=True, blank=True)
+    fav_movie = models.CharField(
+        max_length=50,
+        null=True,
+        blank=True,
+        default="What's your favourite Movie?",
+    )
+    director = models.CharField(
+        max_length=50,
+        null=True,
+        blank=True,
+        default="Who's your favourite Director?",
+    )
     to_watch = models.ManyToManyField(
         Movie, related_name="to_watch", blank=True
     )
