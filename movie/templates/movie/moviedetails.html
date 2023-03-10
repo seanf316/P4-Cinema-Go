@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% block title %}- Movie Details{% endblock %}
 {% block content %}
 <section class="movie-details min-vh-100" style="background-image: url('{{hero}}');">
     <div class="opaque-overlay">&nbsp;</div>
@@ -35,32 +36,38 @@
                                 <p class="card-text"><span>Released:
                                     </span>{{ movie_data.release_date|slice:":4"}}</p>
                                 {% endif %}
-                                {% if trailer %}
-                                <button type="button" class="site-btn flex-grow-1" data-bs-toggle="modal"
-                                    data-bs-target="#exampleModal">
-                                    Trailer <i class="fa-solid fa-play"></i>
-                                </button>
-                                {% endif %}
-                                {% if movie_data.imdb_id %}
-                                <a class="site-btn flex-grow-1"
-                                    href="https://www.imdb.com/title/{{ movie_data.imdb_id }}" target="_blank">IMDb</a>
-                                {% endif %}
-                                {% if to_watch == False %}
-                                <a href="{% url 'watchlist' movie_data.id %}" class="site-btn flex-grow-1">
-                                    Add to Watchlist +
-                                </a>
-                                {% else %}
-                                <a href="{% url 'watchlist' movie_data.id %}" class="site-btn flex-grow-1">
-                                    Remove from Watchlist -
-                                </a>
-                                {% endif %}
-                                {% if user_review_exists == True %}
-                                <button class="site-btn flex-grow-1">Reviewed <i class="fa-solid fa-check"></i></button>
-                                {% else %}
-                                <a href="{% url 'review' movie_data.id %}" class="site-btn flex-grow-1">
-                                    Review <i class="fa-solid fa-magnifying-glass"></i>
-                                </a>
-                                {% endif %}
+                                <div class="row">
+                                    <div class="col-12 d-flex flex-wrap">
+                                        {% if trailer %}
+                                        <button type="button" class="site-btn flex-grow-1" data-bs-toggle="modal"
+                                            data-bs-target="#exampleModal">
+                                            Trailer <i class="fa-solid fa-play"></i>
+                                        </button>
+                                        {% endif %}
+                                        {% if movie_data.imdb_id %}
+                                        <a class="site-btn flex-grow-1"
+                                            href="https://www.imdb.com/title/{{ movie_data.imdb_id }}"
+                                            target="_blank">IMDb</a>
+                                        {% endif %}
+                                        {% if to_watch == False %}
+                                        <a href="{% url 'watchlist' movie_data.id %}" class="site-btn flex-grow-1">
+                                            Add to Watchlist +
+                                        </a>
+                                        {% else %}
+                                        <a href="{% url 'watchlist' movie_data.id %}" class="site-btn flex-grow-1">
+                                            Remove from Watchlist -
+                                        </a>
+                                        {% endif %}
+                                        {% if user_review_exists == True %}
+                                        <button class="site-btn flex-grow-1">Reviewed <i
+                                                class="fa-solid fa-check"></i></button>
+                                        {% else %}
+                                        <a href="{% url 'review' movie_data.id %}" class="site-btn flex-grow-1">
+                                            Review <i class="fa-solid fa-magnifying-glass"></i>
+                                        </a>
+                                        {% endif %}
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
