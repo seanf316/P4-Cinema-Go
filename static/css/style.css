@@ -80,7 +80,7 @@ a.nav-link:hover {
 /* Toast */
 .toast {
     position: absolute;
-    top: 8%;
+    top: 15%;
     width: 100%;
     background-color: var(--dark-color);
     border: 2px solid var(--main-color);
