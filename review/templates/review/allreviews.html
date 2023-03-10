@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block title %}- Reviews{% endblock %}
+
 {% block content %}
 <section class="allreviews min-vh-100">
     <div class="container">
@@ -7,7 +9,7 @@
         <div class="row mb-5">
             {% if review_content %}
             {% for review in review_content %}
-            <div class="col-lg-4 py-3 px-2">
+            <div class="col-lg-4 col-md-6 py-3 px-2">
                 <div class="card bg-trans text-white">
                     <a href="{% url 'moviedetails' review.movie_data.id %}"><img src="{{ review.hero }}"
                             class="card-img-top" alt="..."></a>
