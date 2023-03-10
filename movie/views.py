@@ -1,6 +1,6 @@
 import os
 from django.shortcuts import render, redirect, get_object_or_404, reverse
-from django.template import loader
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 import requests
 from .models import Movie
@@ -112,6 +112,7 @@ def pagination(request, category, page_number=1):
     return render(request, template_name, context)
 
 
+@login_required()
 def moviedetails(request, movie_id):
     """
     Renders the details of the Movie selected from the search
