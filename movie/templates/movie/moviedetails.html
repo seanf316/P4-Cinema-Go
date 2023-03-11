@@ -147,13 +147,17 @@
                 <div class="card-body">
                     <div class="row gx-0">
                         <div class="col-4 d-flex justify-content-start">
-                            <img src="{{ review.user.profile.profile_image.url }}" alt=""
-                                class="rounded-circle review-img">
+                            <a href="{% url 'profile' review.user.username %}"><img
+                                    src="{{ review.user.profile.profile_image.url }}" alt=""
+                                    class="rounded-circle review-img"></a>
                         </div>
                         <div class="col-8 d-flex justify-content-end">
                             <div class="d-flex flex-column">
                                 <p class="justify-content-end">{{ review.created_on }}</p>
-                                <p class="justify-content-end"><span>Review by: </span>{{ review.user.username }}</p>
+                                <p class="justify-content-end"><span>Review by: </span><a
+                                        href="{% url 'profile' review.user.username %}"
+                                        class="text-white">{{ review.user.username }}</a>
+                                </p>
                             </div>
                         </div>
                     </div>
