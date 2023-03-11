@@ -45,8 +45,10 @@
                                 {% endif %}
                                 <div class=" row">
                                     <div class="col-12 col-lg-4 d-flex flex-wrap my-3">
+                                        {% if user == profile.user %}
                                         <a class="site-btn flex-grow-1"
                                             href="{% url 'edit_profile' user.username %}">Edit Profile</a>
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>

@@ -15,12 +15,6 @@ def profile(request, username):
     Renders the users profile, checks that the user matches profile user
     """
     user = get_object_or_404(User, username=username)
-    if not user.username == request.user.username:
-        messages.error(
-            request,
-            "This is not your Profile. You will be returned to your Profile",
-        )
-        return redirect(reverse("profile", args=[request.user.username]))
 
     profile = Profile.objects.get(user=user)
 
@@ -40,7 +34,6 @@ def edit_profile(request, username):
     user = get_object_or_404(User, username=username)
 
     if not user.username == request.user.username:
-        messages.error(request, "You are not authorized to edit this profile.")
         return redirect(reverse("profile", args=[request.user.username]))
 
     profile = Profile.objects.get(user=user)
