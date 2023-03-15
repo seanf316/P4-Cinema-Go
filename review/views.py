@@ -3,11 +3,11 @@ from django.shortcuts import render, get_object_or_404, redirect, reverse
 import requests
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from .models import Review
+from .models import Review, Comment
 from django.contrib.auth.models import User
 from movie.models import Movie
 from profiles.models import Profile
-from .forms import ReviewForm
+from .forms import ReviewForm, CommentForm
 
 API_KEY = os.environ.get("API_KEY")
 
@@ -101,7 +101,7 @@ def edit_review(request, movie_id, review_id):
                 request, f"{user.username} your review has been updated"
             )
 
-            return redirect(reverse("moviedetails", args=[movie_id]))
+            return redirect(reverse("allreviews"))
 
     else:
         form = ReviewForm(instance=review)
@@ -154,6 +154,9 @@ def allreviews(request):
         profile = Profile.objects.get(user=user)
         movie = review.movie
         movie_id = movie.MovieId
+        comments = Comment.objects.filter(
+            review=review,
+        ).order_by("created_on")
 
         url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US&append_to_response=credits,videos,images"
 
@@ -174,3 +177,43 @@ def allreviews(request):
     }
 
     return render(request, "review/allreviews.html", context)
+
+
+@login_required()
+def comment(request, movie_id, review_id):
+
+    movie = Movie.objects.get(MovieId=movie_id)
+    review = Review.objects.get(id=review_id)
+    movie_id = movie.MovieId
+
+    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US&append_to_response=credits,videos,images"
+
+    response = requests.get(url)
+    movie_data = response.json()
+    backdrop = movie_data["backdrop_path"]
+    if backdrop:
+        hero = "https://image.tmdb.org/t/p/w1280/" + backdrop
+    else:
+        hero = "https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg"
+
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.review = review
+            comment.name = request.user
+            comment.save()
+            messages.success(request, "Your comment has been added.")
+            return redirect(reverse("allreviews"))
+    else:
+        form = CommentForm()
+
+    context = {
+        "form": form,
+        "movie": movie,
+        "movie_data": movie_data,
+        "hero": hero,
+        "review": review,
+    }
+
+    return render(request, "review/comment.html", context)
