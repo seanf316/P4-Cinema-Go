@@ -30,6 +30,37 @@ class Review(models.Model):
 
     def __str__(self):
         """
-        Returns the User username and the Movie name as a string representation of the object.
+        Returns the User username and the Movie name as a string
+        representation of the object.
         """
-        return self.user.username + " - " + self.movie.Name
+        return f"{self.user.username} - {self.movie.Name}"
+
+
+class Comment(models.Model):
+    """
+    Model for creating a Comment
+    """
+
+    review = models.ForeignKey(
+        Review, on_delete=models.CASCADE, related_name="comments"
+    )
+    name = models.ForeignKey(User, on_delete=models.CASCADE)
+    body = RichTextField(max_length=500, null=True, blank=False)
+    created_on = models.DateTimeField(
+        auto_now_add=True,
+        null=True,
+    )
+
+    class Meta:
+        """
+        Order set to the created on attribute
+        """
+
+        ordering = ["created_on"]
+
+    def __str__(self):
+        """
+        Returns the User username as a string
+        representation of the object.
+        """
+        return f"Comment by {self.name}"
