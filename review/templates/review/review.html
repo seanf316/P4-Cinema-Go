@@ -41,7 +41,8 @@
                         {% csrf_token %}
                         <h2 class="mb-3 text-white"><span>Delete</span> Review
                         </h2>
-                        <p><i><strong>Are you sure you want to Delete this review?</strong></i></p>
+                        <p><i><strong><span>{{ review.user }}</span> are you sure you want to Delete this
+                                    review?</strong></i></p>
                         <p>This review will be permanently removed and you will not be able
                             to retrieve it.</p>
                         <button type="submit" name="action" value="delete" class="site-btn">Delete</button>
