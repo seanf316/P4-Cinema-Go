@@ -23,6 +23,11 @@ urlpatterns = [
         name="comment",
     ),
     path(
+        "comment/<int:movie_id>/<int:review_id>/comments/<int:comment_id>/edit/",
+        views.edit_comment,
+        name="edit_comment",
+    ),
+    path(
         "allreviews/",
         views.allreviews,
         name="allreviews",
