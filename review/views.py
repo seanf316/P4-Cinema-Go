@@ -52,7 +52,7 @@ def review(request, movie_id):
                 request, f"{user.username} you have reviewed {movie}"
             )
 
-            return redirect(reverse("moviedetails", args=[movie_id]))
+            return redirect(reverse("allreviews"))
 
     else:
         form = ReviewForm()
