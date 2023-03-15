@@ -180,7 +180,7 @@ DJRICHTEXTFIELD_CONFIG = {
         "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect",
         "format_tags": "p;h1;h2;h3",
         "width": "100%",
-        "height": "280",
+        "height": "230",
     },
 }
 
