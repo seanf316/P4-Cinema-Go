@@ -260,3 +260,23 @@ def edit_comment(request, movie_id, review_id, comment_id):
     }
 
     return render(request, "review/comment.html", context)
+
+
+@login_required()
+def delete_comment(request, movie_id, review_id, comment_id):
+
+    user = request.user
+    comment = Comment.objects.get(id=comment_id)
+
+    if comment.name != user:
+        messages.error(
+            request, "You are not authorized to delete this comment."
+        )
+        return redirect(reverse("allreviews"))
+
+    comment.delete()
+    messages.success(
+        request, f"{user.username}, your comment has been deleted."
+    )
+
+    return redirect(reverse("allreviews"))
