@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}- Comment{% endblock %}
+{% block content %}
+<section class="review min-vh-100" style="background-image: url('{{hero}}');">
+    <div class="opaque-overlay">&nbsp;</div>
+    <div class="container">
+        <div class="row justify-content-center py-5">
+            <div class="col-12 col-lg-8 text-white">
+                <div class="card bg-trans text-white p-3">
+                    <h1 class="mb-3 text-center text-white"><span>{{ movie.Name }}</span></h1>
+                    <h2 class="text-center"><span>Review by: </span>{{user.username}}</h2>
+                    <form method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form.media }}
+                        {{ form|crispy}}
+                        <div class="row justify-content-center mt-4">
+                            <div class="col-12 col-lg-6 d-flex flex-wrap">
+                                <button class="flex-grow-1 site-btn" type="submit">Update</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Modal JS -->
+<script src="{% static 'javascript/modal.js' %}"></script>
+{% endblock %}
