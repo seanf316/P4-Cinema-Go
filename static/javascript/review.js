@@ -8,11 +8,5 @@ document.addEventListener('DOMContentLoaded', function () {
                 behavior: 'smooth'
             });
         });
-        card.addEventListener('touchend', function () {
-            card.querySelector('.card-body').scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
     });
 });
