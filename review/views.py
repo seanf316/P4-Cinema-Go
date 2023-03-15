@@ -217,3 +217,46 @@ def comment(request, movie_id, review_id):
     }
 
     return render(request, "review/comment.html", context)
+
+
+@login_required()
+def edit_comment(request, movie_id, review_id, comment_id):
+
+    movie = Movie.objects.get(MovieId=movie_id)
+    review = Review.objects.get(id=review_id)
+    movie_id = movie.MovieId
+    comment = Comment.objects.get(id=comment_id)
+    user = request.user
+    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US&append_to_response=credits,videos,images"
+
+    response = requests.get(url)
+    movie_data = response.json()
+    backdrop = movie_data["backdrop_path"]
+    if backdrop:
+        hero = "https://image.tmdb.org/t/p/w1280/" + backdrop
+    else:
+        hero = "https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg"
+
+    if comment.name != user:
+        messages.error(request, "You are not authorized to edit this comment.")
+        return redirect(reverse("allreviews"))
+
+    if request.method == "POST":
+        form = CommentForm(request.POST, instance=comment)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.save()
+            messages.success(request, "Your comment has been updated.")
+            return redirect(reverse("allreviews"))
+    else:
+        form = CommentForm(instance=comment)
+
+    context = {
+        "form": form,
+        "movie": movie,
+        "movie_data": movie_data,
+        "hero": hero,
+        "review": review,
+    }
+
+    return render(request, "review/comment.html", context)
