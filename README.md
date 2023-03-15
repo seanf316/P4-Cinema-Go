@@ -12,11 +12,12 @@ Developed by Sean Finn.
 
 ## **Project Goals**
 
-This is my third portfolio project for [Code Institute](https://codeinstitute.net/) and my goal with this project is to display my newly acquired Python skills. I decided to build a classic text-based adventure game that included some PvE battle elements. The adventure is led by the player's choices and each choice has an impact on how the story progresses.
+This is my fourth portfolio project for [Code Institute](https://codeinstitute.net/) and my goal with this project is to display my newly acquired skills with frameworks such as Bootstrap and Django. I decided to build a Movie based review site that works in tandem with the TMDB API.
 
 ## **Contents**
 
 1. [Overview](#overview)
+1. [Project Goals](#project-goals)
 1. [UX](#ux)
     - [The Strategy Plane](#the-strategy-plane)
     - [The Ideal User](#the-ideal-user)
@@ -49,14 +50,14 @@ This is my third portfolio project for [Code Institute](https://codeinstitute.ne
 
 Cinema | Go is intended to bring together all Movie lover's to find their favourite Movies and discover new ones. User's will be able to review and rate Movies and create their own watchlist which they can manage from their custom Profile page. The graphical elements and overall design of the site provide the user with a fun and enjoyable environment with an asthetically pleasing display.
 
-### **The Ideal User**
+#### **The Ideal User**
 
 - Someone who enjoys movies and would like to discover new movies
 - Someone who would like to review/rate movies and share those reviews with fellow movies lovers
 - Someone who would like to create a watchlist of movies and share with others
 - Someone who would like to create their own custom Profile page and share some information about themselves
 
-### **Site Goals**
+#### **Site Goals**
 
 - To provide users with a place to find movies they have seen and discover new ones
 - To provide users with the ability to review/rate movies
@@ -71,6 +72,22 @@ It was done this way to ensure that all core requirements were completed first t
 The Kanban board was created using Github projects and can be located [here](https://github.com/users/seanf316/projects/7)  and can be viewed to see more information on the project cards. All stories have a full set of acceptance criteria in order to define the functionality that marks that story as complete.
 
 ![Project Kanban](docs/readme_screenshots/kanban-board.webp)
+
+#### **Epics**
+
+11 Epics (milestones) were created which were then further developed into 32 User Stories. The details on each epic, along with the user stories linked to each one can be found in the project kanban board linked above. 2 extra unplanned User Stories were created during development as an extra feature for the user - Trending Movies & Toprate Movies. They were added as the time to implement was very short and did not require an Epic.
+
+EPIC: Initial Django Setup [#1](https://github.com/seanf316/P4-Cinema-Go/issues/1)\
+EPIC: Initial Deployment [#2](https://github.com/seanf316/P4-Cinema-Go/issues/2)\
+EPIC: User Account/Profile [#3](https://github.com/seanf316/P4-Cinema-Go/issues/3)\
+EPIC: User Login/Logout [#4](https://github.com/seanf316/P4-Cinema-Go/issues/4)\
+EPIC: Movie Search [#5](https://github.com/seanf316/P4-Cinema-Go/issues/5)\
+EPIC: View Search Results [#6](https://github.com/seanf316/P4-Cinema-Go/issues/6)\
+EPIC: View Movie Details [#7](https://github.com/seanf316/P4-Cinema-Go/issues/7)\
+EPIC: Movie Reviews/Comments [#8](https://github.com/seanf316/P4-Cinema-Go/issues/8)\
+EPIC: Base Html/Homepage [#9](https://github.com/seanf316/P4-Cinema-Go/issues/9)\
+EPIC: Complete Documentation [#10](https://github.com/seanf316/P4-Cinema-Go/issues/10)\
+EPIC: Status Error Templates [#11](https://github.com/seanf316/P4-Cinema-Go/issues/29)\
 
 ## **How to Play**
 
