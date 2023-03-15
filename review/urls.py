@@ -18,6 +18,11 @@ urlpatterns = [
         name="delete_review",
     ),
     path(
+        "comment/<int:movie_id>/<int:review_id>/",
+        views.comment,
+        name="comment",
+    ),
+    path(
         "allreviews/",
         views.allreviews,
         name="allreviews",
