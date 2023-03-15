@@ -2,6 +2,7 @@ import os
 from django.shortcuts import render, redirect, get_object_or_404, reverse
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
+from django.db.models import Avg
 import requests
 from .models import Movie
 from profiles.models import Profile
@@ -160,19 +161,22 @@ def moviedetails(request, movie_id):
     movie = Movie.objects.get(MovieId=movie_id)
     user = request.user
     profile = Profile.objects.get(user=user)
+    user_review = Review.objects.filter(movie=movie, user=user)
     reviews = Review.objects.filter(movie=movie)
+    rating_avg = reviews.aggregate(Avg("rating"))
 
     if profile.to_watch.filter(MovieId=movie_id).exists():
         to_watch = True
     else:
         to_watch = False
 
-    if Review.objects.filter(movie=movie, user=user).exists():
+    if user_review.exists():
         user_review_exists = True
+
     else:
         user_review_exists = False
 
-    if Review.objects.filter(movie=movie).exists():
+    if reviews.exists():
         review_exists = True
     else:
         review_exists = False
@@ -186,6 +190,7 @@ def moviedetails(request, movie_id):
         "user_review_exists": user_review_exists,
         "review_exists": review_exists,
         "reviews": reviews,
+        "rating_avg": rating_avg,
     }
 
     return render(request, "movie/moviedetails.html", context)
@@ -231,7 +236,14 @@ def prof_watch(request, movie_id):
             request,
             f"{user.username} you have removed {movie} from your watchlist",
         )
-    return redirect(reverse("profile", kwargs={"username": user.username}))
+        return redirect(reverse("profile", kwargs={"username": user.username}))
+
+    else:
+        messages.success(
+            request,
+            f"{user.username} you are not authorised to do this.",
+        )
+        return redirect(reverse("profile", kwargs={"username": user.username}))
 
 
 def prof_review(request, movie_id):
@@ -252,4 +264,11 @@ def prof_review(request, movie_id):
                 request,
                 f"{user.username} you have removed {movie} from your reviewed list",
             )
+        return redirect(reverse("profile", kwargs={"username": user.username}))
+
+    else:
+        messages.success(
+            request,
+            f"{user.username} you are not authorised to do this.",
+        )
         return redirect(reverse("profile", kwargs={"username": user.username}))
