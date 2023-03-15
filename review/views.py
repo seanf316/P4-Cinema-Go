@@ -140,7 +140,7 @@ def delete_review(request, movie_id, review_id):
     review.delete()
     messages.success(request, f"{user.username} your review has been deleted")
 
-    return redirect(reverse("moviedetails", args=[movie_id]))
+    return redirect(reverse("allreviews"))
 
 
 @login_required()
