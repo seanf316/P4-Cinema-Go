@@ -41,6 +41,12 @@ class Profile(models.Model):
         blank=True,
         default="What's your favourite Movie?",
     )
+    fav_actor = models.CharField(
+        max_length=50,
+        null=True,
+        blank=True,
+        default="Who's your favourite Actor?",
+    )
     director = models.CharField(
         max_length=50,
         null=True,

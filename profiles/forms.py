@@ -39,6 +39,7 @@ class ProfileForm(forms.ModelForm):
             "about",
             "profile_image",
             "fav_movie",
+            "fav_actor",
             "director",
         ]
 
@@ -48,6 +49,7 @@ class ProfileForm(forms.ModelForm):
             "about": "About Me",
             "profile_image": "Profile Image",
             "fav_movie": "Favorite Movie",
+            "fav_actor": "Favorite Actor",
             "director": "Favorite Director",
         }
 
