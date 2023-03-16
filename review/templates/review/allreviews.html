@@ -39,7 +39,7 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6 my-2 d-flex flex-wrap">
+                            <div class="col-lg-4 my-2 d-flex flex-wrap">
                                 {% if user.is_authenticated and user == review.review.user %}
                                 <a class="site-btn flex-grow-1"
                                     href="{% url 'edit_review'  review.movie_data.id review.review.id %}">Edit
