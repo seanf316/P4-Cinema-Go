@@ -15,7 +15,7 @@ class UserForm(forms.ModelForm):
         """
 
         model = User
-        fields = ["username"]
+        fields = ["username", "email"]
         help_texts = {
             "username": None,
         }
