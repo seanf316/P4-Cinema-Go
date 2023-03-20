@@ -236,14 +236,8 @@ def prof_watch(request, movie_id):
             request,
             f"{user.username} you have removed {movie} from your watchlist",
         )
-        return redirect(reverse("profile", kwargs={"username": user.username}))
 
-    else:
-        messages.success(
-            request,
-            f"{user.username} you are not authorised to do this.",
-        )
-        return redirect(reverse("profile", kwargs={"username": user.username}))
+    return redirect(reverse("profile", kwargs={"username": user.username}))
 
 
 def prof_review(request, movie_id):
@@ -264,11 +258,4 @@ def prof_review(request, movie_id):
                 request,
                 f"{user.username} you have removed {movie} from your reviewed list",
             )
-        return redirect(reverse("profile", kwargs={"username": user.username}))
-
-    else:
-        messages.success(
-            request,
-            f"{user.username} you are not authorised to do this.",
-        )
-        return redirect(reverse("profile", kwargs={"username": user.username}))
+    return redirect(reverse("profile", kwargs={"username": user.username}))
