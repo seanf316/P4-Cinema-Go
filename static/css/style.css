@@ -10,8 +10,8 @@
 
 :root {
     --main-color: #66fcf1;
-    --light-color: white;
-    --dark-color: black;
+    --light-color: #fff;
+    --dark-color: #000000;
     --bg-color: #222629;
 }
 
@@ -25,6 +25,23 @@ hr {
 
 ul li {
     list-style: none;
+}
+
+.btn-round {
+    background-color: var(--dark-color);
+    color: var(--main-color);
+    border-radius: 2rem;
+    padding: .5rem 2rem;
+    margin-top: 1rem;
+    font-weight: 700;
+    text-align: center;
+    border: 2px solid var(--light-color);
+}
+
+.btn-round:hover {
+    background-color: var(--main-color);
+    border: 2px solid var(--light-color);
+    color: var(--dark-color);
 }
 
 .nav-link.active {
@@ -46,8 +63,37 @@ header {
 }
 
 /* Forms */
+
 .asteriskField {
     display: none;
+}
+
+.form span {
+    color: var(--main-color);
+}
+
+.form input {
+    margin-bottom: 1rem;
+}
+
+.form label {
+    color: var(--main-color);
+    margin-bottom: .4rem;
+    font-weight: 600;
+}
+
+/* Allauth */
+
+.auth-h1 {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: var(--main-color);
+}
+
+.auth-link {
+    font-weight: 700;
+    color: var(--main-color);
 }
 
 /* Navbar */
@@ -179,98 +225,6 @@ i.fa-brands.fa-github:focus {
     color: var(--dark-color);
 }
 
-/* Allauth */
-
-.auth-h1 {
-    font-size: 2rem;
-    margin-top: 3rem;
-    margin-bottom: 1rem;
-    color: var(--main-color);
-}
-
-.auth-link {
-    font-weight: 700;
-    color: var(--main-color);
-}
-
-.auth-link1 {
-    font-size: 2rem;
-}
-
-.auth-btn {
-    background-color: var(--dark-color);
-    color: var(--main-color);
-    border-radius: 2rem;
-    padding: .5rem 2rem;
-    width: 50%;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    font-weight: 700;
-    border: 2px solid var(--light-color);
-}
-
-.auth-btn:hover {
-    background-color: var(--main-color);
-    border: 2px solid var(--light-color);
-    color: var(--dark-color);
-}
-
-/* Login */
-
-.log-in p span {
-    font-weight: 700;
-    color: var(--main-color);
-}
-
-.log-in input {
-    margin-bottom: 1rem;
-}
-
-.log-in label {
-    color: var(--main-color);
-    margin-bottom: .4rem;
-    font-weight: 600;
-}
-
-/* Sign Up */
-
-.sign-up span {
-    color: var(--main-color);
-}
-
-.sign-up input {
-    margin-bottom: 1rem;
-}
-
-.sign-up label {
-    color: var(--main-color);
-    margin-bottom: .4rem;
-    font-weight: 600;
-}
-
-/* Logout */
-
-.log-out {
-    margin-top: 6rem;
-}
-
-.load-more {
-    background-color: var(--dark-color);
-    color: var(--main-color);
-    border-radius: 2rem;
-    padding: .5rem 2rem;
-    width: 50%;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
-    font-weight: 700;
-    border: 2px solid var(--light-color);
-}
-
-.load-more:hover {
-    background-color: var(--main-color);
-    border: 2px solid var(--dark-color);
-    color: var(--dark-color);
-}
 
 /* Movie Details */
 
@@ -435,8 +389,7 @@ a.site-btn:hover {
     color: var(--main-color);
     border: 1px solid var(--light-color);
     padding: .5rem 2rem;
-    margin-right: .5rem;
-    margin-top: 2rem;
+    margin: 0 .5rem;
 }
 
 .edit-profile button:hover {

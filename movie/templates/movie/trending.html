@@ -19,17 +19,17 @@
             </div>
             {% endif %}
             {% endfor %}
-            <div class="row text-center">
-                <div class="col text-center mt-5">
-                    {% if prev_page %}
-                    <a class="load-more" href="{% url 'pagination' page_number=prev_page category='trending' %}"><i
-                            class="fa-solid fa-circle-chevron-left"></i> Prev</a>
-                    {% endif %}
-                    {% if next_page %}
-                    <a class="load-more" href="{% url 'pagination' page_number=next_page category='trending' %}">Next <i
-                            class="fa-solid fa-circle-chevron-right"></i></a>
-                    {% endif %}
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+                {% if prev_page %}
+                <a class="btn-round" href="{% url 'pagination' page_number=prev_page category='trending' %}"><i
+                        class="fa-solid fa-circle-chevron-left"></i> Prev</a>
+                {% endif %}
+                {% if next_page %}
+                <a class="btn-round" href="{% url 'pagination' page_number=next_page category='trending' %}">Next <i
+                        class="fa-solid fa-circle-chevron-right"></i></a>
+                {% endif %}
             </div>
         </div>
 </section>
