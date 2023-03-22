@@ -46,7 +46,7 @@ class ProfileForm(forms.ModelForm):
         labels = {
             "firstname": "First Name",
             "surname": "Last Name",
-            "about": "About Me",
+            "about": "About Me (Max 200 Characters)",
             "profile_image": "Profile Image",
             "fav_movie": "Favorite Movie",
             "fav_actor": "Favorite Actor",

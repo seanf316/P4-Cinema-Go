@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from djrichtextfield.models import RichTextField
 from movie.models import Movie
 
 placeholder = "https://res.cloudinary.com/seanf316/image/upload/v1677195145/Cinema-Go/default_profile_llyxo2.webp"
@@ -20,8 +21,11 @@ class Profile(models.Model):
     surname = models.CharField(
         max_length=50, null=True, blank=True, default="Surname"
     )
-    about = models.TextField(
-        max_length=200, null=True, blank=True, default="I love Cinema|Go"
+    about = RichTextField(
+        max_length=200,
+        null=True,
+        blank=True,
+        default="I love Cinema|Go",
     )
     profile_image = CloudinaryField(
         "image",
