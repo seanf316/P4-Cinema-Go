@@ -1,5 +1,9 @@
 from django.db import models
-from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.validators import (
+    MaxValueValidator,
+    MinValueValidator,
+    MaxLengthValidator,
+)
 from djrichtextfield.models import RichTextField
 from django.contrib.auth.models import User
 from movie.models import Movie
@@ -16,7 +20,7 @@ class Review(models.Model):
         auto_now_add=True,
         null=True,
     )
-    review = RichTextField(max_length=2500, null=True, blank=True)
+    review = RichTextField(null=True, validators=[MaxLengthValidator(2500)])
     rating = models.IntegerField(
         default=1, validators=[MaxValueValidator(10), MinValueValidator(1)]
     )
