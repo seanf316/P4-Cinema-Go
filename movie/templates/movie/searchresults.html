@@ -7,6 +7,7 @@
             <a href="{% url 'searchresults' query=query %}">
                 <h1 class="auth-h1 text-center">Results: {{ query }}</h1>
             </a>
+            {% if movie_data.results %}
             {% for movie in movie_data.results %}
             {% if forloop.counter0 < 12 %}
             <div class="col-12 col-md-4 col-lg-3 gx-4 gy-4">
@@ -32,15 +33,22 @@
             <div class="row text-center">
                 <div class="col text-center mt-5">
                     {% if prev_page %}
-                    <a class="load-more" href="{% url 'searchresults_page' page_number=prev_page query=query %}"><i
+                    <a class="btn-round" href="{% url 'searchresults_page' page_number=prev_page query=query %}"><i
                             class="fa-solid fa-circle-chevron-left"></i> Prev</a>
                     {% endif %}
                     {% if next_page %}
-                    <a class="load-more" href="{% url 'searchresults_page' page_number=next_page query=query %}">Next <i
+                    <a class="btn-round" href="{% url 'searchresults_page' page_number=next_page query=query %}">Next <i
                             class="fa-solid fa-circle-chevron-right"></i></a>
                     {% endif %}
                 </div>
             </div>
+            {% else %}
+            <div class="col-12 text-white text-center">
+                <h2 class="text-white my-5">There are currently no results for {{ query }}.
+                </h2>
+                <a class="btn-round" href="{% url 'search' %}">Back to Movie Search</a>
+            </div>
+            {% endif %}
         </div>
 </section>
 {% endblock%}
