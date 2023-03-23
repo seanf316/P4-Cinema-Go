@@ -6,7 +6,7 @@ from .models import Profile
 
 class TestProfileViews(TestCase):
     """
-    Testing Movie Views
+    Testing Profile Views
     """
 
     def setUp(self):
