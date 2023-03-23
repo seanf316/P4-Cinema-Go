@@ -29,7 +29,10 @@ def searchresults(request, query, page_number=1):
     Displays the results of the users query and adds
     pagination if results contain more then one page
     """
-    url = f"https://api.themoviedb.org/3/search/movie?api_key={API_KEY}&language=en-US&query={query}&page={page_number}"
+    url = (
+        f"https://api.themoviedb.org/3/search/movie?api_key={API_KEY}"
+        f"&language=en-US&query={query}&page={page_number}"
+    )
 
     response = requests.get(url)
     movie_data = response.json()
@@ -55,10 +58,16 @@ def movies(request, category, page_number=1):
     Call to the TMDB API to provide some movies based on the category
     """
     if category == "trending":
-        url = f"https://api.themoviedb.org/3/trending/movie/week?api_key={API_KEY}&language=en-US&page={page_number}"
+        url = (
+            "https://api.themoviedb.org/3/trending/movie/week?"
+            f"api_key={API_KEY}&language=en-US&page={page_number}"
+        )
         template_name = "movie/trending.html"
     elif category == "toprated":
-        url = f"https://api.themoviedb.org/3/movie/top_rated?api_key={API_KEY}&language=en-US&page={page_number}"
+        url = (
+            "https://api.themoviedb.org/3/movie/top_rated?"
+            f"api_key={API_KEY}&language=en-US&page={page_number}"
+        )
         template_name = "movie/toprated.html"
     else:
         # handle other categories
@@ -88,10 +97,16 @@ def pagination(request, category, page_number=1):
     more then one page
     """
     if category == "trending":
-        url = f"https://api.themoviedb.org/3/trending/movie/week?api_key={API_KEY}&language=en-US&page={page_number}"
+        url = (
+            "https://api.themoviedb.org/3/trending/movie/week?api_key="
+            f"{API_KEY}&language=en-US&page={page_number}"
+        )
         template_name = "movie/trending.html"
     elif category == "toprated":
-        url = f"https://api.themoviedb.org/3/movie/top_rated?api_key={API_KEY}&language=en-US&page={page_number}"
+        url = (
+            "https://api.themoviedb.org/3/movie/top_rated?api_key="
+            f"{API_KEY}&language=en-US&page={page_number}"
+        )
         template_name = "movie/toprated.html"
     else:
         # handle other categories
@@ -120,10 +135,13 @@ def moviedetails(request, movie_id):
     results or Movie category pages. It will save parts of the Movie details
     to database for reference with Profile/Reviews. It will also check
     the users profile to see if they have added to their watchlist or reviewed
-    the movie in question. There is also a check to see if reviews from other users
-    exist and renders those reviews.
+    the movie in question. There is also a check to see if reviews from other
+    users exist and renders those reviews.
     """
-    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US&append_to_response=credits,videos,images"
+    url = (
+        f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}"
+        f"&language=en-US&append_to_response=credits,videos,images"
+    )
 
     response = requests.get(url)
     movie_data = response.json()
@@ -131,7 +149,10 @@ def moviedetails(request, movie_id):
     if backdrop:
         hero = "https://image.tmdb.org/t/p/w1280/" + backdrop
     else:
-        hero = "https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg"
+        hero = (
+            "https://res.cloudinary.com/seanf316/image/"
+            f"upload/v1676857549/wp8923971_qd2bfr.jpg"
+        )
 
     director = None
     for person in movie_data["credits"]["crew"]:
@@ -256,6 +277,9 @@ def prof_review(request, movie_id):
             review.delete()
             messages.success(
                 request,
-                f"{user.username} you have removed {movie} from your reviewed list",
+                (
+                    f"{user.username} you have removed {movie}"
+                    f" from your reviewed list"
+                ),
             )
     return redirect(reverse("profile", kwargs={"username": user.username}))
