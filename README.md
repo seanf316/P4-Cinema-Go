@@ -2,7 +2,7 @@
 
 ## **Overview**
 
-Cinema | Go is a Movie site designed to allow a User to find and review Movies. The site features a search function using the TMDB API that allows user's to search for any Movie they wish. There is a Trending and Top Rated section too so user's can view the most popular Movies today and the highest rated of all time. User's will be able to view Movie details such as Title, Director, Overview and Trailers etc. User's will also be able to review Movies and add Movies to a watchlist that can be displayed in their own customisable Profile page, here they will be able to enter information about themselves and upload their own Profile picture.
+Cinema | Go is a Movie site designed to allow a User to find and review Movies. The site features a search function using the TMDB API that allows users to search for any Movie they wish. There is a Trending and Top Rated section too so users can view the most popular Movies today and the highest rated of all time. Users will be able to view Movie details such as Title, Director, Overview, Trailers, etc. Users will also be able to review Movies and add Movies to a watchlist that can be displayed on their customizable Profile page, here they will be able to enter information about themselves and upload their Profile picture. You are not authorized to delete this review.
 
 Developed by Sean Finn.
 
@@ -48,46 +48,181 @@ This is my fourth portfolio project for [Code Institute](https://codeinstitute.n
 
 ### **The Strategy Plane**
 
-Cinema | Go is intended to bring together all Movie lover's to find their favourite Movies and discover new ones. User's will be able to review and rate Movies and create their own watchlist which they can manage from their custom Profile page. The graphical elements and overall design of the site provide the user with a fun and enjoyable environment with an asthetically pleasing display.
+Cinema | Go is intended to bring together all Movie lover's to find their favourite Movies and discover new ones. Users will be able to review and rate Movies and create their watchlist which they can manage from their custom Profile page. The graphical elements and overall design of the site provide the user with an enjoyable experience with an aesthetically pleasing display.
 
 #### **The Ideal User**
 
 - Someone who enjoys movies and would like to discover new movies
 - Someone who would like to review/rate movies and share those reviews with fellow movies lovers
-- Someone who would like to create a watchlist of movies and share with others
-- Someone who would like to create their own custom Profile page and share some information about themselves
+- Someone who would like to create a watchlist of movies and share it with others
+- Someone who would like to create their own custom Profile page, share some information about themselves and their Movie interests
 
 #### **Site Goals**
 
 - To provide users with a place to find movies they have seen and discover new ones
 - To provide users with the ability to review/rate movies
 - To provide users with the ability to create their own Profile and movie watchlist
+- To provide users with the ability to view other users reviews and watchlists
 
 ### **Agile Planning**
 
-This project was developed using agile methodologies by delivering small features across the duration of the project. All User Stories where assigned to Epics, prioritized under the labels, Must Have, Should Have, Could Have. They were assigned story points according to complexity. Story points where adjusted mid project to use the common Fibonacci sequence correctly. "Must Have" stories were completed first, "Should Have's" and then finally "Could Have's".
+This project was developed using agile methodologies by delivering small features across the duration of the project. All User Stories were assigned to Epics, prioritized under the labels, Must Have, Should Have and Could Have. They were assigned story points according to complexity. Story points were adjusted mid-project to use the common Fibonacci sequence correctly. "Must Have" stories were completed first, "Should Have's" and then finally "Could Have's".
 
-It was done this way to ensure that all core requirements were completed first to give the project a complete feel. In some scenarios certain "Could Have's" where implemented before schedule due to the easy nature of the implementation i.e. Trending/Top Rated Movies. The rest were applied based on capacity and timing.
+It was done this way to ensure that all core requirements were completed first to give the project a complete feel. In some scenarios, certain "Could Have's" were implemented before schedule due to the easy nature of the implementation i.e. Trending/Top Rated Movies. The rest were applied based on capacity and timing.
 
-The Kanban board was created using Github projects and can be located [here](https://github.com/users/seanf316/projects/7)  and can be viewed to see more information on the project cards. All stories have a full set of acceptance criteria in order to define the functionality that marks that story as complete.
+The Kanban board was created using Github projects and can be located [here](https://github.com/users/seanf316/projects/7)  and can be viewed to see more information on the project cards. All stories have a full set of acceptance criteria to define the functionality that marks that story as complete.
 
 ![Project Kanban](docs/readme_screenshots/kanban-board.webp)
 
-#### **Epics**
+### **Epics**
 
-11 Epics (milestones) were created which were then further developed into 32 User Stories. The details on each epic, along with the user stories linked to each one can be found in the project kanban board linked above. 2 extra unplanned User Stories were created during development as an extra feature for the user - Trending Movies & Toprate Movies. They were added as the time to implement was very short and did not require an Epic.
+11 Epics (milestones) were created which were then further developed into 34 User Stories. The details on each epic, along with the user stories linked to each one can be found in the project kanban board linked above. 2 extra unplanned User Stories were created during development as an extra feature for the user - Trending Movies & Toprated Movies. They were added as the time to implement was very short and did not require an Epic.
 
-EPIC: Initial Django Setup [#1](https://github.com/seanf316/P4-Cinema-Go/issues/1)\
-EPIC: Initial Deployment [#2](https://github.com/seanf316/P4-Cinema-Go/issues/2)\
-EPIC: User Account/Profile [#3](https://github.com/seanf316/P4-Cinema-Go/issues/3)\
-EPIC: User Login/Logout [#4](https://github.com/seanf316/P4-Cinema-Go/issues/4)\
-EPIC: Movie Search [#5](https://github.com/seanf316/P4-Cinema-Go/issues/5)\
-EPIC: View Search Results [#6](https://github.com/seanf316/P4-Cinema-Go/issues/6)\
-EPIC: View Movie Details [#7](https://github.com/seanf316/P4-Cinema-Go/issues/7)\
-EPIC: Movie Reviews/Comments [#8](https://github.com/seanf316/P4-Cinema-Go/issues/8)\
-EPIC: Base Html/Homepage [#9](https://github.com/seanf316/P4-Cinema-Go/issues/9)\
-EPIC: Complete Documentation [#10](https://github.com/seanf316/P4-Cinema-Go/issues/10)\
-EPIC: Status Error Templates [#11](https://github.com/seanf316/P4-Cinema-Go/issues/29)\
+#### **EPIC: Initial Django Setup [#1](https://github.com/seanf316/P4-Cinema-Go/issues/1)**
+`
+As a Developer, I can setup Django and start project, so that I can develop the site
+`
+
+The Initial Django Setup epic was required to setup the project and confirm libraries, frameworks etc were installed correctly. Only then could further development progress.
+
+#### **EPIC: Initial Deployment [#2](https://github.com/seanf316/P4-Cinema-Go/issues/2)**
+`
+As a Developer, I can deploy my site with Heroku, so that user's can view and interact with the site
+`
+
+The Initial Deployment epic was completed early on as we were advised during the course material that early deployment is critical to avoid any issues down the line with the production app. Heroku app was creating and config vars were updated, app was linked to my projects Github repo for automatic deployments.
+
+#### **EPIC: Base Html/Homepage [#9](https://github.com/seanf316/P4-Cinema-Go/issues/9)**
+`
+As a Developer, I can design a nice aesthetically pleasing Homepage, so that the user has an enjoyable experience when navigating site
+`
+
+The Base Html/Homepage epic was used to link various User Stories based around the design and responsiveness of the site. The Base template was created first so I could extend within further templates and then the homepage(index.html) was built using bootstrap and styled. Nav and Footer were progressed under seperate User Stories.
+
+#### **EPIC: User Account/Profile [#3](https://github.com/seanf316/P4-Cinema-Go/issues/3)**
+`
+As a Developer, I can provide account/profile creation functionality, so that user can create/read/update or delete their account/profile
+`
+
+The User Account/Profile epic is for all User Stories related to the setup of the account/profile and the CRUD functionality and templates design.
+
+#### **EPIC: User Signup/Login/Logout [#4](https://github.com/seanf316/P4-Cinema-Go/issues/4)**
+`
+As a Developer, I can provide Signup/Login/Logout functionality, so that user can safely signup/login/logout and prevent access to their profile
+`
+
+The User Signup/Login/Logout epic is for all User Stories related to the registration, login and authorization of views.
+
+#### **EPIC: Movie Search [#5](https://github.com/seanf316/P4-Cinema-Go/issues/5)**
+`
+As a Developer, I can provide the Movie search functionality, so that User can easily search for movies to review
+`
+
+The Movie Search epic is for all User Stories related to the setup of the Movie search functionality and the use of the TMDB API. Any templates created or styled were linked also.
+
+#### **EPIC: View Search Results [#6](https://github.com/seanf316/P4-Cinema-Go/issues/6)**
+`
+As a Developer, I can provide search results display, so that the user can view all Movies related to their search
+`
+
+The View Search Results epic is for all User Stories related to the search results page and displaying the results from the API call. Any templates created or styled were linked also.
+
+#### **EPIC: View Movie Details [#7](https://github.com/seanf316/P4-Cinema-Go/issues/7)**
+`
+As a Developer, I can provide a display of the Movie details, so that user can view the Movie details for the Movie they selected
+`
+
+The View Movie Details epic is for all User Stories related to the Movie details page and displaying the Movie information such as Title, Overview, Director etc. Any templates created or styled were linked also.
+
+#### **EPIC: Movie Reviews/Comments [#8](https://github.com/seanf316/P4-Cinema-Go/issues/8)**
+`
+As a Developer, I can provide review/comment functionality, so that registered users can review a Movie or comment on an existing Movie review
+`
+
+The Movie Reviews/Comments epic is for all User Stories related to the Review and Comment functionality. Any templates created or styled were linked also.
+
+#### **EPIC: Status Error Templates [#11](https://github.com/seanf316/P4-Cinema-Go/issues/29)**
+`
+As a Developer, I can create Status Error templates, so that I can secure my views and advise User when there is an issue
+`
+
+The Status Error Templates epic is for all User Stories related to providing status error feedback to the User like 403, 404 and 500 status errors. Any templates created or styled were linked also.
+
+#### **EPIC: Complete Documentation [#10](https://github.com/seanf316/P4-Cinema-Go/issues/10)**
+`
+As a Developer, I can create documentation, so that fellow developers can understand what the site is and how it was built
+`
+
+This epic is for all document related stories and tasks that are needed to document the software development lifecycle of the application. It aims to deliver quality documentation, explaining all stages of development and necessary information on running, deploying and using the application.
+
+### **User Stories**
+
+The following user stories (by epic) were completed throughout development.
+
+#### **EPIC: Initial Django Setup [#1](https://github.com/seanf316/P4-Cinema-Go/issues/1)**
+
+- As a Developer I can set up Django and install the supporting libraries predicted to be needed so that I am ready to start development [#11](https://github.com/seanf316/P4-Cinema-Go/issues/11)
+- As a Developer I need to create the env.py and add to .gitignore so that I can securely deploy the site without exposing developer keys/information [#12](https://github.com/seanf316/P4-Cinema-Go/issues/12)
+
+#### **EPIC: Initial Deployment [#2](https://github.com/seanf316/P4-Cinema-Go/issues/2)**
+
+- As a Developer I can deploy site to Heroku early so that I can confirm everything works before development of the site and to enable continuous testing within the production environment [#13](https://github.com/seanf316/P4-Cinema-Go/issues/13)
+
+#### **EPIC: Base Html/Homepage [#9](https://github.com/seanf316/P4-Cinema-Go/issues/9)**
+
+- As a User I would like to view the site on my different devices so that I can review the site on the go [#14](https://github.com/seanf316/P4-Cinema-Go/issues/14)
+- As a User I want to see a clear way of navigating the site so that I can find the information relative to my needs [#15](https://github.com/seanf316/P4-Cinema-Go/issues/15)
+- As a User I want to be able to get in touch with the Developer so that I can enquire about issues/suggestions I may have [#16](https://github.com/seanf316/P4-Cinema-Go/issues/16)
+
+#### **EPIC: User Account/Profile [#3](https://github.com/seanf316/P4-Cinema-Go/issues/3)**
+
+- As a User I would like access to my Profile so that I can upload an image or alter my details where needed [#18](https://github.com/seanf316/P4-Cinema-Go/issues/18)
+- As a Developer I can create an aesthetically pleasing display of the User's Profile so that the experience of viewing their Profile is a pleasant one [#23](https://github.com/seanf316/P4-Cinema-Go/issues/23)
+- As a Developer I can create an edit Profile template so that the User has a nice display for when they want to update their Profile [#40](https://github.com/seanf316/P4-Cinema-Go/issues/40)
+- As a Developer I can create a Delete Profile view so that the User has access to delete their account. [#41](https://github.com/seanf316/P4-Cinema-Go/issues/41)
+- As a User I would like the ability to add Movies to a watchlist so that so that I can have a list of movies that I can refer to when looking for something to watch [#42](https://github.com/seanf316/P4-Cinema-Go/issues/42)
+
+#### **EPIC: User Signup/Login/Logout [#4](https://github.com/seanf316/P4-Cinema-Go/issues/4)**
+
+- As a User I want to Sign Up/Login and Logout so that I can see what features are available to registered users like reviewing/commenting [#17](https://github.com/seanf316/P4-Cinema-Go/issues/17)
+
+#### **EPIC: Movie Search [#5](https://github.com/seanf316/P4-Cinema-Go/issues/5)**
+
+- As a User I want to have a section where I can search for a Movie so that I can easily find the Movie I want to review [#19](https://github.com/seanf316/P4-Cinema-Go/issues/19)
+- As a Developer I can create the Movie Search Template so that the User has an nice experience on the site [#20](https://github.com/seanf316/P4-Cinema-Go/issues/20)
+- As a Developer I need to setup an account with TMDB so that I can use the sites API and implement into my site [#21](https://github.com/seanf316/P4-Cinema-Go/issues/21)
+
+#### **EPIC: View Search Results [#6](https://github.com/seanf316/P4-Cinema-Go/issues/6)**
+
+- As a Developer I can create the Movie Search Results template so that the User has a clear display of the results from their search [#37](https://github.com/seanf316/P4-Cinema-Go/issues/37)
+
+#### **EPIC: View Movie Details [#7](https://github.com/seanf316/P4-Cinema-Go/issues/7)**
+
+- As a User I want to view the Movie details from my search so that I can read the synopsis and check reviews [#22](https://github.com/seanf316/P4-Cinema-Go/issues/22)
+- As a Developer I can build a page to display the Movie Details for the users selected Movie so that they have a clear overview of the Movie [#24](https://github.com/seanf316/P4-Cinema-Go/issues/24)
+- As a Developer I will create a Movie model so that the movie details that the user references can be saved to the database for use with Reviews/Profile etc [#38](https://github.com/seanf316/P4-Cinema-Go/issues/38)
+
+#### **EPIC: Movie Reviews/Comments [#8](https://github.com/seanf316/P4-Cinema-Go/issues/8)**
+
+- As a User I want the ability to review Movies so that I can share my thoughts of the Movie with family and friends [#25](https://github.com/seanf316/P4-Cinema-Go/issues/25)
+- As a Developer I can create a nice display for the User to review so that they have an enjoyable experience reviewing Movies on the site [#26](https://github.com/seanf316/P4-Cinema-Go/issues/26)
+- As a User I would like the ability to edit my review so that I can fix and spelling or format issues [#43](https://github.com/seanf316/P4-Cinema-Go/issues/43)
+- As a User I would like the ability to delete my review so that I can manage my reviews and in the case of accidentally selecting the wrong Movie and reviewing it [#44](https://github.com/seanf316/P4-Cinema-Go/issues/44)
+- As a User I would like the ability to view all movie reviews so that I can see what my fellow reviewers think of other movies [#45](https://github.com/seanf316/P4-Cinema-Go/issues/45)
+- As a Developer I can create an All Reviews page so that the User can have a nice display containing all reviews [#46](https://github.com/seanf316/P4-Cinema-Go/issues/46)
+- As a User I would like the ability to comment on Reviews so that so that I can participate in conversations with fellow reviewer's [#27](https://github.com/seanf316/P4-Cinema-Go/issues/27)
+- As a Developer I can create a section on the Review page for comments so that User's can comment on reviews [#28](https://github.com/seanf316/P4-Cinema-Go/issues/28)
+
+#### **EPIC: Status Error Templates [#11](https://github.com/seanf316/P4-Cinema-Go/issues/29)**
+
+- As a Developer I can implement a 403 error page to redirect unauthorised users so that I can secure my views [#30](https://github.com/seanf316/P4-Cinema-Go/issues/30)
+- As a Developer I can implement a 404 error page so that I can alert users when they have accessed a page that doesn't exist [#31](https://github.com/seanf316/P4-Cinema-Go/issues/31)
+- As a Developer I can implement a 500 error page so that I can alert users when an internal server error occurs [#32](https://github.com/seanf316/P4-Cinema-Go/issues/32)
+
+#### **EPIC: Complete Documentation [#10](https://github.com/seanf316/P4-Cinema-Go/issues/10)**
+
+- Create/Write README.md [#33](https://github.com/seanf316/P4-Cinema-Go/issues/33)
+- Create/Write TESTING.md [#34](https://github.com/seanf316/P4-Cinema-Go/issues/34)
 
 ## **How to Play**
 
