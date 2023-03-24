@@ -457,10 +457,14 @@ a.site-btn:hover {
 
 .allreviews .card::-webkit-scrollbar {
     display: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .allreviews .card-body::-webkit-scrollbar {
     display: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
 }
 
 .allreviews .card-body {
