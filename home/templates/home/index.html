@@ -3,8 +3,8 @@
 {% block content %}
 <section class="about text-white">
     <div class="container">
-        <div class="row g-0 flex-wrap-reverse">
-            <div class="col-lg-5 mb-2 d-flex flex-column justify-content-center align-items-center text-center">
+        <div class="row g-0 mt-5 flex-wrap-reverse">
+            <div class="col-lg-5 mb-2 text-center">
                 {% if user.is_authenticated %}
                 <h1><span>Cinema</span> | <span>Go</span></h1>
                 <p class="text-center"><i>Like the Cinema? Love Movies?</i></p>
@@ -22,7 +22,8 @@
                 {% else %}
                 <h1>Welcome to<br><span>Cinema</span> | <span>Go</span></h1>
                 <p class="text-center"><i>Like the Cinema? Love Movies?</i></p>
-                <p>Here at <span><strong>Cinema</strong></span> | <span><strong>Go</strong></span> we want to bring
+                <p class="mb-4">Here at <span><strong>Cinema</strong></span> | <span><strong>Go</strong></span> we want
+                    to bring
                     Movie lovers together to discuss the
                     latest blockbusters and
                     review the Movies you have seen. Once signed up you will be able to search for a Movie you like and
@@ -33,7 +34,7 @@
             </div>
             <div class="col-lg-7 pt-3 d-flex align-items-center">
                 <img src="https://res.cloudinary.com/seanf316/image/upload/v1677195278/Cinema-Go/hero_kzdgct.webp"
-                    width="100%" alt="">
+                    class="img-fluid" alt="Site Hero Image">
             </div>
         </div>
     </div>

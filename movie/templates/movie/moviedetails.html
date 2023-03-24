@@ -2,20 +2,20 @@
 {% load static %}
 {% block title %}- Movie Details{% endblock %}
 {% block content %}
-<section class="movie-details min-vh-100" style="background-image: url('{{hero}}');">
+<section class="movie-details" style="background-image: url('{{hero}}');">
     <div class="opaque-overlay">&nbsp;</div>
     <div class="container">
-        <div class="row justify-content-center mt-5">
+        <div class="row mt-6 justify-content-center">
             <div class="col-12 d-none d-lg-block">
                 <div class="card bg-trans text-white">
                     <div class="row g-0">
                         <div class="col-4">
                             {% if movie_data.poster_path %}
                             <img src="https://image.tmdb.org/t/p/w1280/{{ movie_data.poster_path }}"
-                                class="img-fluid rounded-start" alt="...">
+                                class="img-fluid rounded-start" alt="Movie Poster for {{ movie.original_title }}">
                             {% else %}
                             <img src="https://res.cloudinary.com/seanf316/image/upload/v1677179557/Cinema-Go/no_poster_uqgcl9.webp"
-                                width="100%" alt="">
+                                width="100%" alt="Default Movie Poster">
                             {% endif %}
                         </div>
                         <div class="col-md-8">
@@ -51,6 +51,7 @@
                                         {% if movie_data.imdb_id %}
                                         <a class="site-btn flex-grow-1"
                                             href="https://www.imdb.com/title/{{ movie_data.imdb_id }}"
+                                            aria-label="Visit my the movies IMDb page (opens in a new tab)"
                                             target="_blank">IMDb</a>
                                         {% endif %}
                                         {% if to_watch == False %}
@@ -83,10 +84,10 @@
             <div class="card bg-trans text-white">
                 {% if movie_data.backdrop_path %}
                 <img src="https://image.tmdb.org/t/p/w1280/{{ movie_data.backdrop_path }}" class="card-img-top"
-                    alt="...">
+                    alt="Movie Backdrop for {{ movie.original_title }}">
                 {% else %}
                 <img src="https://res.cloudinary.com/seanf316/image/upload/v1677179557/Cinema-Go/no_backdrop_ptm59z.webp"
-                    height="180" alt="">
+                    height="180" alt="Default Movie Backdrop">
                 {% endif %}
                 <div class="card-body">
                     {% if movie_data.original_title %}
@@ -119,7 +120,8 @@
                             {% endif %}
                             {% if movie_data.imdb_id %}
                             <a class="site-btn flex-grow-1 text-center"
-                                href="https://www.imdb.com/title/{{ movie_data.imdb_id }}" target="_blank">IMDb</a>
+                                href="https://www.imdb.com/title/{{ movie_data.imdb_id }}"
+                                aria-label="Visit my the movies IMDb page (opens in a new tab)" target="_blank">IMDb</a>
                             {% endif %}
                             {% if to_watch == False %}
                             <a href="{% url 'watchlist' movie_data.id %}" class="site-btn flex-grow-1">

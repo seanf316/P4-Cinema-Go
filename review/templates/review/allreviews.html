@@ -16,7 +16,8 @@
                         <div class="row">
                             <div class="col-4 d-flex justify-content-start">
                                 <a href="{% url 'profile' review.review.user.username %}"><img src="
-                                    {{ review.review.user.profile.profile_image.url }}" alt=""
+                                    {{ review.review.user.profile.profile_image.url }}"
+                                        alt="{{ review.review.user.profile.user.username }} Profile Image"
                                         class="rounded-circle review-img"></a>
                             </div>
                             <div class="col-8 d-flex justify-content-end">
@@ -24,6 +25,7 @@
                                     <p class="justify-content-end">{{ review.review.created_on }}</p>
                                     <p class="justify-content-end"><span>Review by:
                                         </span><a href="{% url 'profile' review.review.user.username %}"
+                                            aria-label="{{ review.review.user.profile.user.username }} Profile Page"
                                             class="text-white">{{ review.review.user.username }}</a>
                                     </p>
                                 </div>
@@ -63,16 +65,16 @@
                                 <p><i>{{ comment.body|safe }}</i></p>
                                 {% if user == comment.name%}
                                 <div class="comment-a">
-                                    <a href="{% url 'edit_comment' review.movie_data.id review.review.id comment.id %}"><i
-                                            class="fa-solid fa-pen-to-square"></i> Edit</a>
-                                    <a
-                                        href="{% url 'delete_comment' review.movie_data.id review.review.id comment.id %}"><i
-                                            class="fa-solid fa-trash"></i> Delete</a>
+                                    <a href="{% url 'edit_comment' review.movie_data.id review.review.id comment.id %}"
+                                        aria-label="Edit Comment"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
+                                    <a href="{% url 'delete_comment' review.movie_data.id review.review.id comment.id %}"
+                                        aria-label="Edit Comment"><i class="fa-solid fa-trash"></i> Delete</a>
                                 </div>
                                 {% endif %}
                                 <p class="mt-3">{{ comment.created_on }}</p>
                                 <p class="justify-content-end"><span>Comment by: </span><a
                                         href="{% url 'profile' comment.name.username %}"
+                                        aria-label="{{ comment.name.username }} Profile Page"
                                         class="text-white">{{ comment.name.username }}</a>
                                 </p>
                                 <hr>

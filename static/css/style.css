@@ -44,12 +44,6 @@ ul li {
     color: var(--dark-color);
 }
 
-.nav-link.active {
-    text-decoration-line: underline;
-    text-decoration-color: #66fcf1;
-    text-underline-offset: 8px;
-}
-
 h1 {
     font-weight: 700;
 }
@@ -68,6 +62,10 @@ header {
     display: none;
 }
 
+span.cke_button_icon {
+    padding-right: 10px;
+}
+
 .form span {
     color: var(--main-color);
 }
@@ -80,6 +78,10 @@ header {
     color: var(--main-color);
     margin-bottom: .4rem;
     font-weight: 600;
+}
+
+.log-out {
+    margin-top: 5rem;
 }
 
 /* Allauth */
@@ -97,6 +99,12 @@ header {
 }
 
 /* Navbar */
+
+.nav-link.active {
+    text-decoration-line: underline;
+    text-decoration-color: #66fcf1;
+    text-underline-offset: 8px;
+}
 
 i.fa-solid.fa-bars {
     color: var(--main-color);
@@ -225,10 +233,8 @@ i.fa-brands.fa-github:focus {
     color: var(--dark-color);
 }
 
-
-/* Movie Details */
-
 /* Search */
+
 .movie-search {
     margin: 4rem 0;
 }
@@ -253,8 +259,7 @@ i.fa-brands.fa-github:focus {
     font-style: italic;
 }
 
-/* Search Results */
-
+/* Movie Details */
 #trailer {
     height: 18rem;
 }
@@ -274,6 +279,7 @@ i.fa-brands.fa-github:focus {
     background-position: center;
     display: flex;
     position: relative;
+    min-height: 100vh;
 }
 
 .opaque-overlay {
@@ -360,7 +366,7 @@ a.site-btn:hover {
 
 /* Edit Profile */
 
-.edit-profile span {
+.edit-profile h1 span {
     color: var(--main-color);
     font-weight: 600;
 }
@@ -424,7 +430,8 @@ a.site-btn:hover {
     position: relative;
 }
 
-.review span {
+.review h1 span,
+.review h2 span {
     color: var(--main-color);
     font-weight: 600;
 }
@@ -434,21 +441,6 @@ a.site-btn:hover {
     font-weight: 600;
     margin-top: 1rem;
     margin-bottom: .5rem;
-}
-
-/* Movie Review Details */
-
-.reviews-title {
-    color: var(--main-color);
-    font-weight: 600;
-    font-size: 2rem;
-}
-
-.review-img {
-    height: 60px;
-    width: 60px;
-    display: block;
-    border: 1px solid var(--main-color);
 }
 
 /* All Reviews */
@@ -461,6 +453,14 @@ a.site-btn:hover {
     height: 30rem;
     overflow: scroll;
     cursor: pointer;
+}
+
+.allreviews .card::-webkit-scrollbar {
+    display: none;
+}
+
+.allreviews .card-body::-webkit-scrollbar {
+    display: none;
 }
 
 .allreviews .card-body {
@@ -491,6 +491,13 @@ a.site-btn:hover {
     color: var(--main-color);
 }
 
+.review-img {
+    height: 60px;
+    width: 60px;
+    display: block;
+    border: 1px solid var(--main-color);
+}
+
 .comment-a a {
     color: var(--main-color);
     margin-right: .8rem;
@@ -505,8 +512,6 @@ a.site-btn:hover {
 .errors h1 span {
     color: var(--main-color);
 }
-
-
 
 /* Media queries */
 @media screen and (min-width: 576px) {
@@ -551,15 +556,23 @@ a.site-btn:hover {
 @media screen and (min-width: 992px) {
 
     .about {
-        margin: 8rem 0;
+        margin: 10rem 0;
     }
 
-    .movie-search {
-        margin: 8rem 0;
+    .log-out {
+        margin: 10rem 0;
     }
 
     .log-in p {
         padding: 0 3rem;
+    }
+
+    .movie-search {
+        margin: 10rem 0;
+    }
+
+    .mt-6 {
+        margin-top: 6rem;
     }
 
     #trailer {

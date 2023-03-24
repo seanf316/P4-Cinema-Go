@@ -176,11 +176,14 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 DJRICHTEXTFIELD_CONFIG = {
     "js": ["//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"],
     "init_template": "djrichtextfield/init/ckeditor.js",
-    "settings": {  # CKEditor
-        "toolbar": "undo redo | bold italic underline strikethrough | fontselect fontsizeselect formatselect",
+    "settings": {
+        "toolbar": [
+            ["Format", "Bold", "Italic", "Underline"],
+            ["NumberedList", "BulletedList"],
+            ["Undo", "Redo"],
+            ["Maximize"],
+        ],
         "format_tags": "p;h1;h2;h3",
-        "width": "100%",
-        "height": "230",
     },
 }
 

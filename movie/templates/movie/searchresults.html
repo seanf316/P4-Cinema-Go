@@ -14,17 +14,19 @@
                 <div class="card text-center">
                     {% if movie.backdrop_path %}
                     <img src="https://image.tmdb.org/t/p/w500/{{ movie.backdrop_path }}" class="card-img-top"
-                        height="180px" alt="...">
+                        height="180px" alt="Movie Backdrop for {{ movie.original_title }}">
                     {% else %}
                     <img src="https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg"
-                        height="180" alt="">
+                        height="180px" alt="Default Movie Backdrop">
                     {% endif %}
                     <div class="card-body d-flex flex-column bg-black text-white" style="height: 10rem;">
                         {% if movie.original_title %}
-                        <h5 class="card-title mt-3" style="font-size: 1em;">{{ movie.original_title }}
-                            {% if movie.release_date %} ({{ movie.release_date|slice:":4"}}) {% endif %}</h5>
+                        <h2 class="card-title mt-3" style="font-size: 1em;">{{ movie.original_title }}
+                            {% if movie.release_date %} ({{ movie.release_date|slice:":4"}}) {% endif %}</h2>
                         {% endif %}
-                        <a href="{% url 'moviedetails' movie.id %}" class="site-btn mt-auto">Learn More</a>
+                        <a href="{% url 'moviedetails' movie.id %}"
+                            aria-label="Visit the Movie details page for {{ movie.original_title }}"
+                            class="site-btn mt-auto">View Movie</a>
                     </div>
                 </div>
             </div>

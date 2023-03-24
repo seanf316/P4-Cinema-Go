@@ -11,7 +11,8 @@
                     </h1>
                     <div class="row gx-0">
                         <div class="col-lg-4 col-md-4">
-                            <img src="{{ profile.profile_image.url }}" class="rounded-circle prof-img" alt="...">
+                            <img src="{{ profile.profile_image.url }}" class="rounded-circle prof-img"
+                                alt="{{ profile.user.username }} Profile Image">
                         </div>
                         <div class="col-md-8 d-flex flex-column justify-content-center">
                             <div class="card-body">
@@ -26,9 +27,11 @@
                                 {% if profile.to_watch.exists %}
                                 {% for movie in profile.to_watch.all %}
                                 <p class="mb-0"><a class="text-white"
-                                        href="{% url 'moviedetails' movie_id=movie.MovieId %}">{{ movie.Name }}</a>
+                                        href="{% url 'moviedetails' movie_id=movie.MovieId %}"
+                                        aria-label="View {{ movie.Name }} details">{{ movie.Name }}</a>
                                     {% if request.user == profile.user %} -
-                                    <span><a href="{% url 'prof_watch' movie_id=movie.MovieId %}">Remove X</a></span>
+                                    <span><a href="{% url 'prof_watch' movie_id=movie.MovieId %}"
+                                            aria-label="Remove {{ movie.Name }} from watchlist.">Remove X</a></span>
                                     {% endif %}
                                 </p>
                                 {% endfor %}
@@ -39,10 +42,12 @@
                                 {% if profile.reviewed.exists %}
                                 {% for movie in profile.reviewed.all %}
                                 <p class="mb-0"><a class="text-white"
-                                        href="{% url 'moviedetails' movie_id=movie.MovieId %}">{{ movie.Name }}</a>
+                                        href="{% url 'moviedetails' movie_id=movie.MovieId %}"
+                                        aria-label="View {{ movie.Name }} details">{{ movie.Name }}</a>
                                     {% if request.user == profile.user %}
                                     -
-                                    <span><a href="{% url 'prof_review' movie_id=movie.MovieId %}">Remove
+                                    <span><a href="{% url 'prof_review' movie_id=movie.MovieId %}"
+                                            aria-label="Remove {{ movie.Name }} from reviews list.">Remove
                                             X</a></span>{% endif %}
                                 </p>
                                 {% endfor %}
