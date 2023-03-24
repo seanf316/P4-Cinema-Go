@@ -72,7 +72,7 @@ It was done this way to ensure that all core requirements were completed first t
 
 The Kanban board was created using Github projects and can be located [here](https://github.com/users/seanf316/projects/7)  and can be viewed to see more information on the project cards. All stories have a full set of acceptance criteria to define the functionality that marks that story as complete.
 
-![Project Kanban](docs_screenshots/kanban-board.webp)
+![Project Kanban](docs/readme_screenshots/kanban-board.webp)
 
 ### **Epics**
 
@@ -243,6 +243,39 @@ This is the prototype of the project that may change during its development.
 
 </details>
 
+<details><summary>Tablet</summary>
+
+![Tablet Part 1](/docs/wireframes/tablet/home.webp)
+![Tablet Part 2](/docs/wireframes/tablet/search.webp)
+![Tablet Part 3](/docs/wireframes/tablet/searchresults.webp)
+![Tablet Part 4](/docs/wireframes/tablet/category.webp)
+![Tablet Part 5](/docs/wireframes/tablet/movie.webp)
+![Tablet Part 6](/docs/wireframes/tablet/review.webp)
+![Tablet Part 7](/docs/wireframes/tablet/signup.webp)
+![Tablet Part 8](/docs/wireframes/tablet/login.webp)
+![Tablet Part 9](/docs/wireframes/tablet/signout.webp)
+
+</details>
+
+<details><summary>Mobile</summary>
+
+![Mobile Part 1](/docs/wireframes/mobile/first.webp)
+![Mobile Part 2](/docs/wireframes/mobile/second.webp)
+![Mobile Part 3](/docs/wireframes/mobile/third.webp)
+
+</details>
+
+#### **Database Schema**
+
+The database was designed to allow CRUD functionality to be available to registered users, when signed in. Registered Users can view Movies, Review/Comment on Movie reviews and Create a custom Profile page. They will also have the ability to add movies to their own watchlist and have a clear view of there reviewed movies that is displayed on their Profile page.
+
+The Profile model is linked directly to the User model and will be created on user registration. The Review model has a relationship with the User/Movie models linked by a Foreign key, this allows for reviewed movies to be linked back to the specific User. The Comment model in then linked by Foregign key to the Review Model to store comments to the specific Review.
+
+The Movie model is also linked to the Profile model through a Many to Many relationship allowing the user to store Movies on their watchlist.
+
+Entity relationship diagram was created using [DBeaver](https://dbeaver.io/) and shows the schemas for each of the models and how they are related.
+
+![DB Diagram](docs/readme_screenshots/db-diagram.webp)
 
 ## **How to Play**
 
