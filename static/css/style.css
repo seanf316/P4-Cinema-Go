@@ -459,12 +459,14 @@ a.site-btn:hover {
     display: none;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    -moz-appearance: none;
 }
 
 .allreviews .card-body::-webkit-scrollbar {
     display: none;
     scrollbar-width: none;
     -ms-overflow-style: none;
+    -moz-appearance: none;
 }
 
 .allreviews .card-body {
