@@ -451,26 +451,22 @@ a.site-btn:hover {
 
 .allreviews .card {
     height: 30rem;
-    overflow: scroll;
+    overflow: auto;
     cursor: pointer;
 }
 
 .allreviews .card::-webkit-scrollbar {
     display: none;
     scrollbar-width: none;
-    -ms-overflow-style: none;
-    -moz-appearance: none;
 }
 
 .allreviews .card-body::-webkit-scrollbar {
     display: none;
     scrollbar-width: none;
-    -ms-overflow-style: none;
-    -moz-appearance: none;
 }
 
 .allreviews .card-body {
-    overflow: scroll;
+    overflow: auto;
 }
 
 .allreviews .card-body::before {
