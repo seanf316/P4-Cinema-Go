@@ -72,7 +72,7 @@ It was done this way to ensure that all core requirements were completed first t
 
 The Kanban board was created using Github projects and can be located [here](https://github.com/users/seanf316/projects/7)  and can be viewed to see more information on the project cards. All stories have a full set of acceptance criteria to define the functionality that marks that story as complete.
 
-![Project Kanban](docs/readme_screenshots/kanban-board.webp)
+![Project Kanban](docs_screenshots/kanban-board.webp)
 
 ### **Epics**
 
@@ -223,6 +223,26 @@ The following user stories (by epic) were completed throughout development.
 
 - Create/Write README.md [#33](https://github.com/seanf316/P4-Cinema-Go/issues/33)
 - Create/Write TESTING.md [#34](https://github.com/seanf316/P4-Cinema-Go/issues/34)
+
+### **The Skeleton Plane**
+
+#### **Wireframes**
+
+This is the prototype of the project that may change during its development.
+<details><summary>Desktop</summary>
+
+![Desktop Part 1](/docs/wireframes/desktop/home.webp)
+![Desktop Part 2](/docs/wireframes/desktop/search.webp)
+![Desktop Part 3](/docs/wireframes/desktop/searchresults.webp)
+![Desktop Part 4](/docs/wireframes/desktop/category.webp)
+![Desktop Part 5](/docs/wireframes/desktop/movie.webp)
+![Desktop Part 6](/docs/wireframes/desktop/review.webp)
+![Desktop Part 7](/docs/wireframes/desktop/signup.webp)
+![Desktop Part 8](/docs/wireframes/desktop/login.webp)
+![Desktop Part 9](/docs/wireframes/desktop/signout.webp)
+
+</details>
+
 
 ## **How to Play**
 
