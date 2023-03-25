@@ -267,15 +267,19 @@ This is the prototype of the project that may change during its development.
 
 #### **Database Schema**
 
-The database was designed to allow CRUD functionality to be available to registered users, when signed in. Registered Users can view Movies, Review/Comment on Movie reviews and Create a custom Profile page. They will also have the ability to add movies to their own watchlist and have a clear view of there reviewed movies that is displayed on their Profile page.
-
-The Profile model is linked directly to the User model and will be created on user registration. The Review model has a relationship with the User/Movie models linked by a Foreign key, this allows for reviewed movies to be linked back to the specific User. The Comment model in then linked by Foregign key to the Review Model to store comments to the specific Review.
+The Profile model is linked directly to the User model with the user Profile setup to be created upon user registration. The Review model has a relationship with the User/Movie models linked by a Foreign key, this allows for reviewed movies to be linked back to the specific user and their Profile. The Comment model is linked by Foreign key to the Review Model to store comments for the specific Review.
 
 The Movie model is also linked to the Profile model through a Many to Many relationship allowing the user to store Movies on their watchlist.
 
 Entity relationship diagram was created using [DBeaver](https://dbeaver.io/) and shows the schemas for each of the models and how they are related.
 
 ![DB Diagram](docs/readme_screenshots/db-diagram.webp)
+
+#### **Security**
+
+Views were secured where needed using the Django decorator @login_required. Access to the views using the @login_decorator can only be accessed by registered users. This means that if a user tries to access a view that is decorated with @login_required, but they are not currently logged in, they will be redirected to the login page instead.
+
+Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, api keys or sensitive information was added the the repository. In production, these variables were added to the heroku config vars within the project.
 
 ## **How to Play**
 
