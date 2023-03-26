@@ -269,17 +269,8 @@ def prof_review(request, movie_id):
     movie = Movie.objects.get(MovieId=movie_id)
     user = request.user
     profile = Profile.objects.get(user=user)
-    review = Review.objects.filter(user=user, movie=movie)
+    review = Review.objects.get(user=user, movie=movie)
 
     if review:
         if movie in profile.reviewed.all():
-            profile.reviewed.remove(movie)
-            review.delete()
-            messages.success(
-                request,
-                (
-                    f"{user.username} you have removed {movie}"
-                    f" from your reviewed list"
-                ),
-            )
-    return redirect(reverse("profile", kwargs={"username": user.username}))
+            return redirect(reverse("edit_review", args=[movie_id, review.id]))

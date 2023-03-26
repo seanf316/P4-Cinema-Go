@@ -47,8 +47,7 @@
                                     {% if request.user == profile.user %}
                                     -
                                     <span><a href="{% url 'prof_review' movie_id=movie.MovieId %}"
-                                            aria-label="Remove {{ movie.Name }} from reviews list.">Remove
-                                            X</a></span>{% endif %}
+                                            aria-label="Manage {{ movie.Name }} review">Manage</a></span>{% endif %}
                                 </p>
                                 {% endfor %}
                                 {% else %}
