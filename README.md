@@ -46,18 +46,18 @@ This is my fourth portfolio project for [Code Institute](https://codeinstitute.n
 
 ## **UX**
 
-### **The Strategy Plane**
+## **The Strategy Plane**
 
 Cinema | Go is intended to bring together all Movie lover's to find their favourite Movies and discover new ones. Users will be able to review and rate Movies and create their watchlist which they can manage from their custom Profile page. The graphical elements and overall design of the site provide the user with an enjoyable experience with an aesthetically pleasing display.
 
-#### **The Ideal User**
+### **The Ideal User**
 
 - Someone who enjoys movies and would like to discover new movies
 - Someone who would like to review/rate movies and share those reviews with fellow movies lovers
 - Someone who would like to create a watchlist of movies and share it with others
 - Someone who would like to create their own custom Profile page, share some information about themselves and their Movie interests
 
-#### **Site Goals**
+### **Site Goals**
 
 - To provide users with a place to find movies they have seen and discover new ones
 - To provide users with the ability to review/rate movies
@@ -170,7 +170,7 @@ The following user stories (by epic) were completed throughout development.
 
 #### **EPIC: Base Html/Homepage [#9](https://github.com/seanf316/P4-Cinema-Go/issues/9)**
 
-- As a User I would like to view the site on my different devices so that I can review the site on the go [#14](https://github.com/seanf316/P4-Cinema-Go/issues/14)
+- As a User I would like to view the site on my different devices so that I can view the site on the go [#14](https://github.com/seanf316/P4-Cinema-Go/issues/14)
 - As a User I want to see a clear way of navigating the site so that I can find the information relative to my needs [#15](https://github.com/seanf316/P4-Cinema-Go/issues/15)
 - As a User I want to be able to get in touch with the Developer so that I can enquire about issues/suggestions I may have [#16](https://github.com/seanf316/P4-Cinema-Go/issues/16)
 
@@ -224,7 +224,12 @@ The following user stories (by epic) were completed throughout development.
 - Create/Write README.md [#33](https://github.com/seanf316/P4-Cinema-Go/issues/33)
 - Create/Write TESTING.md [#34](https://github.com/seanf316/P4-Cinema-Go/issues/34)
 
-### **The Skeleton Plane**
+#### **Others**
+
+- As a Developer I can build a page to display Trending Movies so that the User can see the latest Trending Movies [#35](https://github.com/seanf316/P4-Cinema-Go/issues/35)
+- As a Developer I can build a page to display the Top Rated Movies so that the User can easily get access to the Top Rated Movies of all time [#36](https://github.com/seanf316/P4-Cinema-Go/issues/36)
+
+## **The Skeleton Plane**
 
 #### **Wireframes**
 
@@ -267,7 +272,7 @@ This is the prototype of the project that may change during its development.
 
 #### **Database Schema**
 
-The Profile model is linked directly to the User model with the user Profile setup to be created upon user registration. The Review model has a relationship with the User/Movie models linked by a Foreign key, this allows for reviewed movies to be linked back to the specific user and their Profile. The Comment model is linked by Foreign key to the Review Model to store comments for the specific Review.
+The Profile model is linked directly to the built in UserModel in conjunction with Djano Allauth with the user Profile setup to be created upon user registration. The Review model has a relationship with the User/Movie models linked by a Foreign key, this allows for reviewed movies to be linked back to the specific user and their Profile. The Comment model is linked by Foreign key to the Review Model to store comments for the specific Review.
 
 The Movie model is also linked to the Profile model through a Many to Many relationship allowing the user to store Movies on their watchlist.
 
@@ -281,175 +286,124 @@ Views were secured where needed using the Django decorator @login_required. Acce
 
 Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, api keys or sensitive information was added the the repository. In production, these variables were added to the heroku config vars within the project.
 
-## **How to Play**
+## **The Scope Plane**
 
-Reclaim The Light is a very easy game to play, all the player needs to do is input letters that correspond to the choices provided to the player. The player's goal is to retrieve the Light crystal that was stolen by the evil creatures known as the Darkness. The Player will be sent on an adventure to the planet Nessus to fight the Darkness and Reclaim The Light.
+* Responsive Design - Site should be fully functional on all devices from 320px up
+* Hamburger menu for mobile devices
+* Ability to perform CRUD functionality on Profile, Reviews and Comments
+* Restricted role based features such as Reviewing/Commenting, viewing Movie Details and editing Profile
+* Home page describing the site and links to features for registered users
 
-### **Setup Phase:**
+## **The Structure Plane**
 
-The player will be asked for their name and be requested to pick a class for their "Guardian", the classes are "W" for "Warrior", "A" for "Assasin" or "M" for "Mage". After that, they will be shown a screen containing their Guardian stats.
-
-### **How to Win:**
-
-The player will make choices that will lead them into battles on occasion, if the player survives they will move on to the next part of the adventure leading to a boss battle at the end. If they defeat the boss they will Reclaim The Light and win the game. 
-
-## **User Stories**
-As a user, I want to be able to:
-* Understand the aim of the story.
-* Have a straightforward way to read the game instructions from within.
-* To access a fun engaging story narrative throughout the game.
-* Find loot and upgrade my stats.
-
-[Back to top &uarr;](#contents)
-
-## **Data Model**
-
-### **Classes**
-With Object-Oriented Programming in mind, I have created two classes for my project Guardian & Enemy.
-
-The Guardian class is called once throughout the adventure. The Guardian object is created when called by the gen_char() function. The Enemy class is called upon several times throughout various battles. The Enemy Object is created when called by the gen_enemy() function.
-
-The classes and their associated methods are stored in separate files to allow for separating the code into parts that hold related data and functionality. This will allow any future expansion and development of this project to have a clear structure and also for any code re-use and sharing as well as maintenance.
-See class details below:
-
-![Classes](/docs/flowchart/classes.webp)
-
-### **Game Flow**
-I created the below flowchart to visualize the flow of the game and the functions used.
-![Flowchart](/docs/flowchart/reclaim_flowchart.webp)
-
-[Back to top &uarr;](#contents)
-
-## **Features**
-
-### **Welcome Screen**
-The user is met with a bright Welcome Screen with some colored Ascii text to provide an aesthetically pleasing experience. There are 3 options to choose from Start, Mission Log, or About.
-![Welcome Screen](/docs/screenshots/welcome.webp)
-
-### **Mission Log**
+### **Features**
 `
-User Story: As a user, I want to be able to understand the aim of the story.
+As a User I would like to view the site on my different devices so that I can view the site on the go
 `
 
-The Mission Log provides the user with the backstory and the aim of the game. It is displayed to the user using the type print animation followed up with the pause function imported from the py-getch Library. This allows the user to take their time reviewing the Mission Log text before pressing any key to return to Welcome Screen.
-![Mission Log](/docs/screenshots/mission_log.webp)
+Implementation:
 
-### **About**
+**Navbar**
+
 `
-User Story: As a user, I want to have a straightforward way to read the game instructions from within.
-`
-
-The About section provides the user with details of what the game is and the instructions for the game. There is also a section that provides information on each Guardian class Warrior, Assassin, or Mage. This will give the user a better idea of what class they would like to pick for the game.
-![About](/docs/screenshots/about.webp)
-
-### **Start**
-
-When the user selects Start they will be brought to a screen with some bright Ascii text welcoming them to the game. They will then be prompted to enter a name for their Guardian which consists of only letters and numbers. The user upon completing that stage will be prompted to select 1 of the 3 possible classes provided Warrior, Assassin, or Mage. After the user completes that step they will see the text - "Generating Guardian"
-![Start](/docs/screenshots/setup.webp)
-
-### **Stats**
-
-When the user has completed the Start setup they will be provided with a screen that displays some weapon-related ASCII art along with their Guardian stats. The stats consist of 6 values (Attack, Defense, Health, Luck, Magic, and Range) followed by the user's name. The stats are all generated using the gen_char() function that calls on the Guardian class. The stats change based on the class chosen by the user i.e. If they choose Mage the Magic stat will be higher compared to the other classes. The only stat that doesn't have a set value is the Luck stat which is generated within the gen_char() function and is set up to be a random value i.e. luck = random.randint(4, 6)
-![Stats](/docs/screenshots/stats.webp)
-
-### **Adventure Story**
-`
-User Story: As a user, I want to access a fun engaging story narrative throughout the game.
+As a User I want to see a clear way of navigating the site so that I can find the information relative to my needs
 `
 
-When the user has reviewed their stats they can press any button to begin the adventure. Each of the main narratives provides the user with either bright Ascii text or some ASCII art that is related to the narrative the user is currently viewing. The text will again be displayed using the type print animation to draw the user's attention to the screen. At the end of the narrative, the user will be offered 2 choices, each choice sends the user on a different path allowing for a fun and engaging game.
-![Adventure Story](/docs/screenshots/nessus.webp)
+The Navbar contains links for Home, a Movies dropdown containing Search/Trending/TopRated, Reviews, Profile and has allauth options.
 
-### **Loot**
+The following navigation items are available on all pages:
+  * Home -> index.html - Visible to all
+  * Movies (Drop Down):
+    * Search -> search.html - Visible to logged in users
+    * Trending -> trending.html - Visible to logged in users
+    * Top Rated -> toprated.html - Visible to logged in users
+  * Reviews -> allreviews.html - Visible to logged in users
+  * Profile -> profile.html - Visible to logged in users
+  * Signup -> signup.html - Visible to logged out users
+  * Login -> login.html - Visible to logged out users
+  * Logout -> logout.html - Visible to logged in users
+
+The navigation menu is displayed on all pages and drops down into a hamburger menu on smaller devices. This will allow users to view the site from any device and not take up too much space on mobile devices. It is easily noticeable, intuitive, and easy to use.
+
+![Navbar Desktop 1](/docs/readme_screenshots/desktop_navbar1.webp)
+![Navbar Desktop 2](/docs/readme_screenshots/desktop_navbar2.webp)
+![Navbar Mobile 1](/docs/readme_screenshots/mobile_navbar1.webp)
+![Navbar Mobile 2](/docs/readme_screenshots/mobile_navbar2.webp)
+
+**Footer**
+
 `
-User Story: As a user, I want to find loot and upgrade my stats.
-`
-
-There are three forms of loot in the game - Common, Legendary & Exotic. Each item of loot contains a Rarity, Name, Value & stat Assignment i.e. Common - Worn Sword - 1 - Attack.
-
-Common items have a Value of 1, Legendary items have a Value of 2 and Exotic items have a Value of 3. Loot values are added to the player's stats when they are found in chests or dropped from enemies. The image below consists of what the user will see (examples):
-
-Common items are displayed in the color CYAN
-
-Legendary items are displayed in the color MAGENTA
-
-Exotic items are displayed in the color YELLOW
-![Loot](/docs/screenshots/loot.webp)
-
-### **Battle Sequence**
-
-#### **Initiating Battle**
-`
-User Story: As a user, I want to access a fun engaging story narrative throughout the game.
-`
-
-When the user has entered into a fight with an enemy a new screen will display containing the following:
-
-Ascii art - I choose a skull head to engage the user and it is colored in red to draw the user's attention to the screen.
-
-Enemy name - The enemy name is taken randomly from the enemy.txt file. It is colored in red to draw the user's attention to the screen.
-
-Enemy stats - The enemy stats are generated using the gen_enemy() function that calls the Enemy class. The stats consist of Health, Attack, Defense, Chance, and Name. Each stat generates a random number between the values set in the function i.e. health = random.randint(80, 100)
-![Initiating Battle](/docs/screenshots/battle.webp)
-
-#### **Engaged in Battle**
-`
-User Story: As a user, I want to access a fun engaging story narrative throughout the game.
+As a User I want to be able to get in touch with the Developer so that I can enquire about issues/suggestions I may have
 `
 
-When the battle begins users will have the first turn to attack, they will be prompted to enter "C" for "Close attack", "R" for "Ranged" attack, or "M" for "Magic" attack.
+The footer is placed at the bottom of the page. It social media links displayed with icons provided by Font Awesome. There is also a small portion of text for the Copyright/Disclaimer. This is where the user can click on a social media link and reach out to the developer for news and updates. A link to the developer's Github repository is provided and displayed using the Font Awesone Github icon. These icons have aria-labels added to ensure users with assistive screen reading technology know what the purpose of the links are for. They also open in new tabs as they lead users away from the site.
 
-After selecting an attack the following text will display: "You wind up for the attack..."
+![Footer Desktop](/docs/readme_screenshots/desktop_footer.webp)
 
-The strike_chance() function is called to determine whether the player's attack is successful. If the attack is successful the amount of health lost by the enemy is calculated by the attack value used minus the enemy's defense value i.e. 
+**Homepage**
 
-if choice == "c":
-            damage = guardian.get_attack() - enemy.get_e_defence()
+There are two variations of the Home page that changes based off User login/registration. Users that have not signed up will be met with a welcome message and some information about the site. Details of features available to registered Users are shown and a Sign Up button is provided. The site Hero image (Lego Movie) is also provided.
 
-The user will be alerted that their attack was successful and the enemy's new health stat will be displayed. If the user's attack was not successful the following text will be displayed: "You missed! Enemy dodged your attack".
+Users that have registered and logged in will be met with a similar layout but this time there will be buttons linking the user to various Movie features to get started.
 
-It will be the enemy's turn now, the enemy_attack() function is now called to determine if the enemy attack will be successful. If the attack is successful the amount of health lost by the user is calculated by the attack value used minus the user's defence value i.e. 
+![Homepage Desktop 1](/docs/readme_screenshots/desktop_homepage1.webp)
+![Homepage Desktop 2](/docs/readme_screenshots/desktop_homepage2.webp)
 
-loss = attack_value - defence
+**Movie Search**
 
-If the enemy attack is successful the user will be alerted and their new health stat will be displayed.
-
-Some of the text is displayed with the color Red to engage the user and signify the imagery of blood loss.
-
-![Engaged in Battle](/docs/screenshots/battle1.webp)
-
-#### **Battle Victory**
 `
-User Story: As a user, I want to find loot and upgrade my stats.
+As a User I want to have a section where I can search for a Movie so that I can easily find the Movie I want to review
 `
 
-If the enemy is defeated by the user the user will be alerted i.e. "Centurian, has been slain!"
+The Movie Search page has a similar layout to the Home page as it includes the hero image but this time a search input is provided and and search button to execute the users Movie search. The search feature works in tandem with the TMDB and makes an API based of the query the user enters.
 
-The loot() function is then called. It picks a random.int between 0 and 7 and if the value provided is greater than the user's current luck value the enemy won't drop any loot and the following text will display: "That creature dropped no loot..."
+![Search Desktop](/docs/readme_screenshots/desktop_search.webp)
 
-If the user's luck value is greater than the random.int then the enemy will drop loot. It will be displayed to the user with the text "The enemy dropped an....." along with the loot values retrieved from the loot .txt files. The value of the loot will be added to the user's current stats and stats will be displayed to the user.
+**Movie Search Results**
 
-![Battle Victory](/docs/screenshots/battle2.webp)
-
-#### **Battle Lost**
 `
-User Story: As a user, I want to access a fun engaging story narrative throughout the game.
+As a Developer I can create the Movie Search Results template so that the User has a clear display of the results from their search
 `
 
-If the user is defeated a new screen will be displayed alerting the user that they have been slain along with some Game Over ASCII art. The user will also see some text advising to press any key to return to Welcome Screen.
+The Search Results page is displayed with the users Movie search query at the top of the page and for each Movie recieved in the results of the API call a card is generated containing the Movie backdrop image, the title of the movie and a "View Movie" button. If a backdrop image is not available for Movies in the results a default image has been provided as backup. I have set the results to display 12 movies per page, this was a design choice to have an even laylout across devices. Prev/Next buttons are displayed at the bottom of the page for pagination with the views.
 
-![Battle Lost](/docs/screenshots/gameover.webp)
+In the occurrence were no results for the query are available a message will be displayed to the user along with a button linking the user back to the Movie Search page.
 
-### **Adventure Victory Screen**
+![Search Results Desktop 1](/docs/readme_screenshots/desktop_searchresults1.webp)
+![Search Results Desktop 2](/docs/readme_screenshots/desktop_searchresults2.webp)
+
+**Trending/Top Rated Movies**
+
 `
-User Story: As a user, I want to access a fun engaging story narrative throughout the game.
+As a Developer I can build a page to display Trending Movies so that the User can see the latest Trending Movies
 `
 
-If the user completes the adventure without dying they will be provided a message stating that they "Reclaimed The Light" and a thank you message. Ascii Text along with Ascii art is used here to grab the user's attention. The user will be then prompted to return to the Welcome Screen where they can start another adventure if they choose to do so.
+`
+As a Developer I can build a page to display the Top Rated Movies so that the User can easily get access to the Top Rated Movies of all time
+`
 
-![EZGIF Animation](/docs/gifs/reclaim_2.gif)
+There are two Movie category pages provided for the user - Trending & Top Rated. They were not in the original scope of the project but during development I decided to implement as an extra feature for the user. Each page makes a call to the TMDB API and displays the most upto date results on the page to the user in the form of Movie posters. Each Movie poster is an anchor that can be clicked and will bring the user to the Movie Details page for that selected Movie. If a poster image is not available for Movies in the results a default image has been provided as backup. I have set the results to display 18 movies per page, this was a design choice to have an even laylout across devices. Prev/Next buttons are displayed at the bottom of the page for pagination with the views.
 
-[Back to top &uarr;](#contents)
+![Trending Movies Desktop](/docs/readme_screenshots/desktop_trending.webp)
+![Top Rated Movies Desktop](/docs/readme_screenshots/desktop_toprated.webp)
+
+**Movie Details**
+
+`
+As a User I want to view the Movie details from my search so that I can read the synopsis and check reviews
+`
+
+The Movie Details page contains all the details of the Movie selected by the user from the pages mentioned above. A horizontal card layout is used to display the following details from the API - Movie poster/backdrop, title, overview, director, runtime and release year. A rating is provided too if the Movie has been reviewed, it retrieves all the ratings from all user reviews for this specific movie and shows the average rating. Buttons for Trailer and IMDb are displayed if they are contained in the movie results from the API call. If a trailer does exist users can click the trailer button and a modal will appear conatining that movie trailer. If there is an IMDb id provided the button will bring the user to the movies IMDb page in a new tab.
+
+2 more buttons are displayed to the user "Add to Watchlist +" and "Review". Clicking the "Add to Watchlist +" will add the movie to the users watchlist which can be viewed on the users Profile page. Clicking the "Review" button will open the Review form page and allow the user to submit a review which again will be linked back to their Profile page where they can view all reviewed Movies. If a user has added the movie to their watchlist the button will change to "Remove from Watchlist -" and this can be toggled again to remove the Movie from the users watchlist. User can manage their watchlist from their Profile page. If the movie has been reviewed by the user the "Review" button will now display "Reviewed", users can manage (Edit/Delete) their reviews from the All Reviews page or can delete reviews directly from their Profile page.
+
+![Movie Details](/docs/readme_screenshots/desktop_movie.webp)
+![Movie Details Trailer](/docs/readme_screenshots/desktop_movietrailer.webp)
+
+
+
+
+
 
 ## **Libraries**
 For this project I used the following libraries:
