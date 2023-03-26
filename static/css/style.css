@@ -52,11 +52,6 @@ header {
     height: 8vh;
 }
 
-.navbar {
-    min-height: 8vh;
-    padding: 1rem 0;
-}
-
 .back-color {
     background-color: var(--bg-color);
 }
@@ -104,6 +99,11 @@ span.cke_button_icon {
 }
 
 /* Navbar */
+
+.navbar {
+    min-height: 8vh;
+    padding: 1rem 0;
+}
 
 .nav-link.active {
     text-decoration-line: underline;
@@ -156,7 +156,7 @@ a.nav-link:hover {
 /* Footer */
 footer {
     width: 100%;
-    height: 10vh;
+    min-height: 12vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -207,6 +207,12 @@ i.fa-brands.fa-github:focus {
 }
 
 /* About */
+
+.about {
+    display: flex;
+    align-items: center;
+    min-height: 80vh;
+}
 
 .about h1 {
     padding: 0 1rem;
@@ -284,7 +290,7 @@ i.fa-brands.fa-github:focus {
     background-position: center;
     display: flex;
     position: relative;
-    min-height: 82vh;
+    min-height: 80vh;
     align-items: center;
 }
 
@@ -524,10 +530,6 @@ a.site-btn:hover {
 /* Media queries */
 @media screen and (min-width: 576px) {
 
-    .about {
-        margin: 2rem 0;
-    }
-
     .about h1 {
         font-size: 3rem;
     }
@@ -562,10 +564,6 @@ a.site-btn:hover {
 }
 
 @media screen and (min-width: 992px) {
-
-    .about {
-        margin: 8rem 0;
-    }
 
     .log-out {
         margin: 10rem 0;
