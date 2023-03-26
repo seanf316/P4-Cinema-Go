@@ -440,6 +440,8 @@ a.site-btn:hover {
     background-position: center;
     display: flex;
     position: relative;
+    min-height: 80vh;
+    align-items: center;
 }
 
 .review h1 span,
