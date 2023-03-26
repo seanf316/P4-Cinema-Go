@@ -284,14 +284,14 @@ Entity relationship diagram was created using [DBeaver](https://dbeaver.io/) and
 
 Views were secured where needed using the Django decorator @login_required. Access to the views using the @login_decorator can only be accessed by registered users. This means that if a user tries to access a view that is decorated with @login_required, but they are not currently logged in, they will be redirected to the login page instead.
 
-Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, api keys or sensitive information was added the the repository. In production, these variables were added to the heroku config vars within the project.
+Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, API keys, or sensitive information was added to the repository. In production, these variables were added to the Heroku config vars within the project.
 
 ## **The Scope Plane**
 
-* Responsive Design - Site should be fully functional on all devices from 320px up
+* Responsive Design - The site should be fully functional on all devices from 320px up
 * Hamburger menu for mobile devices
-* Ability to perform CRUD functionality on Profile, Reviews and Comments
-* Restricted role based features such as Reviewing/Commenting, viewing Movie Details and editing Profile
+* Ability to perform CRUD functionality on Profiles, Reviews, and Comments
+* Restricted role-based features such as Reviewing/Commenting, viewing Movie Details, and editing Profile
 * Home page describing the site and links to features for registered users
 
 ## **The Structure Plane**
@@ -301,15 +301,13 @@ Environment variables were stored in an env.py for local development for securit
 As a User I would like to view the site on my different devices so that I can view the site on the go
 `
 
-Implementation:
-
 **Navbar**
 
 `
 As a User I want to see a clear way of navigating the site so that I can find the information relative to my needs
 `
 
-The Navbar contains links for Home, a Movies dropdown containing Search/Trending/TopRated, Reviews, Profile and has allauth options.
+The Navbar contains links for Home, a Movies dropdown containing Search/Trending/TopRated, Reviews, Profile, and allauth options.
 
 The following navigation items are available on all pages:
   * Home -> index.html - Visible to all
@@ -336,13 +334,13 @@ The navigation menu is displayed on all pages and drops down into a hamburger me
 As a User I want to be able to get in touch with the Developer so that I can enquire about issues/suggestions I may have
 `
 
-The footer is placed at the bottom of the page. It social media links displayed with icons provided by Font Awesome. There is also a small portion of text for the Copyright/Disclaimer. This is where the user can click on a social media link and reach out to the developer for news and updates. A link to the developer's Github repository is provided and displayed using the Font Awesone Github icon. These icons have aria-labels added to ensure users with assistive screen reading technology know what the purpose of the links are for. They also open in new tabs as they lead users away from the site.
+The footer is placed at the bottom of the page. The social media links are displayed with icons provided by Font Awesome. There is also a small portion of text for the Copyright/Disclaimer. This is where the user can click on a social media link and reach out to the developer for news and updates. A link to the developer's Github repository is provided and displayed using the Font Awesome Github icon. These icons have aria labels added to ensure users with assistive screen reading technology know the purpose of the links. They also open new tabs as they lead users away from the site.
 
 ![Footer Desktop](/docs/readme_screenshots/desktop_footer.webp)
 
 **Homepage**
 
-There are two variations of the Home page that changes based off User login/registration. Users that have not signed up will be met with a welcome message and some information about the site. Details of features available to registered Users are shown and a Sign Up button is provided. The site Hero image (Lego Movie) is also provided.
+There are two variations of the Home page that change based on User login/registration. Users that have not signed up will be met with a welcome message and some information about the site. Details of features available to registered Users are shown and a Sign-Up button is provided. The site Hero image (Lego Movie) is also provided.
 
 Users that have registered and logged in will be met with a similar layout but this time there will be buttons linking the user to various Movie features to get started.
 
@@ -355,7 +353,7 @@ Users that have registered and logged in will be met with a similar layout but t
 As a User I want to have a section where I can search for a Movie so that I can easily find the Movie I want to review
 `
 
-The Movie Search page has a similar layout to the Home page as it includes the hero image but this time a search input is provided and and search button to execute the users Movie search. The search feature works in tandem with the TMDB and makes an API based of the query the user enters.
+The Movie Search page has a similar layout to the Home page as it includes the hero image but this time a search input is provided and a search button to execute the users' Movie search. The search feature works in tandem with the TMDB and makes an API based on the query the user enters.
 
 ![Search Desktop](/docs/readme_screenshots/desktop_search.webp)
 
@@ -365,9 +363,9 @@ The Movie Search page has a similar layout to the Home page as it includes the h
 As a Developer I can create the Movie Search Results template so that the User has a clear display of the results from their search
 `
 
-The Search Results page is displayed with the users Movie search query at the top of the page and for each Movie recieved in the results of the API call a card is generated containing the Movie backdrop image, the title of the movie and a "View Movie" button. If a backdrop image is not available for Movies in the results a default image has been provided as backup. I have set the results to display 12 movies per page, this was a design choice to have an even laylout across devices. Prev/Next buttons are displayed at the bottom of the page for pagination with the views.
+The Search Results page is displayed with the users' Movie search query at the top of the page and for each Movie received in the results of the API call a card is generated containing the Movie backdrop image, the title of the movie, and a "View Movie" button. If a backdrop image is not available for Movies in the results a default image has been provided as backup. I have set the results to display 12 movies per page, this was a design choice to have an even layout across devices. Prev/Next buttons are displayed at the bottom of the page for pagination with the views.
 
-In the occurrence were no results for the query are available a message will be displayed to the user along with a button linking the user back to the Movie Search page.
+In the occurrence where no results for the query are available a message will be displayed to the user along with a button linking the user back to the Movie Search page.
 
 ![Search Results Desktop 1](/docs/readme_screenshots/desktop_searchresults1.webp)
 ![Search Results Desktop 2](/docs/readme_screenshots/desktop_searchresults2.webp)
@@ -382,7 +380,7 @@ As a Developer I can build a page to display Trending Movies so that the User ca
 As a Developer I can build a page to display the Top Rated Movies so that the User can easily get access to the Top Rated Movies of all time
 `
 
-There are two Movie category pages provided for the user - Trending & Top Rated. They were not in the original scope of the project but during development I decided to implement as an extra feature for the user. Each page makes a call to the TMDB API and displays the most upto date results on the page to the user in the form of Movie posters. Each Movie poster is an anchor that can be clicked and will bring the user to the Movie Details page for that selected Movie. If a poster image is not available for Movies in the results a default image has been provided as backup. I have set the results to display 18 movies per page, this was a design choice to have an even laylout across devices. Prev/Next buttons are displayed at the bottom of the page for pagination with the views.
+There are two Movie category pages provided for the user - Trending & Top Rated. They were not in the original scope of the project but during development, I decided to implement them as an extra feature for the user. Each page makes a call to the TMDB API and displays the most up-to-date results on the page to the user in the form of Movie posters. Each Movie poster is an anchor that can be clicked and will bring the user to the Movie Details page for that selected Movie. If a poster image is not available for Movies in the results a default image has been provided as a backup. I have set the results to display 18 movies per page, this was a design choice to have an even layout across devices. Prev/Next buttons are displayed at the bottom of the page for pagination with the views.
 
 ![Trending Movies Desktop](/docs/readme_screenshots/desktop_trending.webp)
 ![Top Rated Movies Desktop](/docs/readme_screenshots/desktop_toprated.webp)
@@ -393,17 +391,159 @@ There are two Movie category pages provided for the user - Trending & Top Rated.
 As a User I want to view the Movie details from my search so that I can read the synopsis and check reviews
 `
 
-The Movie Details page contains all the details of the Movie selected by the user from the pages mentioned above. A horizontal card layout is used to display the following details from the API - Movie poster/backdrop, title, overview, director, runtime and release year. A rating is provided too if the Movie has been reviewed, it retrieves all the ratings from all user reviews for this specific movie and shows the average rating. Buttons for Trailer and IMDb are displayed if they are contained in the movie results from the API call. If a trailer does exist users can click the trailer button and a modal will appear conatining that movie trailer. If there is an IMDb id provided the button will bring the user to the movies IMDb page in a new tab.
+`
+As a User I would like the ability to add Movies to a watchlist so that so that I can have a list of movies that I can refer to when looking for something to watch
+`
 
-2 more buttons are displayed to the user "Add to Watchlist +" and "Review". Clicking the "Add to Watchlist +" will add the movie to the users watchlist which can be viewed on the users Profile page. Clicking the "Review" button will open the Review form page and allow the user to submit a review which again will be linked back to their Profile page where they can view all reviewed Movies. If a user has added the movie to their watchlist the button will change to "Remove from Watchlist -" and this can be toggled again to remove the Movie from the users watchlist. User can manage their watchlist from their Profile page. If the movie has been reviewed by the user the "Review" button will now display "Reviewed", users can manage (Edit/Delete) their reviews from the All Reviews page or can delete reviews directly from their Profile page.
+Registered users can access the Movie Details page.
+
+The Movie Details page contains all the details of the Movie selected by the user from the pages mentioned above. A horizontal card layout is used to display the following details from the API - Movie poster/backdrop, title, overview, director, runtime, and release year. A rating is provided too if the Movie has been reviewed, it retrieves all the ratings from all user reviews for this specific movie and shows the average rating. Buttons for Trailer and IMDb are displayed if they are contained in the movie results from the API call. If a trailer does exist users can click the trailer button and a modal will appear containing that movie trailer. If there is an IMDb id provided the button will bring the user to the movies' IMDb page in a new tab.
+
+2 more buttons are displayed to the user "Add to Watchlist +" and "Review". Clicking the "Add to Watchlist +" will add the movie to the user's watchlist which can be viewed on the user's Profile page. Clicking the "Review" button will open the Review form page and allow the user to submit a review which again will be linked back to their Profile page where they can view all reviewed Movies. If a user has added the movie to their watchlist the button will change to "Remove from Watchlist -" and this can be toggled again to remove the Movie from the user's watchlist. User can manage their watchlist from their Profile page. If the movie has been reviewed by the user the "Review" button will now display "Reviewed", users can manage (Edit/Delete) their reviews from the All Reviews page or can manage reviews directly from their Profile page.
 
 ![Movie Details](/docs/readme_screenshots/desktop_movie.webp)
 ![Movie Details Trailer](/docs/readme_screenshots/desktop_movietrailer.webp)
 
+**Reviews**
 
+`
+As a User I want the ability to review Movies so that I can share my thoughts of the Movie with family and friends
+`
 
+`
+As a User I would like the ability to edit my review so that I can fix and spelling or format issues
+`
 
+`
+As a User I would like the ability to delete my review so that I can manage my reviews and in the case of accidentally selecting the wrong Movie and reviewing it
+`
 
+Creating and viewing reviews are features only available to registered users.
+
+When the user clicks the Review button on the Movie Details page they will shown brought to the Review page that contains the Review form for the user to fill out. The page contains the backdrop image for that movie, the movie title, the reviewer's username, and the form itself. There are 2 inputs on the form "Review (Max 2500 Characters)" and "Rating (1-10)" with 2 buttons "Update" and "Delete". When the form is filled out correctly the user can submit their review, by submitting the review will be added to the user's review list and the review will be rendered on the Reviews page.
+
+The user can manage their review from the Reviews page or on their Profile page. They can edit their review from either location, if the user decides to delete their review a modal will pop up asking for the user to confirm the deletion. Once deleted Review will be removed from the Profile reviews list and the button on the Movie Details page will be returned to the "Review" state. Each review will also show a "Comment" button on the Review page to allow users to comment on reviews. 
+
+![Review 1](/docs/readme_screenshots/desktop_review.webp)
+![Review 2](/docs/readme_screenshots/desktop_reviews.webp)
+![Review 3](/docs/readme_screenshots/desktop_reviewdelete.webp)
+
+**Comment**
+
+`
+As a User I would like the ability to comment on Reviews so that so that I can participate in conversations with fellow reviewer's
+`
+
+Creating and viewing comments are features only available to registered users.
+
+On the Reviews page, users can comment on any review by clicking the "Comment" button. When the button is clicked users will be brought to the comment page that renders the comment form. The page contains the backdrop image for that movie, the movie title, the reviewer's username, and the form itself. There is 1 input on the comment form "Comment (Max 500 Characters)" and 1 button "Update". When the user has submitted their comment it will be applied to the Review card on the Reviews page. Here the user will see their comment, Edit & Delete icons, the date of the comment, and the commenter's username. The user can edit or delete their comment by clicking either icon.
+
+![Comment 1](/docs/readme_screenshots/desktop_comment.webp)
+![Comment 2](/docs/readme_screenshots/desktop_commentreview.webp)
+
+**Profile**
+
+`
+As a User I would like access to my Profile so that I can upload an image or alter my details where needed
+`
+
+Profile features are only available to registered users.
+
+When a user signs up to the site a Profile will automatically be created for them. They can access their Profile page from the Profile Navbar link. On the Profile page, the user can add/change information like their username, first name, surname, about, and more. Users can also upload their own Profile image and if they do not want to a default image is provided. Users will also be able to manage their Movie Watchlist and Reviews list.
+
+![Profile 1](/docs/readme_screenshots/desktop_profile.webp)
+![Profile 2](/docs/readme_screenshots/desktop_profileedit1.webp)
+![Profile 3](/docs/readme_screenshots/desktop_profileedit2.webp)
+
+**Toasts**
+
+Custom toasts were implemented throughout the site. This will provide feedback to the user when they carry out an action on the site. Below are are few toast references:
+
+![Toast 1](/docs/readme_screenshots/desktop_toast.webp)
+![Toast 2](/docs/readme_screenshots/desktop_toast1.webp)
+![Toast 3](/docs/readme_screenshots/desktop_toast2.webp)
+![Toast 4](/docs/readme_screenshots/desktop_toast3.webp)
+![Toast 5](/docs/readme_screenshots/desktop_toast4.webp)
+![Toast 6](/docs/readme_screenshots/desktop_toast5.webp)
+![Toast 7](/docs/readme_screenshots/desktop_toast6.webp)
+![Toast 8](/docs/readme_screenshots/desktop_toast7.webp)
+
+**Error Pages**
+
+**404 Page**
+
+`
+As a Developer I can implement a 404 error page so that I can alert users when they have accessed a page that doesn't exist
+`
+
+A 404 page has been implemented and will display if a user navigates to a broken link.
+
+The 404 page will allow the user to easily navigate back to the main website if they direct to a broken link / missing page, without the need for the browser's back button.
+
+![Error 404](/docs/readme_screenshots/desktop_404.webp)
+
+**403 & 403_csrf Pages**
+
+`
+As a Developer I can implement a 403 error page to redirect unauthorised users so that I can secure my views
+`
+
+A 403 error page has been implemented to provide feedback to the user when they try to access unauthorized content. Users will be directed to this page if they alter the URLs and attempt to edit, delete, or access pages that are restricted.
+A 403_csrf error page has been implemented to provide feedback to the user when there is an issue with csrf verification. 
+
+![Error 403](/docs/readme_screenshots/desktop_403.webp)
+![Error 403_csrf](/docs/readme_screenshots/desktop_403_csrf.webp)
+
+**500 Page**
+
+`
+As a Developer I can implement a 500 error page so that I can alert users when an internal server error occurs
+`
+
+A 500 error page has been displayed to alert users when an internal server error occurs. The message relays to users that the problem is on our end, not theirs.
+
+![Error 500](/docs/readme_screenshots/desktop_500.webp)
+
+**Favicon**
+
+A favicon has been added the website to enable users to easily locate the website in the browser when multiple tabs are open.
+
+### **Future Features**
+
+**More Movie Categories**
+
+In the future I would like to spend more time working with the TMDB API to add further Movie categories for the user like Upcoming movies, Now Playing, etc
+
+**Movie Details Enhancements**
+
+I would like to enhance the Movie Details information in the future to branch off into a Cast/Crew page that would display all the actors involved in the Movie. Within the Cast information, a user could click on an Actor's image and be shown other movies that they have appeared in.
+
+**Latest Trailers**
+
+A page dedicated to just Trailers for new and upcoming movies that the user can view. The thinking would be that it would update weekly and show the latest trailers at the top of the page.
+
+**Genre Page**
+
+A page where a user would have a dropdown containing all the different Movie genres i.e. Action, Thriller, Comedy, etc
+The user would select one and a call would be made to the API to retrieve the latest Movies in the genre chosen.
+
+## **The Surface Plane**
+
+### **Design**
+
+**Colour Scheme**
+
+I opted for a very minimalistic aesthetic and the below 4 colours were chosen. I went for a darker theme with an aqua blue to add some contrast and vibrance to the site. The colours have been implemented across the site and are included in the buttons/links and their hover effects.
+
+![Coolors](/docs/readme_screenshots/coolors.webp)
+
+**Typography**
+
+The Poppins font was used throughout the website. This font is from google fonts and was imported into the style sheet.
+
+**Imagery**
+
+The hero image was taken from TopPng and was free for personal use. The image used as the Profile background was taken from wallpaperflare.com
 
 ## **Libraries**
 For this project I used the following libraries:
