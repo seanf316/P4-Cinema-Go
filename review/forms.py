@@ -20,6 +20,7 @@ class ReviewForm(forms.ModelForm):
         ]
         labels = {
             "review": "Review (Max 2500 Characters)",
+            "rating": "Rating (1-10)",
         }
 
         review = forms.CharField(widget=RichTextWidget())
@@ -39,7 +40,7 @@ class CommentForm(forms.ModelForm):
         fields = ("body",)
 
         labels = {
-            "body": "Comment",
+            "body": "Comment (Max 500 Characters)",
         }
 
         review = forms.CharField(widget=RichTextWidget())
