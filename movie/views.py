@@ -263,7 +263,7 @@ def prof_watch(request, movie_id):
 
 def prof_review(request, movie_id):
     """
-    Allows the user to remove a movie from their reviewed list
+    Allows the user to manage a movie from their reviewed list
     directly from their Profile page
     """
     movie = Movie.objects.get(MovieId=movie_id)

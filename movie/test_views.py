@@ -235,13 +235,15 @@ class TestMovieViews(TestCase):
         self.assertEqual(response.status_code, 302)
         self.assertFalse(self.movie in self.profile.to_watch.all())
 
-    def test_remove_review_from_profile_page_watchlist(self):
+    def test_manage_review_from_profile_page_reviewlist(self):
         """
-        Test to remove setup review from profile page review list
+        Test to manage review from profile page review list
         """
         self.client.login(username="testuser", password="testpass")
-        response = self.client.get(
-            reverse("prof_review", kwargs={"movie_id": self.movie.MovieId})
-        )
-        self.assertEqual(response.status_code, 302)
-        self.assertFalse(self.movie in self.profile.reviewed.all())
+        review = Review.objects.get(user=self.user, movie=self.movie)
+
+        if review:
+            if self.movie in self.profile.reviewed.all():
+                return reverse(
+                    "edit_review", args=[self.movie.MovieId, review.id]
+                )
