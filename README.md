@@ -95,7 +95,7 @@ The Initial Django Setup epic was required to setup the project and confirm libr
 As a Developer, I can deploy my site with Heroku, so that user's can view and interact with the site
 `
 
-The Initial Deployment epic was completed early on as we were advised during the course material that early deployment is critical to avoid any issues down the line with the production app. Heroku app was creating and config vars were updated, app was linked to my projects Github repo for automatic deployments.
+The Initial Deployment epic was completed early on as we were advised during the course material that early deployment is critical to avoid any issues down the line with the production app. Heroku app was created and config vars were updated, app was linked to my projects Github repo for automatic deployments.
 
 #### **EPIC: Base Html/Homepage [#9](https://github.com/seanf316/P4-Cinema-Go/issues/9)**
 `
@@ -213,7 +213,7 @@ The following user stories (by epic) were completed throughout development.
 
 - As a User I want the ability to review Movies so that I can share my thoughts of the Movie with family and friends [#25](https://github.com/seanf316/P4-Cinema-Go/issues/25)
 - As a Developer I can create a nice display for the User to review so that they have an enjoyable experience reviewing Movies on the site [#26](https://github.com/seanf316/P4-Cinema-Go/issues/26)
-- As a User I would like the ability to edit my review so that I can fix and spelling or format issues [#43](https://github.com/seanf316/P4-Cinema-Go/issues/43)
+- As a User I would like the ability to edit my review so that I can fix any spelling or format issues [#43](https://github.com/seanf316/P4-Cinema-Go/issues/43)
 - As a User I would like the ability to delete my review so that I can manage my reviews and in the case of accidentally selecting the wrong Movie and reviewing it [#44](https://github.com/seanf316/P4-Cinema-Go/issues/44)
 - As a User I would like the ability to view all movie reviews so that I can see what my fellow reviewers think of other movies [#45](https://github.com/seanf316/P4-Cinema-Go/issues/45)
 - As a Developer I can create an All Reviews page so that the User can have a nice display containing all reviews [#46](https://github.com/seanf316/P4-Cinema-Go/issues/46)
@@ -405,7 +405,7 @@ As a User I want to view the Movie details from my search so that I can read the
 `
 
 `
-As a User I would like the ability to add Movies to a watchlist so that so that I can have a list of movies that I can refer to when looking for something to watch
+As a User I would like the ability to add Movies to a watchlist so that I can have a list of movies that I can refer to when looking for something to watch
 `
 
 Registered users can access the Movie Details page.
@@ -424,7 +424,7 @@ As a User I want the ability to review Movies so that I can share my thoughts of
 `
 
 `
-As a User I would like the ability to edit my review so that I can fix and spelling or format issues
+As a User I would like the ability to edit my review so that I can fix any spelling or format issues
 `
 
 `
@@ -433,9 +433,9 @@ As a User I would like the ability to delete my review so that I can manage my r
 
 Creating and viewing reviews are features only available to registered users.
 
-When the user clicks the Review button on the Movie Details page they will shown brought to the Review page that contains the Review form for the user to fill out. The page contains the backdrop image for that movie, the movie title, the reviewer's username, and the form itself. There are 2 inputs on the form "Review (Max 2500 Characters)" and "Rating (1-10)" with 2 buttons "Update" and "Delete". When the form is filled out correctly the user can submit their review, by submitting the review will be added to the user's review list and the review will be rendered on the Reviews page.
+When the user clicks the Review button on the Movie Details page they will brought to the Review page that contains the Review form for the user to fill out. The page contains the backdrop image for that movie, the movie title, the reviewer's username, and the form itself. There are 2 inputs on the form "Review (Max 2500 Characters)" and "Rating (1-10)" with 2 buttons "Update" and "Delete". When the form is filled out correctly the user can submit their review, by submitting the review will be added to the user's review list and the review will be rendered on the Reviews page.
 
-The user can manage their review from the Reviews page or on their Profile page. They can edit their review from either location, if the user decides to delete their review a modal will pop up asking for the user to confirm the deletion. Once deleted Review will be removed from the Profile reviews list and the button on the Movie Details page will be returned to the "Review" state. Each review will also show a "Comment" button on the Review page to allow users to comment on reviews. 
+The user can manage their review from the Reviews page or on their Profile page. They can edit their review from either location, if the user decides to delete their review a modal will pop up asking for the user to confirm the deletion. Once deleted the Review will be removed from the Profile reviews list and the button on the Movie Details page will be returned to the "Review" state. Each review will also show a "Comment" button on the Review page to allow users to comment on reviews. 
 
 ![Review 1](/docs/readme_screenshots/desktop_review.webp)
 ![Review 2](/docs/readme_screenshots/desktop_reviews.webp)
@@ -711,7 +711,7 @@ Once GitHub is chosen, find your repository and connect it to Heroku.
 1. [Stackoverflow](https://stackoverflow.com/)
     - I found myself on Stackoverflow so many times researching issues. This a fantastic place to learn and troubleshoot code.
 1. [Slack](https://slack.com/intl/en-ie/)
-    - The slack community is great and I reached out to fellow students who had already completed their P4 for their advice and got some nice tips and feedback. I 
+    - The slack community is great and I reached out to fellow students who had already completed their P4 for their advice and got some nice tips and feedback. I attending some webinars by CI staff which I found very beneficial.
 1. [Youtube](https://www.youtube.com/)
     - Various videos were watched for further learning and Django project ideas. Some playlists I have reviewed are [Django Project: Movie App](https://www.youtube.com/watch?v=tm9Yps3IkmQ&list=PLBQzvdjNG8c-g_mVYUNiVDwwO5YgcbNwT), [Django IMDB clone](https://www.youtube.com/watch?v=FawGmAas4h0&list=PL9tgJISrBWc6ktmvTSLGrn055XzVb0OwZ&index=1)
 1. Matt Boden, Gareth McGirr & Fernanda Brito
