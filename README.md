@@ -2,7 +2,7 @@
 
 ## **Overview**
 
-Cinema | Go is a Movie site designed to allow a User to find and review Movies. The site features a search function using the TMDB API that allows users to search for any Movie they wish. There is a Trending and Top Rated section too so users can view the most popular Movies today and the highest rated of all time. Users will be able to view Movie details such as Title, Director, Overview, Trailers, etc. Users will also be able to review Movies and add Movies to a watchlist that can be displayed on their customizable Profile page, here they will be able to enter information about themselves and upload their Profile picture. You are not authorized to delete this review.
+Cinema | Go is a Movie site designed to allow a User to find and review Movies. The site features a search function using the TMDB API that allows users to search for any Movie they wish. There is a Trending and Top Rated section too so users can view the most popular Movies today and the highest rated of all time. Users will be able to view Movie details such as Title, Director, Overview, Trailers, etc. Users will also be able to review Movies and add Movies to a watchlist that can be displayed on their customizable Profile page, here they will be able to enter information about themselves and upload their Profile picture.
 
 Developed by Sean Finn.
 
