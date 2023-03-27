@@ -23,12 +23,14 @@ urlpatterns = [
         name="comment",
     ),
     path(
-        "comment/<int:movie_id>/<int:review_id>/comments/<int:comment_id>/edit/",
+        "comment/<int:movie_id>/<int:review_id>/"
+        "comments/<int:comment_id>/edit/",
         views.edit_comment,
         name="edit_comment",
     ),
     path(
-        "comment/<int:movie_id>/<int:review_id>/comments/<int:comment_id>/delete/",
+        "comment/<int:movie_id>/<int:review_id>/"
+        "comments/<int:comment_id>/delete/",
         views.delete_comment,
         name="delete_comment",
     ),

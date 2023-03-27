@@ -4,7 +4,10 @@ from cloudinary.models import CloudinaryField
 from djrichtextfield.models import RichTextField
 from movie.models import Movie
 
-placeholder = "https://res.cloudinary.com/seanf316/image/upload/v1677195145/Cinema-Go/default_profile_llyxo2.webp"
+placeholder = (
+    f"https://res.cloudinary.com/seanf316/image/upload/"
+    f"v1677195145/Cinema-Go/default_profile_llyxo2.webp"
+)
 
 
 class Profile(models.Model):

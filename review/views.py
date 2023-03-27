@@ -17,19 +17,24 @@ def review(request, movie_id):
     """
     At the movie details page this function checks if a review for
     the current selected movie exists, if it does not the user can click the
-    review button and the review page will be rendered containing the review form.
-    If review is made the review will be rendered on the movie details page and also
-    saved to the database for reference later
+    review button and the review page will be rendered containing the review
+    form. If review is made the review will be rendered on the movie details
+    page and also saved to the database for reference later
     """
-    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US&append_to_response=credits,videos,images"
-
+    url = (
+        f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}"
+        f"&language=en-US&append_to_response=credits,videos,images"
+    )
     response = requests.get(url)
     movie_data = response.json()
     backdrop = movie_data["backdrop_path"]
     if backdrop:
         hero = "https://image.tmdb.org/t/p/w1280/" + backdrop
     else:
-        hero = "https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg"
+        hero = (
+            "https://res.cloudinary.com/seanf316/image/"
+            f"upload/v1676857549/wp8923971_qd2bfr.jpg"
+        )
 
     movie = Movie.objects.get(MovieId=movie_id)
     user = request.user
@@ -74,7 +79,10 @@ def edit_review(request, movie_id, review_id):
     Checks the database for the Review.id/Movieid and then confirms if
     user matches the review user before allowing user to edit their review
     """
-    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US&append_to_response=credits,videos,images"
+    url = (
+        f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}"
+        f"&language=en-US&append_to_response=credits,videos,images"
+    )
 
     response = requests.get(url)
     movie_data = response.json()
@@ -82,7 +90,10 @@ def edit_review(request, movie_id, review_id):
     if backdrop:
         hero = "https://image.tmdb.org/t/p/w1280/" + backdrop
     else:
-        hero = "https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg"
+        hero = (
+            "https://res.cloudinary.com/seanf316/image/"
+            f"upload/v1676857549/wp8923971_qd2bfr.jpg"
+        )
 
     movie = Movie.objects.get(MovieId=movie_id)
     review = Review.objects.get(id=review_id)
@@ -158,15 +169,20 @@ def allreviews(request):
             review=review,
         ).order_by("created_on")
 
-        url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US&append_to_response=credits,videos,images"
-
+        url = (
+            f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}"
+            f"&language=en-US&append_to_response=credits,videos,images"
+        )
         response = requests.get(url)
         movie_data = response.json()
         backdrop = movie_data["backdrop_path"]
         if backdrop:
             hero = "https://image.tmdb.org/t/p/w1280/" + backdrop
         else:
-            hero = "https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg"
+            hero = (
+                "https://res.cloudinary.com/seanf316/image/"
+                f"upload/v1676857549/wp8923971_qd2bfr.jpg"
+            )
 
         review_content.append(
             {"movie_data": movie_data, "hero": hero, "review": review}
@@ -186,15 +202,20 @@ def comment(request, movie_id, review_id):
     review = Review.objects.get(id=review_id)
     movie_id = movie.MovieId
 
-    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US&append_to_response=credits,videos,images"
-
+    url = (
+        f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}"
+        f"&language=en-US&append_to_response=credits,videos,images"
+    )
     response = requests.get(url)
     movie_data = response.json()
     backdrop = movie_data["backdrop_path"]
     if backdrop:
         hero = "https://image.tmdb.org/t/p/w1280/" + backdrop
     else:
-        hero = "https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg"
+        hero = (
+            "https://res.cloudinary.com/seanf316/image/"
+            f"upload/v1676857549/wp8923971_qd2bfr.jpg"
+        )
 
     if request.method == "POST":
         form = CommentForm(request.POST)
@@ -227,15 +248,20 @@ def edit_comment(request, movie_id, review_id, comment_id):
     movie_id = movie.MovieId
     comment = Comment.objects.get(id=comment_id)
     user = request.user
-    url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US&append_to_response=credits,videos,images"
-
+    url = (
+        f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}"
+        f"&language=en-US&append_to_response=credits,videos,images"
+    )
     response = requests.get(url)
     movie_data = response.json()
     backdrop = movie_data["backdrop_path"]
     if backdrop:
         hero = "https://image.tmdb.org/t/p/w1280/" + backdrop
     else:
-        hero = "https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg"
+        hero = (
+            "https://res.cloudinary.com/seanf316/image/"
+            f"upload/v1676857549/wp8923971_qd2bfr.jpg"
+        )
 
     if comment.name != user:
         messages.error(request, "You are not authorized to edit this comment.")
@@ -246,7 +272,9 @@ def edit_comment(request, movie_id, review_id, comment_id):
         if form.is_valid():
             comment = form.save(commit=False)
             comment.save()
-            messages.success(request, "Your comment has been updated.")
+            messages.success(
+                request, f"{user.username} your comment has been updated."
+            )
             return redirect(reverse("allreviews"))
     else:
         form = CommentForm(instance=comment)
@@ -276,7 +304,7 @@ def delete_comment(request, movie_id, review_id, comment_id):
 
     comment.delete()
     messages.success(
-        request, f"{user.username}, your comment has been deleted."
+        request, f"{user.username} your comment has been deleted."
     )
 
     return redirect(reverse("allreviews"))

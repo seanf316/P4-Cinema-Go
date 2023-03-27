@@ -25,14 +25,20 @@ class TestReviewViews(TestCase):
         )
         self.profile = Profile.objects.get(user=self.user)
         movie_id = "804150"
-        url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US&append_to_response=credits,videos,images"
+        url = (
+            f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}"
+            f"&language=en-US&append_to_response=credits,videos,images"
+        )
         response = requests.get(url)
         movie_data = response.json()
         backdrop = movie_data["backdrop_path"]
         if backdrop:
             hero = "https://image.tmdb.org/t/p/w1280/" + backdrop
         else:
-            hero = "https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg"
+            hero = (
+                "https://res.cloudinary.com/seanf316/image/"
+                f"upload/v1676857549/wp8923971_qd2bfr.jpg"
+            )
 
         director = None
         for person in movie_data["credits"]["crew"]:

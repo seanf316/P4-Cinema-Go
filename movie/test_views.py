@@ -103,23 +103,34 @@ class TestMovieViews(TestCase):
         Tests API call to TMDB(using id that contains a background image),
         Creates a new movie using the API data
         Adds the new movie to profile watchlist
-        Creates review of the new movie and queries the database for reviews/user reviews
+        Creates review of the new movie and queries the database for
+        reviews/user reviews
         """
         self.client.login(username="testuser", password="testpass")
         movie_id = "804150"
-        api_url = f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}&language=en-US&append_to_response=credits,videos,images"
+        api_url = (
+            f"https://api.themoviedb.org/3/movie/{movie_id}?api_key={API_KEY}"
+            f"&language=en-US&append_to_response=credits,videos,images"
+        )
         response = requests.get(api_url)
         movie_data = response.json()
         backdrop = movie_data["backdrop_path"]
         if backdrop:
             hero = "https://image.tmdb.org/t/p/w1280/" + backdrop
         else:
-            hero = "https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg"
+            hero = (
+                "https://res.cloudinary.com/seanf316/image/"
+                f"upload/v1676857549/wp8923971_qd2bfr.jpg"
+            )
 
         self.assertEqual(hero, "https://image.tmdb.org/t/p/w1280/" + backdrop)
 
         movie_id_no_backdrop = "1033965"
-        api_url_no_backdrop = f"https://api.themoviedb.org/3/movie/{movie_id_no_backdrop}?api_key={API_KEY}&language=en-US&append_to_response=credits,videos,images"
+        api_url_no_backdrop = (
+            f"https://api.themoviedb.org/3/movie/{movie_id_no_backdrop}"
+            f"?api_key={API_KEY}&language=en-US&"
+            f"append_to_response=credits,videos,images"
+        )
         response_no_backdrop = requests.get(api_url_no_backdrop)
         movie_data_no_backdrop = response_no_backdrop.json()
         backdrop_no_backdrop = movie_data_no_backdrop["backdrop_path"]
@@ -128,11 +139,17 @@ class TestMovieViews(TestCase):
                 "https://image.tmdb.org/t/p/w1280/" + _no_backdrop
             )
         else:
-            hero_no_backdrop = "https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg"
+            hero_no_backdrop = (
+                "https://res.cloudinary.com/seanf316/image/upload/"
+                f"v1676857549/wp8923971_qd2bfr.jpg"
+            )
 
         self.assertEqual(
             hero_no_backdrop,
-            "https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg",
+            (
+                "https://res.cloudinary.com/seanf316/image/upload/v1676857549/"
+                f"wp8923971_qd2bfr.jpg"
+            ),
         )
 
         director = None
@@ -205,7 +222,8 @@ class TestMovieViews(TestCase):
 
     def test_add_movie_to_watchlist(self):
         """
-        First test clears watchlist and then tests adding setup movie to watchlist
+        First test clears watchlist and then tests adding setup
+        movie to watchlist
         """
         self.profile.to_watch.clear()
         self.client.login(username="testuser", password="testpass")
