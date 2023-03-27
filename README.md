@@ -20,26 +20,29 @@ This is my fourth portfolio project for [Code Institute](https://codeinstitute.n
 1. [Project Goals](#project-goals)
 1. [UX](#ux)
     - [The Strategy Plane](#the-strategy-plane)
-    - [The Ideal User](#the-ideal-user)
-    - [Site Goals](#site-goals)
+        - [The Ideal User](#the-ideal-user)
+        - [Site Goals](#site-goals)
     - [Agile Planning](#agile-planning)
-1. [Design](#design)
-    - [Imagery](#imagery)
-    - [Color Scheme](#color-scheme)
-1. [How to Play](#how-to-play)
-    - [Setup Phase](#setup-phase)
-    - [How to Win](#how-to-win)
-1. [User Stories](#user-stories)
-1. [Data Model](#data-model)
-    - [Classes](#classes)
-    - [Game Flow](#game-flow)
-1. [Features](#features)
-1. [Libraries](#libraries)
+        - [Epics](#epics)
+        - [User Stories](#user-stories)
+    - [The Skeleton Plane](#the-skeleton-plane)
+        - [Wireframes](#wireframes)
+        - [Database Schema](#database-schema)
+        - [Security](#security)
+    - [The Scope Plane](#the-scope-plane)
+    - [The Structure Plane](#the-structure-plane)
+        - [Features](#features)
+        - [Future Features](#future-features)
+    - [The Service Plane](#the-service-plane)
+        - [Design](#future-features)
+            - [Colour Scheme](#colour-scheme)
+            - [Typography](#typography)
+            - [Imagery](#Imagery)
 1. [Technologies Used](#technologies-used)
     - [Languages Used](#languages-used)
     - [Frameworks and Tools Used](#frameworks-and-tools-used)
+    - [Libraries Used](#libraries-used)
 1. [Testing](#testing)
-1. [Future Updates](#future-updates)
 1. [Deployment](#deployment)
 1. [Credits](#credits)
 1. [Acknowledgements](#acknowledgements)
@@ -64,7 +67,9 @@ Cinema | Go is intended to bring together all Movie lover's to find their favour
 - To provide users with the ability to create their own Profile and movie watchlist
 - To provide users with the ability to view other users reviews and watchlists
 
-### **Agile Planning**
+[Back to top &uarr;](#contents)
+
+## **Agile Planning**
 
 This project was developed using agile methodologies by delivering small features across the duration of the project. All User Stories were assigned to Epics, prioritized under the labels, Must Have, Should Have and Could Have. They were assigned story points according to complexity. Story points were adjusted mid-project to use the common Fibonacci sequence correctly. "Must Have" stories were completed first, "Should Have's" and then finally "Could Have's".
 
@@ -155,6 +160,8 @@ As a Developer, I can create documentation, so that fellow developers can unders
 
 This epic is for all document related stories and tasks that are needed to document the software development lifecycle of the application. It aims to deliver quality documentation, explaining all stages of development and necessary information on running, deploying and using the application.
 
+[Back to top &uarr;](#contents)
+
 ### **User Stories**
 
 The following user stories (by epic) were completed throughout development.
@@ -229,6 +236,8 @@ The following user stories (by epic) were completed throughout development.
 - As a Developer I can build a page to display Trending Movies so that the User can see the latest Trending Movies [#35](https://github.com/seanf316/P4-Cinema-Go/issues/35)
 - As a Developer I can build a page to display the Top Rated Movies so that the User can easily get access to the Top Rated Movies of all time [#36](https://github.com/seanf316/P4-Cinema-Go/issues/36)
 
+[Back to top &uarr;](#contents)
+
 ## **The Skeleton Plane**
 
 #### **Wireframes**
@@ -286,6 +295,8 @@ Views were secured where needed using the Django decorator @login_required. Acce
 
 Environment variables were stored in an env.py for local development for security purposes to ensure no secret keys, API keys, or sensitive information was added to the repository. In production, these variables were added to the Heroku config vars within the project.
 
+[Back to top &uarr;](#contents)
+
 ## **The Scope Plane**
 
 * Responsive Design - The site should be fully functional on all devices from 320px up
@@ -293,6 +304,8 @@ Environment variables were stored in an env.py for local development for securit
 * Ability to perform CRUD functionality on Profiles, Reviews, and Comments
 * Restricted role-based features such as Reviewing/Commenting, viewing Movie Details, and editing Profile
 * Home page describing the site and links to features for registered users
+
+[Back to top &uarr;](#contents)
 
 ## **The Structure Plane**
 
@@ -508,6 +521,8 @@ A 500 error page has been displayed to alert users when an internal server error
 
 A favicon has been added the website to enable users to easily locate the website in the browser when multiple tabs are open.
 
+[Back to top &uarr;](#contents)
+
 ### **Future Features**
 
 **More Movie Categories**
@@ -527,47 +542,25 @@ A page dedicated to just Trailers for new and upcoming movies that the user can 
 A page where a user would have a dropdown containing all the different Movie genres i.e. Action, Thriller, Comedy, etc
 The user would select one and a call would be made to the API to retrieve the latest Movies in the genre chosen.
 
+[Back to top &uarr;](#contents)
+
 ## **The Surface Plane**
 
 ### **Design**
 
-**Colour Scheme**
+#### **Colour Scheme**
 
 I opted for a very minimalistic aesthetic and the below 4 colours were chosen. I went for a darker theme with an aqua blue to add some contrast and vibrance to the site. The colours have been implemented across the site and are included in the buttons/links and their hover effects.
 
 ![Coolors](/docs/readme_screenshots/coolors.webp)
 
-**Typography**
+#### **Typography**
 
 The Poppins font was used throughout the website. This font is from google fonts and was imported into the style sheet.
 
-**Imagery**
+#### **Imagery**
 
 The hero image was taken from TopPng and was free for personal use. The image used as the Profile background was taken from wallpaperflare.com
-
-## **Libraries**
-For this project I used the following libraries:
-
-### ***random:***
--   randint was used throughout the project to produce random stats or pick a random index in the choice list for loot.
-
-### ***time:***
--   time was imported to make use of the sleep function which was used throughout the adventure. It was implemented to increase the time between narrative text's showing and it also provided a level of intrigue for the user i.e. when opening a loot box
-
-### ***math:***
--   math.ceil was used to make sure the calculated loss from enemy or character strike was rounded upward to its nearest integer.
-
-### ***pprint:***
--   pprint was used to print out the user's/enemy's stats and nicely display them for the user.
-
-### ***getch:***
--   pause imported from getch to pause the gameplay and give the user more time to review the story.
-
-### ***os:***
--   system used in conjunction with the clear/cls command to clear the display so the user would not get overwhelmed by reams of outdated data from previous narratives.
-
-### ***colorama:***
--   Fore & Style were imported from colorama to style the font, ASCII text, and ASCII art with color.
 
 [Back to top &uarr;](#contents)
 
@@ -581,13 +574,24 @@ For this project I used the following libraries:
 -   [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 ### **Frameworks and Tools Used**
-
+1. [Django](https://www.djangoproject.com/)
+    - Django was used as the main python framework in the development of this project
+1. [Bootstrap](https://blog.getbootstrap.com/)
+    - Bootstrap was used for general layout and spacing requirements for the site.
+1. [ElephantSQL](https://www.elephantsql.com/)
+    - ElephantSQL was used for the Production database.
+1. [Cloudinary](https://cloudinary.com/)
+    - Cloudinary was used to store all static files and images
+1. [TMDB](https://www.themoviedb.org/)
+    - TMDB API functionality was used throughout the project.
 1. [Git](https://git-scm.com/)
     - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
 1. [GitHub:](https://github.com/)
     - GitHub is used to store the project's code after being pushed from Git.
 1. [Heroku](https://www.heroku.com/)
     - Heroku was used to deploy the app.
+1. [Balsamiq](https://balsamiq.com/)
+    - Balsamiq was used to produce the sites wireframes
 1. [XConvert](www.xconvert.com)
     - XConvert was used to convert images to webp or png where required.
 1. [Stackoverflow](https://stackoverflow.com/)
@@ -602,21 +606,37 @@ For this project I used the following libraries:
     - ezgif.com was used to convert screen recordings to gif.
 1. [Xnip](https://www.xnipapp.com/)
     - Xnip was used to capture all the game screenshots.
-1. [Lucidchart.com](https://www.lucidchart.com/pages/)
-    - The Lucidchart app was used to create the app's flowcharts.
+1. [DBeaver](https://dbeaver.io/)
+    - DBeaver was used to generate the Database Schema diagram.
+
+### **Libraries Used**
+
+- asgiref - A standard Python library to allow for asynchronous web apps and servers to communicate with each other.
+- cloudinary - A Python package allowing integration between the application and Cloudinary.
+- coverage - is a third-party package that helps developers measure code coverage in their Python codebase.
+- dj-database-url - A Django utility to utilise the DATABASE_URL environment variable to configure the Django application. Used with PostgreSQL.
+- dj3-cloudinary-storage - A Django package that facilitates integration with Cloudinary storage.
+- Django - A python package for the Django framework.
+- django-active-link - A Django package used to highlight an active link in the site navigation bars.
+- django-allauth - An integrated set of Django applications addressing user authentication, registration and account management.
+- django-ckeditor - is a third-party package that provides a rich text editor widget for Django web applications.
+- django-crispy-forms - A Django package that provides tags and filters to control the rendering behaviour of Django forms.
+- django-js-asset - is a third-party package for Django that simplifies the process of including JavaScript assets in Django templates.
+- django-richtextfield - is a third-party package for Django that provides a model field for rich text editing. 
+- gunicorn - A Python WSGI HTTP Server for UNIX.
+- oauthlib - A generic, spec-compliant, thorough implementation of the OAuth request-signing logic for Python 3.6+.
+- psycopg2 - A PostgreSQL database adapter for Python.
+- PyJWT - A Python library that allows for encoding and decoding of JSON Web Tokens (JWT).
+- python3-openid - A set of Python packages to support use of the OpenID decentralized identity system.
+- pytz - A Python package for world timezone definitions, modern and historical.
+- requests-oauthlib - A Python package for OAuthlib authentication support for Requests.
+- sqlparse - A non-validating SQL parser for Python.
+
 
 [Back to top &uarr;](#contents)
 
 ## **Testing**
 I have included details of testing both during development and post-development in a separate document called [TESTING.md](TESTING.md)
-
-## **Future Updates**
-
-I would like to add the following updates in the future when time permits:
-
-1. Enemy Weakness - I would like to add a weakness stat for the enemy to a specific Guardian attack, it wasn't part of my original scope for the adventure but something I would be interested in implementing in the future.
-2. Battle graphic animations - show the user and enemy in battle with moving Graphics.
-3. Sound Effects - I would like to apply sound effects for the different Narratives and for the battle sequences.
 
 [Back to top &uarr;](#contents)
 
