@@ -656,15 +656,25 @@ This project was developed by forking a specialized [Code Institute template](ht
 For version control the following steps were made:
 
 1. Changes made to files in Gitpod
-2. Files made ready for commit with command - git add .
-3. For the commits the following command was run along with commit description - git commit -m "This is my commit etc"
-4. To move the changes to Github the following command was run - git push  
+2. Files made ready for commit using the Source Control staging area in Gitpod
+3. Files were staged and a message describing the commit was made before committing and pushing it to GitHub
+
+### **Clone Repo**
+
+Creating a clone enables you to make a copy of the repository at that point in time - this lets you run a copy of the project locally: This can be done by:
+
+1. Navigating to https://github.com/seanf316/P4-Cinema-Go
+2. Clicking on the arrow on the green code button at the top of the list of files
+3. Select Local then HTTPS copy the URL it provides to the clipboard
+4. Navigate to your code editor of choice and within the terminal change the directory to the location you want to clone the repository to.
+5. Type 'git clone' and paste the HTTPS link you copied from GitHub
+6. Press enter and git will clone the repository to your local machine
 
 ### **Forking the GitHub Repository**
 
 By forking the GitHub Repository we make a copy of the original repository on our GitHub account to view and/or make changes without affecting the original repository by using the following steps...
 
-1. Log in to GitHub and locate the repository [P3-Reclaim-The-Light](https://github.com/seanf316/P3-Reclaim-The-Light)
+1. Log in to GitHub and locate the repository [P4-Cinema-Go](https://github.com/seanf316/P4-Cinema-Go)
 2. At the top of the Repository (not the top of the page) just above the "Settings" Button on the menu, locate the "Fork" Button.
 3. You should now have a copy of the original repository in your GitHub account.
 
@@ -673,12 +683,16 @@ By forking the GitHub Repository we make a copy of the original repository on ou
 The below steps were followed to deploy this project to Heroku:
 1. Go to [Heroku](https://dashboard.heroku.com/apps) and click "New" to create a new app.
 2. After choosing the app name and setting the region, press "Create app".
-3. Go to "Settings" and navigate to Config Vars. Add a Config Var with a keyword called PORT and a value of 8000.
-4. Still in the "Settings", navigate to Buildpacks and add buildpacks for Python and NodeJS (in order).
-5. Leave "Settings" and go to "Deploy". Scroll down and set Deployment Method to GitHub.
+3. Go to "Settings" and navigate to Config Vars, enter the below:
+    - SECRET_KEY: (Enter your secret key)
+    - DATABASE_URL: (Enter the database URL from ElephantSQL)
+    - CLOUNDINARY_URL: (Enter Cloudinary API URL)
+    - PORT: 8000
+    - API_KEY: (An API key will need to be retrieved from the [TMDB](https://www.themoviedb.org/))
+4. Leave "Settings" and go to "Deploy". Scroll down and set Deployment Method to GitHub.
 Once GitHub is chosen, find your repository and connect it to Heroku.
-6. Scroll down to Manual Deploy, make sure the "main" branch is selected and click "Deploy Branch". 
-7. The deployed app can be found [here](https://reclaim-the-light-p3.herokuapp.com/).
+5. Scroll down to Manual Deploy, make sure the "main" branch is selected, and click "Deploy Branch". 
+6. The deployed app can be found [here](https://cinema-go-p4.herokuapp.com/).
 
 [Back to top &uarr;](#contents)
 
@@ -686,23 +700,28 @@ Once GitHub is chosen, find your repository and connect it to Heroku.
 
 1. [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template)
     - This repository was created using the template provided by Code Institute. Also, without the knowledge gained through the coursework, I would not be able to create this site so thank you Code Institute.
-1. [Corey Schafer](https://www.youtube.com/watch?v=ZDa-Z5JzLYM)
-    - Corey Schafer for the Python OOP Tutorial series for general reference on working with classes and OOP in general.
-1. [delftstack.com](https://www.delftstack.com/howto/python/python-clear-console/)
-    - Provided the clear display function used in the project.
+1. [Django Documentation](https://docs.djangoproject.com/en/4.0/)
+    - Thanks to the Django docs which were also used as a step-by-step while going through the project to ensure everything was set up correctly.
+1. [Allauth Documentation](https://django-allauth.readthedocs.io/en/latest/faq.html)
+    - Thanks to the Alluath documentation which was referenced during development.
+1. [Daisy McGirr - Gamer Reviews](https://github.com/Daisy-McG/Gamer-Reviews)
+    - The above was created in a study group for students with CI, I have used the Debug method in my project.
+1. [Corey Schafer](https://www.youtube.com/watch?v=FdVuKt_iuSI)
+    - Corey Schafer for the tutorial to get automatic profile creation and updating working as intended for my project.
 1. [Stackoverflow](https://stackoverflow.com/)
-    - I found myself on Stackoverflow so many times researching issues with python code. This a fantastic place to learn and troubleshoot code.
+    - I found myself on Stackoverflow so many times researching issues. This a fantastic place to learn and troubleshoot code.
 1. [Slack](https://slack.com/intl/en-ie/)
-    - The slack community is great and I reached out to fellow students who had already completed their P3 for their advice and got some nice tips and feedback.
-1. [pixabay.com](https://pixabay.com/)
-    - Favicon image was taken from [pixabay.com](https://pixabay.com/), the image was free to use. The creaters name is OpenClipart-Vectors.
+    - The slack community is great and I reached out to fellow students who had already completed their P4 for their advice and got some nice tips and feedback. I 
+1. [Youtube](https://www.youtube.com/)
+    - Various videos were watched for further learning and Django project ideas. Some playlists I have reviewed are [Django Project: Movie App](https://www.youtube.com/watch?v=tm9Yps3IkmQ&list=PLBQzvdjNG8c-g_mVYUNiVDwwO5YgcbNwT), [Django IMDB clone](https://www.youtube.com/watch?v=FawGmAas4h0&list=PL9tgJISrBWc6ktmvTSLGrn055XzVb0OwZ&index=1)
+1. Matt Boden, Gareth McGirr & Fernanda Brito
+    - I reviewed the above Project 4 repos for inspiration on README layouts and testing.
 
 ## **Acknowledgements**
 
-- To my amazing wife Denise who has supported me every day and kept me motivated. After P1 & P2 it was a short and stressful turnaround for P3, Denise consistently encouraged me to work on the project while keeping our 5-year-old son entertained. I couldn't do this without her.
+- To my amazing wife Denise who has supported me every day and kept me motivated. P4 has been by far the most time-consuming to date, Denise consistently encouraged me to work on the project while keeping our 6-year-old son entertained. I couldn't do this without her.
 - My son Alex for always making me laugh and never getting mad when Dad had to study.
-- My classmate Sean Johnston for the continuous testing of my project throughout and for being there to bounce ideas off.
-- My classmates Victoria Traynor & Monica Murray for reviewing and testing my Project thanks guys.
-- To my mentor Daisy Mc Girr, this was my first full project with Daisy and she goes above and beyond. Even outside of project planning she is great for advice and is a great help to the Slack community too.
+- To my family and friends who tested the site and provided information on bugs/errors and general feedback
+- To my mentor Daisy Mc Girr, Daisy always goes above and beyond. Even outside of project planning she is great for advice and is a great help to the Slack community too.
 
 [Back to top &uarr;](#contents)
