@@ -36,7 +36,7 @@
                                 <a href="{% url 'moviedetails' review.movie_data.id %}">
                                     <h2>{{ review.review.movie }}</h2>
                                 </a>
-                                <p class="card-text">{{ review.review.review|safe }}</p>
+                                {{ review.review.review|safe }}
                                 <p><span>Rated: </span>{{ review.review.rating|safe }}/10</p>
                             </div>
                         </div>
@@ -62,7 +62,7 @@
                                 <h3><span>Comments</span></h3>
                                 <hr>
                                 {% for comment in review.review.comments.all %}
-                                <i>{{ comment.body|safe }}</i>
+                                {{ comment.body|safe }}
                                 {% if user == comment.name%}
                                 <div class="comment-a">
                                     <a href="{% url 'edit_comment' review.movie_data.id review.review.id comment.id %}"
