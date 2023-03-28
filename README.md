@@ -81,7 +81,7 @@ The Kanban board was created using Github projects and can be located [here](htt
 
 ### **Epics**
 
-11 Epics (milestones) were created which were then further developed into 34 User Stories. The details on each epic, along with the user stories linked to each one can be found in the project kanban board linked above. 2 extra unplanned User Stories were created during development as an extra feature for the user - Trending Movies & Toprated Movies. They were added as the time to implement was very short and did not require an Epic.
+11 Epics (milestones) were created which were then further developed into 35 User Stories. The details on each epic, along with the user stories linked to each one can be found in the project kanban board linked above. 2 extra unplanned User Stories were created during development as an extra feature for the user - Trending Movies & Toprated Movies. They were added as the time to implement was very short and did not require an Epic.
 
 #### **EPIC: Initial Django Setup [#1](https://github.com/seanf316/P4-Cinema-Go/issues/1)**
 `
@@ -192,6 +192,7 @@ The following user stories (by epic) were completed throughout development.
 #### **EPIC: User Signup/Login/Logout [#4](https://github.com/seanf316/P4-Cinema-Go/issues/4)**
 
 - As a User I want to Sign Up/Login and Logout so that I can see what features are available to registered users like reviewing/commenting [#17](https://github.com/seanf316/P4-Cinema-Go/issues/17)
+- As a Developer I can add functionality to verify email and reset password so that the user has better security over their email being used and can reset password if they forget it [#47](https://github.com/seanf316/P4-Cinema-Go/issues/47)
 
 #### **EPIC: Movie Search [#5](https://github.com/seanf316/P4-Cinema-Go/issues/5)**
 
@@ -242,7 +243,7 @@ The following user stories (by epic) were completed throughout development.
 
 #### **Wireframes**
 
-This is the prototype of the project that may change during its development.
+This is the prototype of the project that may change during its development. Further styling was applied to Allauth email and password templates but they were not in the original scope of the project.
 <details><summary>Desktop</summary>
 
 ![Desktop Part 1](/docs/wireframes/desktop/home.webp)
