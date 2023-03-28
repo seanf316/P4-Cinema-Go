@@ -113,8 +113,8 @@
                     <div class="row">
                         <div class="col d-flex flex-wrap">
                             {% if trailer %}
-                            <button type="button" class="site-btn flex-grow-1" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
+                            <button type="button" class="site-btn flex-grow-1" id="exampleModalLabel"
+                                data-bs-toggle="modal" data-bs-target="#exampleModal">
                                 Trailer <i class="fa-solid fa-play"></i>
                             </button>
                             {% endif %}
@@ -147,7 +147,6 @@
             </div>
         </div>
     </div>
-    </div>
 
     <!-- Trailer Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -156,9 +155,8 @@
                 <button type="button" class="mb-3 mx-auto modal-btn" data-bs-dismiss="modal"
                     aria-label="Close">Close</button>
                 <iframe id="trailer" title="Trailer" src="https://www.youtube.com/embed/{{ trailer }}?modestbranding=1"
-                    class="rounded-lg" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                    style="border: 2px solid var(--main-color); border-radius: .5rem;"></iframe>
+                    class="rounded-lg" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen style="border: 2px solid var(--main-color); border-radius: .5rem;"></iframe>
             </div>
         </div>
     </div>
