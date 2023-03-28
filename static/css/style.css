@@ -27,6 +27,10 @@ ul li {
     list-style: none;
 }
 
+.text-justify {
+    text-align: justify;
+}
+
 .btn-round {
     background-color: var(--dark-color);
     color: var(--main-color);
