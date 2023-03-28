@@ -14,7 +14,7 @@
                 <div class="card text-center">
                     {% if movie.backdrop_path %}
                     <img src="https://image.tmdb.org/t/p/w500/{{ movie.backdrop_path }}" class="card-img-top"
-                        height="180px" alt="Movie Backdrop for {{ movie.original_title }}">
+                        height="180" alt="Movie Backdrop for {{ movie.original_title }}">
                     {% else %}
                     <img src="https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg"
                         height="180px" alt="Default Movie Backdrop">
@@ -52,5 +52,6 @@
             </div>
             {% endif %}
         </div>
+    </div>
 </section>
 {% endblock%}
