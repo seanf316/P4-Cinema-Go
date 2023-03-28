@@ -62,13 +62,13 @@
                                 <h3><span>Comments</span></h3>
                                 <hr>
                                 {% for comment in review.review.comments.all %}
-                                <p><i>{{ comment.body|safe }}</i></p>
+                                <i>{{ comment.body|safe }}</i>
                                 {% if user == comment.name%}
                                 <div class="comment-a">
                                     <a href="{% url 'edit_comment' review.movie_data.id review.review.id comment.id %}"
                                         aria-label="Edit Comment"><i class="fa-solid fa-pen-to-square"></i> Edit</a>
                                     <a href="{% url 'delete_comment' review.movie_data.id review.review.id comment.id %}"
-                                        aria-label="Edit Comment"><i class="fa-solid fa-trash"></i> Delete</a>
+                                        aria-label="Delete Comment"><i class="fa-solid fa-trash"></i> Delete</a>
                                 </div>
                                 {% endif %}
                                 <p class="mt-3">{{ comment.created_on }}</p>

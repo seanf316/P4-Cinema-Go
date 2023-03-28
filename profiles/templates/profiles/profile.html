@@ -19,7 +19,8 @@
                                 <p><span>Username<br></span>{{ profile.user.username }}</p>
                                 <p><span>Email<br></span>{{ profile.user.email }}</p>
                                 <p><span>Name<br></span>{{ profile.firstname }} {{ profile.surname }}</p>
-                                <p class="mb-0"><span>About<br></span>{{ profile.about|safe }}</p>
+                                <p class="mb-0"><span>About<br></span></p>
+                                {{ profile.about|safe }}
                                 <p class="mt-3"><span>Favourite Movie<br></span>{{ profile.fav_movie }}</p>
                                 <p class="mt-3"><span>Favourite Actor<br></span>{{ profile.fav_actor }}</p>
                                 <p><span>Favourite Director<br></span>{{ profile.director|safe }}</p>
@@ -68,7 +69,5 @@
             </div>
         </div>
     </div>
-    </div>
-
 </section>
 {% endblock %}
