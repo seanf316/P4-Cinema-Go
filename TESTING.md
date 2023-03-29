@@ -101,6 +101,141 @@ Due to the Django templating language code used in the HTML files, these could n
 
 [Back to top &uarr;](#contents)
 
+### **Lighthouse**
+
+<details><summary>Desktop Results</summary>
+
+Home(User not signed in)
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/nosignin_desktop.webp)
+
+Home(User signed in)
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/signedin_desktop.webp)
+
+Trending Movies
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/trending_desktop.webp)
+
+Top Rated Movies
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/toprated_desktop.webp)
+
+Movie Search
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/search_desktop.webp)
+
+Movie Search Results
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/searchresults_desktop.webp)
+
+Movie Details
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/moviedetails_desktop.webp)
+
+All Reviews
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/allreviews_desktop.webp)
+
+Review
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/review_desktop.webp)
+
+Comment
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/comment_desktop.webp)
+
+Profile
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/profile_desktop.webp)
+
+Sign Up
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/signup_desktop.webp)
+
+Login
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/login_desktop.webp)
+
+Logout
+
+![Lighthouse Desktop Score](/docs/validation/lighthouse/logout_desktop.webp)
+
+</details>
+
+<details><summary>Mobile Results</summary>
+
+Home(User not signed in)
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/nosignin_mobile.webp)
+
+Home(User signed in)
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/signedin_mobile.webp)
+
+Trending Movies
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/trending_mobile.webp)
+
+Top Rated Movies
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/toprated_mobile.webp)
+
+Movie Search
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/search_mobile.webp)
+
+Movie Search Results
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/searchresults_mobile.webp)
+
+Movie Details
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/moviedetails_mobile.webp)
+
+All Reviews
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/allreviews_mobile.webp)
+
+Review
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/review_mobile.webp)
+
+Comment
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/comment_mobile.webp)
+
+Profile
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/profile_mobile.webp)
+
+Sign Up
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/signup_mobile.webp)
+
+Login
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/login_mobile.webp)
+
+Logout
+
+![Lighthouse Mobile Score](/docs/validation/lighthouse/logout_mobile.webp)
+
+</details>
+
+### **Lighthouse Errors**
+
+The errors encountered in the various reports are outlined below:
+
+- "Eliminate render-blocking resources" - this was pointing towards bootstrap.min.css throughout, I am unaware of how to fix at this time
+- "Displays images with incorrect aspect ratio", "Properly size images", "Serve images in next-gen formats" - I have tried resizing how the images are displayed but due to the fact they are being retrieved from the API there is not much I can do here.
+
+I have tested the site on various devices and networks (3g, 4g & WIFI) and the above is not affecting the site, load times are good and no issues/delays reported by test users.
+
+There is one console error due to the embedded Youtube video that cannot be fixed at this time, it refers to "Ensure CORS response header values are valid". Error only occurs when user clicks play on the video. I have reserached this previously and the issue appears to be between Google and Youtube so I am unable to fix this error. Please not this error does not seem to affect the performance of the site.
+
+![Lighthouse Console Error](/docs/validation/lighthouse/trailer_console.webp)
+
 ## **Bugs & Fixes**
 
 |   **Bug**                                                    |   **Issue**                                                                                                                                                                                                                                                                                                                  |   **Resolution**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
