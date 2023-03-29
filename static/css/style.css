@@ -15,6 +15,11 @@
     --bg-color: #222629;
 }
 
+.img-fluid {
+    max-width: 100%;
+    max-height: max-content;
+}
+
 a {
     text-decoration: none;
 }

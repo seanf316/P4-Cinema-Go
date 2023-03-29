@@ -151,7 +151,7 @@ def moviedetails(request, movie_id):
     else:
         hero = (
             "https://res.cloudinary.com/seanf316/image/"
-            f"upload/v1676857549/wp8923971_qd2bfr.jpg"
+            f"upload/v1680055493/background_r1z21m.webp"
         )
 
     director = None

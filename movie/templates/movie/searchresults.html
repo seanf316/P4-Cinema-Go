@@ -13,11 +13,11 @@
             <div class="col-12 col-md-6 col-lg-4 gx-4 gy-4">
                 <div class="card text-center">
                     {% if movie.backdrop_path %}
-                    <img src="https://image.tmdb.org/t/p/w500/{{ movie.backdrop_path }}" class="card-img-top"
-                        height="180" alt="Movie Backdrop for {{ movie.original_title }}">
+                    <img src="https://image.tmdb.org/t/p/w500/{{ movie.backdrop_path }}" class="card-img-top img-fluid"
+                        alt="Movie Backdrop for {{ movie.original_title }}">
                     {% else %}
-                    <img src="https://res.cloudinary.com/seanf316/image/upload/v1676857549/wp8923971_qd2bfr.jpg"
-                        class="card-img-top" height="180" alt="Default Movie Backdrop">
+                    <img src="https://res.cloudinary.com/seanf316/image/upload/v1680055493/background_r1z21m.webp"
+                        class="card-img-top img-fluid" alt="Default Movie Backdrop">
                     {% endif %}
                     <div class="card-body d-flex flex-column bg-black text-white" style="height: 10rem;">
                         {% if movie.original_title %}

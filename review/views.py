@@ -33,7 +33,7 @@ def review(request, movie_id):
     else:
         hero = (
             "https://res.cloudinary.com/seanf316/image/"
-            f"upload/v1676857549/wp8923971_qd2bfr.jpg"
+            f"upload/v1680055493/background_r1z21m.webp"
         )
 
     movie = Movie.objects.get(MovieId=movie_id)
@@ -92,7 +92,7 @@ def edit_review(request, movie_id, review_id):
     else:
         hero = (
             "https://res.cloudinary.com/seanf316/image/"
-            f"upload/v1676857549/wp8923971_qd2bfr.jpg"
+            f"upload/v1680055493/background_r1z21m.webp"
         )
 
     movie = Movie.objects.get(MovieId=movie_id)
@@ -181,7 +181,7 @@ def allreviews(request):
         else:
             hero = (
                 "https://res.cloudinary.com/seanf316/image/"
-                f"upload/v1676857549/wp8923971_qd2bfr.jpg"
+                f"upload/v1680055493/background_r1z21m.webp"
             )
 
         review_content.append(
@@ -214,7 +214,7 @@ def comment(request, movie_id, review_id):
     else:
         hero = (
             "https://res.cloudinary.com/seanf316/image/"
-            f"upload/v1676857549/wp8923971_qd2bfr.jpg"
+            f"upload/v1680055493/background_r1z21m.webp"
         )
 
     if request.method == "POST":
@@ -260,7 +260,7 @@ def edit_comment(request, movie_id, review_id, comment_id):
     else:
         hero = (
             "https://res.cloudinary.com/seanf316/image/"
-            f"upload/v1676857549/wp8923971_qd2bfr.jpg"
+            f"upload/v1680055493/background_r1z21m.webp"
         )
 
     if comment.name != user:
