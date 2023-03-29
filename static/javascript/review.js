@@ -1,3 +1,8 @@
+/**
+ * Adds a mouseleave event listener to each card
+ * When user moves outside card text will scroll back to original position
+ * This is timed to 3 seconds
+ */
 document.addEventListener('DOMContentLoaded', function () {
     let cards = document.querySelectorAll('.card');
 
