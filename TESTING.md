@@ -73,43 +73,31 @@ Through my testing I was able to get a total of 95% coverage across the site. Th
 
 ## **Validators**
 
-The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the python code used throughout the project.
+### **CI Python Linter**
 
-<details><summary>run.py</summary>
+The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the python code used throughout the project. Results are outlined in the below:
 
-![run.py Results](/docs/ci_linter/run_results.webp)
-</details>
+![PEP8 Results](/docs/validation/pep_results.webp)
 
-<details><summary>adventure.py</summary>
+### **JSHint**
 
-![adventure.py Results](/docs/ci_linter/adventure_results.webp)
-</details>
+[JSHint](https://jshint.com/) was used to validate the Javascript code used in project. Only one undefined variable is showing "bootstrap" - this was taken from the walkthrough and altered to fix console error. No other issues to report.
 
-<details><summary>functions.py</summary>
+![JSHint Results](/docs/validation/jshint.webp)
 
-![functions.py Results](/docs/ci_linter/functions_results.webp)
-</details>
+### **W3C CSS Validator**
 
-<details><summary>guardian.py</summary>
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the sites css code.
 
-![guardian.py Results](/docs/ci_linter/guardian_results.webp)
-</details>
+![W3C CSS Validator](/docs/validation/css_results.webp)
 
-<details><summary>enemy.py</summary>
+### **W3C Markup Validator**
 
-![enemy.py Results](/docs/ci_linter/enemy_results.webp)
-</details>
+All pages were run through the [W3C Markup Validator](https://validator.w3.org/nu/). Initially there were some errors due to missing closing tags, image height values and richtextfield inputs. All of these issues were corrected and all pages passed validation.
 
-<details><summary>story.py</summary>
+Due to the Django templating language code used in the HTML files, these could not be copied and pasted into the validator and due to the secured views, pages with login required or a secured view cannot be validated by direct URI. To test the validation on the files, open the page to validate, right click and view page source. Paste the raw HTML code into the validator as this will be only the HTML-rendered code.
 
-![story.py Results](/docs/ci_linter/story_results.webp)
-</details>
-
-<details><summary>ascii_art.py</summary>
-
-![ascii_art.py Results](/docs/ci_linter/ascii_results.webp)
-
-</details>
+![W3C Markup Validator](/docs/validation/html_check.webp)
 
 [Back to top &uarr;](#contents)
 
