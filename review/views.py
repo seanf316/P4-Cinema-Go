@@ -59,7 +59,10 @@ def review(request, movie_id):
 
             return redirect(reverse("allreviews"))
         else:
-            messages.success(request, "Review field cannot be blank.")
+            messages.success(
+                request,
+                "Review field cannot be blank or exceed 2500 characters.",
+            )
     else:
         form = ReviewForm()
 
@@ -114,7 +117,11 @@ def edit_review(request, movie_id, review_id):
             )
 
             return redirect(reverse("allreviews"))
-
+        else:
+            messages.success(
+                request,
+                "Review field cannot be blank or exceed 2500 characters.",
+            )
     else:
         form = ReviewForm(instance=review)
 
@@ -228,7 +235,10 @@ def comment(request, movie_id, review_id):
             messages.success(request, "Your comment has been added.")
             return redirect(reverse("allreviews"))
         else:
-            messages.success(request, "Comment field cannot be blank")
+            messages.success(
+                request,
+                "Comment field cannot be blank or exceed 500 characters.",
+            )
     else:
         form = CommentForm()
 
@@ -279,6 +289,11 @@ def edit_comment(request, movie_id, review_id, comment_id):
                 request, f"{user.username} your comment has been updated."
             )
             return redirect(reverse("allreviews"))
+        else:
+            messages.success(
+                request,
+                "Comment field cannot be blank or exceed 500 characters.",
+            )
     else:
         form = CommentForm(instance=comment)
 
