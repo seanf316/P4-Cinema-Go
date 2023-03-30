@@ -86,6 +86,12 @@ Through my testing I was able to get a total of 95% coverage across the site. Th
 
 ![Testing 6](/docs/testing/test6.webp)
 
+### **Negative Testing**
+
+Negative testing was done on the Edit/Delete functionality for Reviews, Comments & Profile. Signup username field min length was tested also.
+
+![Testing 7](/docs/testing/test7.webp)
+
 
 [Back to top &uarr;](#contents)
 
