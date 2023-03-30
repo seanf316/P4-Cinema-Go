@@ -105,7 +105,7 @@ def edit_review(request, movie_id, review_id):
 
     if review.user != user:
         messages.error(request, "You are not authorized to edit this review.")
-        return redirect(reverse("review", args=[review.movie.MovieId]))
+        return redirect(reverse("allreviews"))
 
     if request.method == "POST":
         form = ReviewForm(request.POST, instance=review)
@@ -150,7 +150,7 @@ def delete_review(request, movie_id, review_id):
         messages.error(
             request, "You are not authorized to delete this review."
         )
-        return redirect(reverse("review", args=[review.movie.MovieId]))
+        return redirect(reverse("allreviews"))
 
     profile = Profile.objects.get(user=user)
     if review.movie in profile.reviewed.all():
