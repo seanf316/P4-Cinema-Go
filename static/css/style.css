@@ -476,6 +476,9 @@ a.site-btn:hover {
     height: 30rem;
     overflow: auto;
     cursor: pointer;
+    background-color: var(--bg-color);
+    border: 1px solid var(--light-color);
+    box-shadow: var(--main-color) 0px 1px 2px 0px, var(--main-color) 0px 1px 3px 1px;
 }
 
 .allreviews .card::-webkit-scrollbar {
