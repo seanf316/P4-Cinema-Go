@@ -58,7 +58,8 @@ def review(request, movie_id):
             )
 
             return redirect(reverse("allreviews"))
-
+        else:
+            messages.success(request, "Review field cannot be blank.")
     else:
         form = ReviewForm()
 
@@ -226,6 +227,8 @@ def comment(request, movie_id, review_id):
             comment.save()
             messages.success(request, "Your comment has been added.")
             return redirect(reverse("allreviews"))
+        else:
+            messages.success(request, "Comment field cannot be blank")
     else:
         form = CommentForm()
 
