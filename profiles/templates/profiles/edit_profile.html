@@ -2,6 +2,7 @@
 {% load static %}
 {% block title %}- Edit Profile{% endblock %}
 {% block content %}
+<!-- Edit Profile Start -->
 <section class="edit-profile">
     <div class="container">
         <div class="row justify-content-center py-5">
@@ -27,7 +28,9 @@
         </div>
     </div>
 </section>
+<!-- Edit Profile End -->
 
+<!-- Delete Profile Start -->
 <section class="delete-profile">
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -52,6 +55,7 @@
         </div>
     </div>
 </section>
+<!-- Delete Profile End -->
 
 <!-- Modal JS -->
 <script src="{% static 'javascript/modal.js' %}"></script>

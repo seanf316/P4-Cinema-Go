@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}- Search Results{% endblock %}
 {% block content %}
+<!-- Search Results Start -->
 <section class="search-results">
     <div class="container">
         <div class="row pb-5">
@@ -10,6 +11,7 @@
             {% if movie_data.results %}
             {% for movie in movie_data.results %}
             {% if forloop.counter0 < 12 %}
+            <!-- Movie API Results Start -->
             <div class="col-12 col-md-6 col-lg-4 gx-4 gy-4">
                 <div class="card text-center">
                     {% if movie.backdrop_path %}
@@ -30,6 +32,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Movie API Results End -->
             {% endif %}
             {% endfor %}
             <div class="row text-center">
@@ -53,4 +56,5 @@
             {% endif %}
         </div>
 </section>
+<!-- Search Results End -->
 {% endblock%}

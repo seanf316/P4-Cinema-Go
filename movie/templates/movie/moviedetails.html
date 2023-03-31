@@ -2,13 +2,16 @@
 {% load static %}
 {% block title %}- Movie Details{% endblock %}
 {% block content %}
+<!-- Movie Details Start -->
 <section class="movie-details" style="background-image: url('{{hero}}');">
     <div class="opaque-overlay">&nbsp;</div>
     <div class="container">
         <div class="row justify-content-center">
+            <!-- Laptop/Desktop View Start -->
             <div class="col-12 d-none d-lg-block">
                 <div class="card my-4 bg-trans text-white">
                     <div class="row g-0">
+                        <!-- API Movie Details Start -->
                         <div class="col-4">
                             {% if movie_data.poster_path %}
                             <img src="https://image.tmdb.org/t/p/w1280/{{ movie_data.poster_path }}"
@@ -40,6 +43,7 @@
                                 <p class="card-text"><span>Rating by Reviewers:
                                     </span>{{ rating_avg.rating__avg|floatformat:"-1" }}/10</p>
                                 {% endif %}
+                                <!-- Movie Details Buttons Start -->
                                 <div class="row">
                                     <div class="col-12 d-flex flex-wrap">
                                         {% if trailer %}
@@ -73,14 +77,19 @@
                                         {% endif %}
                                     </div>
                                 </div>
+                                <!-- Movie Details Buttons End -->
                             </div>
                         </div>
+                        <!-- API Movie Details End -->
                     </div>
                 </div>
             </div>
+            <!-- Laptop/Desktop View End -->
         </div>
-        <!-- Mobile/Tablet View -->
+
+        <!-- Mobile/Tablet View Start -->
         <div class="col-12 d-lg-none my-5">
+            <!-- API Movie Details Start -->
             <div class="card bg-trans text-white">
                 {% if movie_data.backdrop_path %}
                 <img src="https://image.tmdb.org/t/p/w500/{{ movie_data.backdrop_path }}" class="card-img-top"
@@ -110,6 +119,7 @@
                     <p class="card-text"><span>Rating by Reviewers:
                         </span>{{ rating_avg.rating__avg|floatformat:"-1" }}/10</p>
                     {% endif %}
+                    <!-- Movie Details Buttons Start -->
                     <div class="row">
                         <div class="col d-flex flex-wrap">
                             {% if trailer %}
@@ -143,12 +153,15 @@
                             {% endif %}
                         </div>
                     </div>
+                    <!-- Movie Details Buttons End -->
                 </div>
             </div>
+            <!-- API Movie Details End -->
         </div>
+        <!-- Mobile/Tablet View End -->
     </div>
 
-    <!-- Trailer Modal -->
+    <!-- Trailer Modal Start -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-md modal-lg modal-xl flex-column justify-content-center">
             <div class="modal-content transparent border-0">
@@ -160,7 +173,9 @@
             </div>
         </div>
     </div>
+    <!-- Trailer Modal End -->
 </section>
+<!-- Movie Details End -->
 
 <!-- Modal JS -->
 <script src="{% static 'javascript/modal.js' %}"></script>

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}- Profile{% endblock %}
 {% block content %}
+<!-- Profile Start -->
 <section class="profile min-vh-100">
     <div class="opaque-overlay">&nbsp;</div>
     <div class="container">
@@ -15,6 +16,7 @@
                                 alt="{{ profile.user.username }} Profile Image">
                         </div>
                         <div class="col-md-8 d-flex flex-column justify-content-center">
+                            <!-- User Profile Details Start -->
                             <div class="card-body">
                                 <p><span>Username<br></span>{{ profile.user.username }}</p>
                                 <p><span>Email<br></span>{{ profile.user.email }}</p>
@@ -63,6 +65,7 @@
                                     </div>
                                 </div>
                             </div>
+                            <!-- User Profile Details End -->
                         </div>
                     </div>
                 </div>
@@ -70,4 +73,5 @@
         </div>
     </div>
 </section>
+<!-- Profile End -->
 {% endblock %}

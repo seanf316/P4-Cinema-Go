@@ -1,8 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
+<!-- About Start -->
 <section class="about text-white">
     <div class="container">
+        <!-- About Registered User Start -->
         <div class="row g-0 my-4 flex-wrap-reverse">
             <div class="col-lg-5 mb-2 text-center">
                 {% if user.is_authenticated %}
@@ -19,7 +21,9 @@
                         <a class="flex-grow-1" href="{% url 'toprated' %}">Top Rated</a>
                     </div>
                 </div>
+                <!-- About Registered User End -->
                 {% else %}
+                <!-- About User Not Registered Start -->
                 <h1>Welcome to<br><span>Cinema</span> | <span>Go</span></h1>
                 <p class="text-center"><i>Like the Cinema? Love Movies?</i></p>
                 <p class="mb-4">Here at <span><strong>Cinema</strong></span> | <span><strong>Go</strong></span> we want
@@ -31,6 +35,7 @@
                     going to see and provide feedback via our comment section. Sign up below to get started...</p>
                 <a href="{% url 'account_signup' %}">SIGN UP</a>
                 {% endif %}
+                <!-- About User Not Registered End -->
             </div>
             <div class="col-lg-7 pt-3 d-flex align-items-center">
                 <img src="https://res.cloudinary.com/seanf316/image/upload/v1677195278/Cinema-Go/hero_kzdgct.webp"
@@ -39,4 +44,5 @@
         </div>
     </div>
 </section>
+<!-- About End -->
 {% endblock%}

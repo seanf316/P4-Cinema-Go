@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}- Trending Movies{% endblock %}
 {% block content %}
+<!-- Trending Start -->
 <section class="trending">
     <div class="container">
         <div class="row pb-5">
@@ -9,6 +10,7 @@
             </a>
             {% for movie in movie_data.results %}
             {% if forloop.counter0 < 18 %}
+            <!-- API Movie Posters Start -->
             <div class="col-6 col-md-4 col-lg-2 gx-4 gy-4">
                 <div class="card medium">
                     <div class="card-image">
@@ -18,6 +20,7 @@
                     </div>
                 </div>
             </div>
+            <!-- API Movie Posters End -->
             {% endif %}
             {% endfor %}
         </div>
@@ -35,4 +38,5 @@
         </div>
     </div>
 </section>
+<!-- Trending End -->
 {% endblock%}

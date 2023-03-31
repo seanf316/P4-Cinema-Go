@@ -2,6 +2,7 @@
 {% load static %}
 {% block title %}- Create Review{% endblock %}
 {% block content %}
+<!-- Edit Review Start -->
 <section class="review" style="background-image: url('{{hero}}');">
     <div class="opaque-overlay">&nbsp;</div>
     <div class="container">
@@ -29,7 +30,9 @@
         </div>
     </div>
 </section>
+<!-- Edit Review End -->
 
+<!-- Delete Review Start -->
 <section class="delete-review">
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -55,5 +58,6 @@
         </div>
     </div>
 </section>
+<!-- Delete Review End -->
 
 {% endblock %}
