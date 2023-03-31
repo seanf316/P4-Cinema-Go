@@ -164,7 +164,10 @@ def delete_review(request, movie_id, review_id):
 
 @login_required()
 def allreviews(request):
-
+    """
+    Function to render all reviews to the review page, also queries database to
+    see if the reviews have comments
+    """
     reviews = Review.objects.all()
 
     review_content = []
@@ -205,7 +208,9 @@ def allreviews(request):
 
 @login_required()
 def comment(request, movie_id, review_id):
-
+    """
+    Function to comment on existing reviews
+    """
     movie = Movie.objects.get(MovieId=movie_id)
     review = Review.objects.get(id=review_id)
     movie_id = movie.MovieId
@@ -255,7 +260,9 @@ def comment(request, movie_id, review_id):
 
 @login_required()
 def edit_comment(request, movie_id, review_id, comment_id):
-
+    """
+    Function to edit comment
+    """
     movie = Movie.objects.get(MovieId=movie_id)
     review = Review.objects.get(id=review_id)
     movie_id = movie.MovieId
@@ -310,7 +317,9 @@ def edit_comment(request, movie_id, review_id, comment_id):
 
 @login_required()
 def delete_comment(request, movie_id, review_id, comment_id):
-
+    """
+    Function to delete comment
+    """
     user = request.user
     comment = Comment.objects.get(id=comment_id)
 
