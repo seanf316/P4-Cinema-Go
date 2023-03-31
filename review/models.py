@@ -20,7 +20,12 @@ class Review(models.Model):
         auto_now_add=True,
         null=True,
     )
-    review = RichTextField(null=True, validators=[MaxLengthValidator(2507)])
+    review = RichTextField(
+        null=False,
+        blank=False,
+        default="Enter Review here...",
+        validators=[MaxLengthValidator(2507)],
+    )
     rating = models.IntegerField(
         default=1, validators=[MaxValueValidator(10), MinValueValidator(1)]
     )
@@ -49,7 +54,12 @@ class Comment(models.Model):
         Review, on_delete=models.CASCADE, related_name="comments"
     )
     name = models.ForeignKey(User, on_delete=models.CASCADE)
-    body = RichTextField(max_length=507, null=True, blank=False)
+    body = RichTextField(
+        null=False,
+        blank=False,
+        default="Enter Comment here...",
+        validators=[MaxLengthValidator(507)],
+    )
     created_on = models.DateTimeField(
         auto_now_add=True,
         null=True,
