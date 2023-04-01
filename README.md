@@ -6,7 +6,7 @@ Cinema | Go is a Movie site designed to allow a User to find and review Movies. 
 
 Developed by Sean Finn.
 
-![EZGIF Animation](/docs/gifs/cinema-go.gif)
+![EZGIF Animation](/docs/gifs/cinemago.gif)
 
 [Cinema | Go - Live Webpage](https://cinema-go-p4.herokuapp.com/) (Right-click to open in a new tab)
 

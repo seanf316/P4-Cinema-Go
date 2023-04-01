@@ -11,7 +11,7 @@ A wide range of testing was carried out during development by myself and also by
     - [Unit Testing](#unit-testing)
     - [Site Coverage Report](#site-coverage-report)
 3. [Manual Testing](#manual-testing)
-    - [Functional Testing](#functional-testing)
+    - [User Story Testing](#functional-testing)
     - [Negative Testing](#negative-testing)
 4. [Validators](#validators)
     - [CI Python Linter](#ci-python-linter)
@@ -21,14 +21,15 @@ A wide range of testing was carried out during development by myself and also by
     - [Lighthouse](#lighthouse)
     - [Lighthouse Errors](#lighthouse-errors)
     - [Wave Accessibility Tests](#wave-accessibility-tests)
-5. [Bugs & Fixes](#bugs--fixes)
-5. [Unresolved Bugs/Issues](#unresolved-bugs-issues)
+5. [Responsiveness](#responsiveness)
+6. [Bugs & Fixes](#bugs--fixes)
+7. [Unresolved Bugs/Issues](#unresolved-bugs-issues)
 
 ## **Automated Testing**
 
 ### **Unit Testing**
 
-Unit tests were created to test functionality of the apps. These can be found in the tests.py files in the respective apps.
+Unit tests were created to test the functionality of the apps. These can be found in the tests.py files in the respective apps.
 
 #### **Home**
 
@@ -72,9 +73,11 @@ Unit tests were created to test functionality of the apps. These can be found in
 
 ![Review Forms](/docs/unit_testing/test_review_forms.webp)
 
+[Back to top &uarr;](#contents)
+
 ### **Site Coverage Report**
 
-Through my testing I was able to get a total of 95% coverage across the site. The remaining 5% will be covered through the manual testing.
+Through my testing, I was able to get a total of 95% coverage across the site. The remaining 5% will be covered through manual testing.
 
 ![Coverage 1](/docs/unit_testing/coverage1.webp)
 ![Coverage 2](/docs/unit_testing/coverage2.webp)
@@ -86,7 +89,7 @@ Through my testing I was able to get a total of 95% coverage across the site. Th
 
 ### **User Story Testing**
 
-Some features of the site are restricted to registered Users such as viewing Movie details, Reviewing movies, Commenting on Reviews and editing a Profile. The functional tests take this into account. There is also one Epic below as this included the Homepage.
+Some features of the site are restricted to registered users such as viewing Movie details, Reviewing movies, Commenting on Reviews, and editing a Profile. The functional tests take this into account. There is also one Epic below as this included the Homepage.
 
 #### **Homepage**
 
@@ -94,15 +97,17 @@ Some features of the site are restricted to registered Users such as viewing Mov
 As a Developer, I can design a nice aesthetically pleasing Homepage, so that the user has an enjoyable experience when navigating site
 `
 
-The Homepage view is adjusted for registered Users, non registered Users will see some information about the site along with the features offered too registered Users along with a "Sign Up" button. Registered Users will be met with a thank you message and some movie related links to get them started on the site like "Search", "Trending" & "Top Rated".
+The Homepage view is adjusted for registered Users, non-registered Users will see some information about the site along with the features offered to registered Users along with a "Sign Up" button. Registered Users will be met with a thank you message and some movie-related links to get them started on the site like "Search", "Trending" & "Top Rated".
 
 **User Not Registered**
 
 ![Homepage 1](/docs/testing_screenshots/homepagenotreg.webp)
+![Homepage 1 Test](/docs/testing_screenshots/homepagesign.webp)
 
 **User Registered**
 
 ![Homepage 2](/docs/testing_screenshots/homepagereg.webp)
+![Homepage 2 Test](/docs/testing_screenshots/homepagereglinks.webp)
 
 The Home page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
@@ -137,31 +142,11 @@ As a User I want to be able to get in touch with the Developer so that I can enq
 - Social Links implemented
 - Copyright implemented
 
-Functional testing was carried out on the Footer all and all links go to the relevant social media site as expected. All links open in a seperate tab. Footer is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
+Functional testing was carried out on the Footer and all links go to the relevant social media site as expected. All links open in a separate tab. The Footer is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
 ![Footer 1](/docs/testing_screenshots/footer.webp)
 
-#### **Authentication**
-
-`
-As a User I want to Sign Up/Login and Logout so that I can see what features are available to registered users like reviewing/commenting
-`
-
-**Acceptance Criteria**
-- Users are able to Sign Up
-- Registered Users are able to Login/Logout
-
-`
-As a Developer I can add functionality to verify email and reset password so that the user has better security over their email being used and can reset password if they forget it
-`
-
-**Acceptance Criteria**
-- Users are able verify their email when signing up
-- Registered Users are able to reset password if they forgot it
-
-Functional testing was carried out on the allAuth functionality. Sign Up/Login/Logout as well as Email verification and Password Reset were tested. allAuth Pages are fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
-
-![Authentication 1](/docs/testing_screenshots/authentication.webp)
+[Back to top &uarr;](#contents)
 
 #### **Movie Search**
 
@@ -181,7 +166,7 @@ As a Developer I can create the Movie Search Template so that the User has an ni
 **Acceptance Criteria**
 - Create a responsive template that allows the user to quickly search for a specific Movie
 
-Search page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
+The Search page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
 ![Search 1](/docs/testing_screenshots/search.webp)
 
@@ -194,7 +179,7 @@ As a Developer I can create the Movie Search Results template so that the User h
 **Acceptance Criteria**
 - Create a responsive template that allows the user to quickly display the results from their search
 
-Search Results page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
+The Search Results page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
 **User Not Registered**
 
@@ -213,7 +198,7 @@ As a Developer I can build a page to display the Top Rated Movies so that the Us
 **Acceptance Criteria**
 - When the User selects Top Rated from the Movies dropdown they will be met with a page that displays the Top Rated Movies
 
-Top Rated page link can be accessed in the Movie dropdown list in the Navbar. Link has been tested and is working as expected. The Top Rated page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
+The Top Rated page link can be accessed in the Movie dropdown list in the Navbar. The link has been tested and is working as expected. The Top Rated page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
 **User Not Registered**
 
@@ -230,7 +215,7 @@ As a Developer I can build a page to display Trending Movies so that the User ca
 **Acceptance Criteria**
 - When the User selects Trending from the Movies dropdown they will be met with a page that displays the Trending Movies
 
-Trending page link can be accessed in the Movie dropdown list in the Navbar. Link has been tested and is working as expected. The Trending page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
+The Trending page link can be accessed in the Movie dropdown list in the Navbar. The link has been tested and is working as expected. The Trending page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
 **User Not Registered**
 
@@ -257,13 +242,15 @@ As a Developer I can build a page to display the Movie Details for the users sel
 - When User selects the Movie from the search query they will land at a page that displays that Movie Detail
 
 
-Movie details page was originally planned to work with just the Search Results page but during development I decided to add some category pages Trending & Top Rated. When a user selects View Movie from the Search Results or clicks on a Movie Poster in the category pages they will be redirected to the Movie Details page. This was covered in the functional link testing above. The Movie Details page will display all the information for the Movie selected by User, the page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
+The Movie details page was originally planned to work with just the Search Results page but during development, I decided to add some category pages Trending & Top Rated. When a user selects View Movie from the Search Results or clicks on a Movie Poster in the category pages they will be redirected to the Movie Details page. This was covered in the functional link testing above. The Movie Details page will display all the information for the Movie selected by User, the page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
-Orignally I had planned to display the reviews for the Movie under the details but decided as a Design choice to move all reviews to a sepcific Reviews page.
+Originally I had planned to display the reviews for the Movie under the details but decided as a Design choice to move all reviews to a specific Reviews page.
 
 Further functional testing was carried out on the Movie Details links/buttons. Movie Details page is only accessible to registered users. 
 
 ![Movie Details](/docs/testing_screenshots/moviedetails.webp)
+
+[Back to top &uarr;](#contents)
 
 #### **Watchlist**
 
@@ -274,11 +261,13 @@ As a User I would like the ability to add Movies to a watchlist so that I can ha
 **Acceptance Criteria**
 - User can search for movies and add them to a list for watching later
 
-Clicking the "Add to Watchlist +" or "Remove from Watchlist -" button in Movie Details page has been tested and works as expected, User watchlist can also be managed on the Profile page under the My Watchlist section.
+Clicking the "Add to Watchlist +" or "Remove from Watchlist -" button on the Movie Details page has been tested and works as expected, User watchlist can also be managed on the Profile page under the My Watchlist section.
 
 ![Add to Watchlist](/docs/testing_screenshots/addtowatchlist.webp)
 ![Remove from Watchlist](/docs/testing_screenshots/removewatchlist.webp)
 ![Profile Watchlist](/docs/testing_screenshots/profilewatchlist.webp)
+
+[Back to top &uarr;](#contents)
 
 #### **Reviewing/Commenting & Reviews**
 
@@ -328,7 +317,7 @@ As a User I would like the ability to delete my review so that I can manage my r
 **Acceptance Criteria**
 - User has access to a Delete view where they can delete the selected Review
 
-Registered Users can delete their reviews via the Edit Review button on the Review card located on the Reviews page or by clicking the Manage link beside the Movie name under the My Reviews section of the Profile page. Users will be redirected to the Review form to delete their review. User can click the Delete button on the Review form, a modal will pop up asking the User if they are sure about deleting their Review. Once User confirms deletion the review and any comments related to the review will be deleted, the review will be removed from the Reviews page & from the My Reviews section in the Profile page. 
+Registered Users can delete their reviews via the Edit Review button on the Review card located on the Reviews page or by clicking the Manage link beside the Movie name under the My Reviews section of the Profile page. Users will be redirected to the Review form to delete their review. User can click the Delete button on the Review form, a modal will pop up asking the User if they are sure about deleting their Review. Once User confirms deletion the review and any comments related to the review will be deleted, and the review will be removed from the Reviews page & the My Reviews section on the Profile page. 
 
 The Movie Details "Review" button for the Movie reviewed will now read as "Review" again.
 
@@ -353,7 +342,7 @@ As a Developer I can create a section on the Review page for comments so that Us
 - Registered Users can comment on Reviews
 - Comment form created for User to add comment
 
-Comment functionality is only available to registered Users. Users can Comment on reviews by clicking the "Comment" button on the review card shown on the Review page. They will be redirected to the Comment form page where once they fill out required fields and click the "Update" button their comment will be then rendered within the review card on the Reviews page. Along with the comment text the following be be rendered - commenter name, date/time of comment, an Edit icon and a Delete icon.
+Comment functionality is only available to registered Users. Users can Comment on reviews by clicking the "Comment" button on the review card shown on the Review page. They will be redirected to the Comment form page where once they fill out the required fields and click the "Update" button their comment will be then rendered within the review card on the Reviews page. Along with the comment text, the following will be rendered - commenter name, date/time of comment, an Edit icon, and a Delete icon.
 
 The Comment Form page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
@@ -386,13 +375,15 @@ As a Developer I can create an All Reviews page so that the User can have a nice
 **Acceptance Criteria**
 - User selects the Reviews link in Nav and all Movie Reviews are displayed to user
 
-Registered Users have access to the Reviews page, here they can view all reviews created by registered Users. The Reviews link in Navbar was tested and works as expected. The Reviews page renders each Review in a card, each card contains the reviewer's Profile image, the review date/time, their username, Movie title, review text and 2 buttons "View Movie" & "Comment". A third button will render if the review belongs to the logged in User - "Edit Review".
+Registered Users have access to the Reviews page, here they can view all reviews created by registered Users. The Reviews link in Navbar was tested and works as expected. The Reviews page renders each Review in a card, each card contains the reviewer's Profile image, the review date/time, their username, the Movie title, review text, and 2 buttons "View Movie" & "Comment". A third button will render if the review belongs to the logged-in User - "Edit Review".
 
 The Reviews page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
 Functional testing was carried out on the Reviews page.
 
 ![Reviews Page Testing](/docs/testing_screenshots/reviewspage.webp)
+
+[Back to top &uarr;](#contents)
 
 #### **Profile**
 
@@ -411,7 +402,7 @@ As a Developer I can create an aesthetically pleasing display of the User's Prof
 - When User clicks on their Profile a nice responsive display is shown
 
 
-Only registered Users have access to the Profile page as the Profile is automatically created when a User signs up to the site. On the Profile page the User can view the information that they signed up with and add extra information about themselves if they wish too. They will also be able to manage their Watchlist and Reviews list from the Profile page.
+Only registered Users have access to the Profile page as the Profile is automatically created when a User signs up to the site. On the Profile page, the User can view the information that they signed up with and add extra information about themselves if they wish to. They will also be able to manage their Watchlist and Reviews list from the Profile page.
 
 The Profile page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
@@ -425,19 +416,20 @@ As a Developer I can create an edit Profile template so that the User has a nice
 **Acceptance Criteria**
 - User selects Edit on Profile template and Edit Profile template is rendered.
 
-On the Profile page the User will find an "Edit Profile" button under all there information, if clicked it will redirect the User to the Edit Profile form page. Here the User will be able to update information like firstname, surname, about, favourite movie, favourite actor, favourite director and also will have the ability to upload their own Profile image. Once User is happy with the information entered and fields are valid they can click the "Update" button and they will be redirected back to Profile page where new information will be rendered.
+On the Profile page, the User will find an "Edit Profile" button under all their information, if clicked it will redirect the User to the Edit Profile form page. Here the User will be able to update information like first name, surname, about, favourite movie, favourite actor, favourite director and also will have the ability to upload their own Profile image. Once User is happy with the information entered and the fields are valid they can click the "Update" button and they will be redirected back to the Profile page where new information will be rendered.
 
 The Edit Profile form page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
 ![Edit Profile](/docs/testing_screenshots/profilebutton.webp)
 ![Profile Page](/docs/testing_screenshots/profileedited.webp)
 
-The User is able to delete their Profile/User account by clicking the "Delete" button on the Edit Profile form page. When the User clicks the "Delete" button a modal will pop up asking the User if they are sure they want to delete and advising all information related to their account will be deleted, if they confirm deletion Profile/User account will be deleted and User will be returned to the Homepage for unregistered Users.
+The User can delete their Profile/User account by clicking the "Delete" button on the Edit Profile form page. When the User clicks the "Delete" button a modal will pop up asking the User if they are sure they want to delete and advising all information related to their account will be deleted, if they confirm deletion Profile/User account will be deleted and User will be returned to the Homepage for unregistered Users.
 
 ![Delete Profile Button](/docs/testing_screenshots/profiledeletebutton.webp)
 ![Delete Profile](/docs/testing_screenshots/profiledelete.webp)
-
 ![Edit Profile Page Test](/docs/testing_screenshots/editprofiletest.webp)
+
+[Back to top &uarr;](#contents)
 
 #### **Authentication**
 
@@ -457,11 +449,11 @@ As a Developer I can add functionality to verify email and reset password so tha
 - Users are able verify their email when signing up
 - Registered Users are able to reset password if they forgot it
 
-Allauth is used to manage the sites authentication, Users can Sign up, Login and Logout. Email verification and Password rest functionality was also added.
+Allauth is used to manage the authentication of the site, Users can Sign up, Login and Logout. Email verification and Password rest functionality were also added.
 
-The Sign Up page can be accessed via the link in Navbar, the Sign Up link on the Login page or lastly via the Sign Up button on the Homepage for unregistered Users. All links have been tested and work as expected.
+The Sign Up page can be accessed via the link in Navbar, the Sign Up link on the Login page, or lastly via the Sign Up button on the Homepage for unregistered Users. All links have been tested and work as expected.
 
-For Sign Up the user will fill out the required fields on the Sign Up form page and once valid they click the "Sign Up" button. They will be redirected to the Verify Email Address page where the User will be advised that an email is sent to them. Once User recieves the email they can click the confirmation link. This will bring the User to the Confirm E-mail Address page on the site, the User will click the "Confirm" button and be redirected to the Login page.
+For Sign Up the user will fill out the required fields on the Sign Up form page and once valid they click the "Sign Up" button. They will be redirected to the Verify Email Address page where the User will be advised that an email is sent to them. Once the User receives the email they can click the confirmation link. This will bring the User to the Confirm E-mail Address page on the site, the User will click the "Confirm" button and be redirected to the Login page.
 
 The Sign Up page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
@@ -473,7 +465,7 @@ The Sign Up page is fully responsive see Feature images and Mobile screenshots i
 
 The Login page can be accessed via the link in the Navbar, the link has been tested and works as expected.
 
-For Login the User will enter either their Username or Email Address and their password in the required fields, once fields are valid they can click the "Login" button to gain access to site features retricted to registered Users. If User has forgotten their password they can click the "Forgot Password" button. They will then be redirected to the Password Reset page where they will need to enter the email address they registered with before clicking the "Reset My Password" button. They will now be redirected to the Password Reset email sent page where a message will display advising an email has been sent to the User. When email is received the User can click on the link to reset password which will then direct them to the Change Password page on the site. Once User enters new password in the fields required they will be redirected to the Change Password confirmed page, here they will be able to click the "Home" button to be redirected to the site Homepage for unregistered Users. They can proceed to login again with new details.
+For Login, the User will enter either their Username or Email Address and their password in the required fields, once the fields are valid they can click the "Login" button to gain access to site features restricted to registered Users. If User has forgotten their password they can click the "Forgot Password" button. They will then be redirected to the Password Reset page where they will need to enter the email address they registered with before clicking the "Reset My Password" button. They will now be redirected to the Password Reset email sent page where a message will display advising an email has been sent to the User. When the email is received the User can click on the link to reset the password which will then direct them to the Change Password page on the site. Once the User enters a new password in the fields required they will be redirected to the Change Password confirmed page, here they will be able to click the "Home" button to be redirected to the site Homepage for unregistered Users. They can proceed to log in again with new details.
 
 The Login page is fully responsive see Feature images and Mobile screenshots in [README.md](README.md)
 
@@ -494,6 +486,8 @@ The Logout page is fully responsive see Feature images and Mobile screenshots in
 ![Logout](/docs/testing_screenshots/logout.webp)
 ![Logout Test](/docs/testing_screenshots/logouttest.webp)
 
+[Back to top &uarr;](#contents)
+
 #### **Error Pages**
 
 `
@@ -503,7 +497,7 @@ As a Developer I can implement a 403 error page to redirect unauthorised users s
 **Acceptance Criteria**
 - 403 page created and Error message explained to User
 
-A custom 403 error page & 403_csrf error page were created to handle 403 status errors. Pages were tested by changing urls to access other Users information and delete their Profiles, this worked as expected. I also removed the csrf token from a form to test the 403_csrf page and this also worked as expected.
+A custom 403 error page & 403_csrf error page were created to handle 403 status errors. Pages were tested by changing URLs to access other Users' information and delete their Profiles, 403 status page displayed as expected. I also removed the csrf token from a form to test the 403_csrf page and 403_csrf status page displayed as expected.
 
 `
 As a Developer I can implement a 404 error page so that I can alert users when they have accessed a page that doesn't exist
@@ -512,7 +506,7 @@ As a Developer I can implement a 404 error page so that I can alert users when t
 **Acceptance Criteria**
 - 404 page created and Error message explained to User
 
-A custom 404 error page was created to handle 404 status errors. To test I tried to acces a page that does not exist, this worked as expected.
+A custom 404 error page was created to handle 404 status errors. To test I tried to access a page that does not exist, and this worked, 404 status page displayed as expected.
 
 `
 As a Developer I can implement a 500 error page so that I can alert users when an internal server error occurs
@@ -521,14 +515,16 @@ As a Developer I can implement a 500 error page so that I can alert users when a
 **Acceptance Criteria**
 - 500 page created and Error message explained to User
 
-A custom 500 error page was created to handle 500 status errors. To test I would repeated and quickly hit the delete icon for a comment by doing this too fast and not allowing the time for the comment to be deleted the error 500 page was rendered.
+A custom 500 error page was created to handle 500 status errors. To test I would repeatedly and quickly hit the delete icon for a comment by doing this too fast and not allowing the time for the comment to be deleted the error 500 page was rendered.
 
 
 All error pages are fully responsive, I do not have any current screenshots of the errors on Mobile/Tablet but you can view the Desktop screenshots in the Features section of the [README.md](README.md)
 
+[Back to top &uarr;](#contents)
+
 ### **Negative Testing**
 
-Negative testing was done on the Edit/Delete functionality for Reviews, Comments & Profile. Signup username field min length was tested also.
+Negative testing was done on the Edit/Delete functionality for Reviews, Comments & Profile. Sign Up username field min length was tested also.
 
 ![Testing 7](/docs/testing/test7.webp)
 
@@ -538,25 +534,31 @@ Negative testing was done on the Edit/Delete functionality for Reviews, Comments
 
 ### **CI Python Linter**
 
-The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the python code used throughout the project. Results are outlined in the below:
+The [CI Python Linter](https://pep8ci.herokuapp.com/) was used to validate the python code used throughout the project. The results are outlined in below:
 
 ![PEP8 Results](/docs/validation/pep_results.webp)
 
+[Back to top &uarr;](#contents)
+
 ### **JSHint**
 
-[JSHint](https://jshint.com/) was used to validate the Javascript code used in project. Only one undefined variable is showing "bootstrap" - this was taken from the walkthrough and altered to fix console error. No other issues to report.
+[JSHint](https://jshint.com/) was used to validate the Javascript code used in the project. Only one undefined variable is showing "bootstrap" - this was taken from the walkthrough and altered to fix a console error. No other issues to report.
 
 ![JSHint Results](/docs/validation/jshint.webp)
 
+[Back to top &uarr;](#contents)
+
 ### **W3C CSS Validator**
 
-[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the sites css code.
+[W3C CSS Validator](https://jigsaw.w3.org/css-validator/) was used to validate the site's CSS code.
 
 ![W3C CSS Validator](/docs/validation/css_results.webp)
 
+[Back to top &uarr;](#contents)
+
 ### **W3C Markup Validator**
 
-All pages were run through the [W3C Markup Validator](https://validator.w3.org/nu/). Initially there were some errors due to missing closing tags, image height values and richtextfield inputs. All of these issues were corrected and all pages passed validation.
+All pages were run through the [W3C Markup Validator](https://validator.w3.org/nu/). Initially, there were some errors due to missing closing tags, image height values, and Richtextfield inputs. All of these issues were corrected and all pages passed validation.
 
 Due to the Django templating language code used in the HTML files, these could not be copied and pasted into the validator and due to the secured views, pages with login required or a secured view cannot be validated by direct URI. To test the validation on the files, open the page to validate, right click and view page source. Paste the raw HTML code into the validator as this will be only the HTML-rendered code.
 
@@ -692,12 +694,12 @@ Logout
 
 The errors encountered in the various reports are outlined below:
 
-- "Eliminate render-blocking resources" - this was pointing towards bootstrap.min.css throughout, I am unaware of how to fix at this time
-- "Displays images with incorrect aspect ratio", "Properly size images", "Serve images in next-gen formats" - I have tried resizing how the images are displayed but due to the fact they are being retrieved from the API there is not much I can do here.
+- "Eliminate render-blocking resources" - this was pointing towards bootstrap.min.css throughout, I am unaware of how to fix it at this time
+- "Displays images with incorrect aspect ratio", "Properly size images", "Serve images in next-gen formats" - I have tried resizing how the images are displayed but due to the fact they are being retrieved from the API, there is not much I can do here.
 
 I have tested the site on various devices and networks (3g, 4g & WIFI) and the above is not affecting the site, load times are good and no issues/delays reported by test users.
 
-There is one console error due to the embedded Youtube video that cannot be fixed at this time, it refers to "Ensure CORS response header values are valid". Error only occurs when user clicks play on the video. I have reserached this previously and the issue appears to be between Google and Youtube so I am unable to fix this error. Please note this error does not seem to affect the performance of the site.
+There is one console error due to the embedded Youtube video that cannot be fixed at this time, it refers to "Ensure CORS response header values are valid". The error only occurs when the user clicks play on the video. I have researched this previously and the issue appears to be between Google and Youtube so I am unable to fix this error. Please note this error does not seem to affect the performance of the site.
 
 ![Lighthouse Console Error](/docs/validation/lighthouse/trailer_console.webp)
 
@@ -705,9 +707,37 @@ There is one console error due to the embedded Youtube video that cannot be fixe
 
 ### **Wave Accessibility Tests**
 
-Every page of the site was passed through the [Wave Evaluation Tool](https://wave.webaim.org/) via the Chrome extension. Only 1 page returned errors which was the Reviews Page. It showed 91 contrast errors due to no fallback contrast being in place if image does not populate, to resolve I added a background colour to the Review cards and all contrast errors were cleared.
+Every page of the site was passed through the [Wave Evaluation Tool](https://wave.webaim.org/) via the Chrome extension. Only 1 page returned errors which was the Reviews Page. It showed 91 contrast errors due to no fallback contrast being in place if the image does not populate, to resolve I added a background colour to the Review cards and all contrast errors were cleared.
 
 ![Wave](/docs/validation/wave.webp)
+
+[Back to top &uarr;](#contents)
+
+## **Responsiveness**
+
+All pages were tested to ensure responsiveness on screen sizes from 320px and upwards. The site was tested on multiple browsers and devices as outlined below.
+
+| **Browser Tested** | **Actual Result** | **Pass/Fail** |
+|--------------------|-------------------|---------------|
+| Chrome             | As Expected       | Pass          |
+| Firefox            | As Expected       | Pass          |
+| Edge               | As Expected       | Pass          |
+| Mac OS Safari      | As Expected       | Pass          |
+
+| **Device Tested** | **Actual Result** | **Pass/Fail** |
+|-------------------|-------------------|---------------|
+| Mac Air M2 | As Expected       | Pass          |
+| HP Elite Laptop | As Expected       | Pass          |
+| HP 23 Monitor | As Expected       | Pass          |
+| Samsung Note 10+  | As Expected       | Pass          |
+| Samsung Note 20   | As Expected       | Pass          |
+| Samsung S21+      | As Expected       | Pass          |
+| Samsung Tab S7+   | As Expected       | Pass          |
+| iPhone 13 Pro Max | As Expected       | Pass          |
+| iPhone 11         | As Expected       | Pass          |
+| iPad Pro 12 inch  | As Expected       | Pass          |
+| One Plus 8T  | As Expected       | Pass          |
+| Xiaomi Redmi Note 11 | As Expected       | Pass          |
 
 [Back to top &uarr;](#contents)
 
@@ -726,6 +756,8 @@ Every page of the site was passed through the [Wave Evaluation Tool](https://wav
 
 ## **Unresolved Bugs/Issues**
 
-The console error related to the Youtube is the main unresolved bug for the site, I have mentioned the error to CI staff on calls and the consensus was it was out of my control and to make sure it was documented in README.md
+The console error related to the Youtube embedded video is the main unresolved bug for the site, I have mentioned the error to CI staff on calls and the consensus was it was out of my control and to make sure it was documented in README.md
+
+The other bug that I have encountered is that a User can enter just white spaces in the Richtextfield inputs and submit. This issue only occurs with Richtextfields, I have tried adding clean functions but nothing works. To resolve this issue you could remove all the Richtextfields and Richtext widgets and place a standard Textfield. After speaking with my Mentor and the Users that tested the site the consensus was to keep the editor that they would miss the functionality and that 99.9% of people reviewing a Movie would not enter blank spaces. I have decided to leave the editors in place based on the feedback received.
 
 [Return to README.md](README.md)
