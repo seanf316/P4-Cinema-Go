@@ -1,16 +1,17 @@
 {% load static %}
 <header>
-    <!-- Navbar -->
+    <!-- Navbar Start -->
     <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-black">
         <div class="container-fluid">
-            <!-- Nav Logo -->
+            <!-- Nav Logo Start -->
             <a class="navbar-brand text-white" href="{% url 'home' %}"><span>Cinema</span> | <span>Go</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <i class="fa-solid fa-bars"></i>
             </button>
-            <!-- Nav Items -->
+            <!-- Nav Logo End -->
+            <!-- Nav Items Start -->
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
@@ -55,6 +56,8 @@
                     {% endif %}
                 </ul>
             </div>
+            <!-- Nav Items End -->
         </div>
     </nav>
+    <!-- Navbar End -->
 </header>
