@@ -530,6 +530,26 @@ Negative testing was done on the Edit/Delete functionality for Reviews, Comments
 
 [Back to top &uarr;](#contents)
 
+### **Javascript Testing**
+
+**base.html Javascript**
+
+The JS script in the base.html handles the alert messages for the site. There is a timeout of 2 seconds set for the alert messages to close. This has been manually tested and works as expected. See below example:
+
+![Alert Gif](/docs/gifs/alert.gif)
+
+**Review.js**
+
+The review.js is setup with a mouse leave event on the review cards, when user has moved the mouse outside the review card the text will smoothly scroll back to the top. There is a timeout of 3 seconds applied for this to happen. This has been manually tested and works as expected. See below example:
+
+![Review Gif](/docs/gifs/review.gif)
+
+**Modal.js**
+
+The modal.js was taken from Bootstrap but has been altered slightly to to remove the iframe scource for the trailer once the modal is hidden as well as managing the closing/hiding of the modal. This was done to avoid the trailer continuing to play in the background once modal was closed. This has been manually tested and works as expected. See below example, please note I could not show the sound playing in the gif but you will be able to see the sound icon in the tab:
+
+![Trailer Gif](/docs/gifs/trailer.gif)
+
 ## **Validators**
 
 ### **CI Python Linter**
