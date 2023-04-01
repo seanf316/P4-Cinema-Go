@@ -24,7 +24,7 @@ A wide range of testing was carried out during development by myself and also by
     - [Wave Accessibility Tests](#wave-accessibility-tests)
 5. [Responsiveness](#responsiveness)
 6. [Bugs & Fixes](#bugs--fixes)
-7. [Unresolved Bugs/Issues](#Unresolved-Bugs/Issues)
+7. [Unresolved Bugs/Issues](#unresolved-bugsissues)
 
 ## **Automated Testing**
 
