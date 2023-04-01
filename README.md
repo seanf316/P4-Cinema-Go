@@ -33,7 +33,7 @@ This is my fourth portfolio project for [Code Institute](https://codeinstitute.n
     - [The Structure Plane](#the-structure-plane)
         - [Features](#features)
         - [Future Features](#future-features)
-    - [The Service Plane](#the-service-plane)
+    - [The Surface Plane](#the-surface-plane)
         - [Design](#future-features)
             - [Colour Scheme](#colour-scheme)
             - [Typography](#typography)
@@ -146,7 +146,7 @@ As a Developer, I can provide review/comment functionality, so that registered u
 
 The Movie Reviews/Comments epic is for all User Stories related to the Review and Comment functionality. Any templates created or styled were linked also.
 
-#### **EPIC: Status Error Templates [#11](https://github.com/seanf316/P4-Cinema-Go/issues/29)**
+#### **EPIC: Status Error Templates [#29](https://github.com/seanf316/P4-Cinema-Go/issues/29)**
 `
 As a Developer, I can create Status Error templates, so that I can secure my views and advise User when there is an issue
 `
@@ -221,7 +221,7 @@ The following user stories (by epic) were completed throughout development.
 - As a User I would like the ability to comment on Reviews so that so that I can participate in conversations with fellow reviewer's [#27](https://github.com/seanf316/P4-Cinema-Go/issues/27)
 - As a Developer I can create a section on the Review page for comments so that User's can comment on reviews [#28](https://github.com/seanf316/P4-Cinema-Go/issues/28)
 
-#### **EPIC: Status Error Templates [#11](https://github.com/seanf316/P4-Cinema-Go/issues/29)**
+#### **EPIC: Status Error Templates [#29](https://github.com/seanf316/P4-Cinema-Go/issues/29)**
 
 - As a Developer I can implement a 403 error page to redirect unauthorised users so that I can secure my views [#30](https://github.com/seanf316/P4-Cinema-Go/issues/30)
 - As a Developer I can implement a 404 error page so that I can alert users when they have accessed a page that doesn't exist [#31](https://github.com/seanf316/P4-Cinema-Go/issues/31)
@@ -609,7 +609,7 @@ The hero image was taken from TopPng and was free for personal use. The image us
     - Heroku was used to deploy the app.
 1. [Balsamiq](https://balsamiq.com/)
     - Balsamiq was used to produce the sites wireframes
-1. [XConvert](www.xconvert.com)
+1. [XConvert](https://www.xconvert.com/)
     - XConvert was used to convert images to webp or png where required.
 1. [Stackoverflow](https://stackoverflow.com/)
     - Stackoverflow was used on many occasions to figure out some troublesome code.
