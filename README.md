@@ -445,7 +445,7 @@ The user can manage their review from the Reviews page or on their Profile page.
 **Comment**
 
 `
-As a User I would like the ability to comment on Reviews so that so that I can participate in conversations with fellow reviewer's
+As a User I would like the ability to comment on Reviews so that I can participate in conversations with fellow reviewer's
 `
 
 Creating and viewing comments are features only available to registered users.
@@ -521,6 +521,22 @@ A 500 error page has been displayed to alert users when an internal server error
 **Favicon**
 
 A favicon has been added the website to enable users to easily locate the website in the browser when multiple tabs are open.
+
+**Mobile**
+
+`
+As a User I would like to view the site on my different devices so that I can view the site on the go
+`
+
+The site was created Mobile first and scaled up to larger devices using Bootstrap and media queries.
+
+![Mobile 1](/docs/readme_screenshots/mobile1.webp)
+![Mobile 2](/docs/readme_screenshots/mobile2.webp)
+![Mobile 3](/docs/readme_screenshots/mobile3.webp)
+![Mobile 4](/docs/readme_screenshots/mobile4.webp)
+![Mobile 5](/docs/readme_screenshots/mobile5.webp)
+![Mobile 6](/docs/readme_screenshots/mobile6.webp)
+
 
 [Back to top &uarr;](#contents)
 
@@ -656,9 +672,14 @@ This project was developed by forking a specialized [Code Institute template](ht
 
 For version control the following steps were made:
 
+For version control the following steps were made:
+
 1. Changes made to files in Gitpod
-2. Files made ready for commit using the Source Control staging area in Gitpod
-3. Files were staged and a message describing the commit was made before committing and pushing it to GitHub
+2. Files made ready for commit with command - git add "filename", or git add . to add all files
+3. For the commits the following command was run along with commit description - git commit -m "This is my commit etc"
+4. To move the changes to Github the following command was run - git push
+5. Alternatively files can be made ready for commit using the Source Control staging area in Gitpod
+6. Files were staged and a message describing the commit was made before committing and pushing it to GitHub
 
 ### **Clone Repo**
 
