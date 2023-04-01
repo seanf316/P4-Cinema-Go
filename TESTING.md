@@ -13,6 +13,7 @@ A wide range of testing was carried out during development by myself and also by
 3. [Manual Testing](#manual-testing)
     - [User Story Testing](#functional-testing)
     - [Negative Testing](#negative-testing)
+    - [Javascript Testing](#javascript-testing)
 4. [Validators](#validators)
     - [CI Python Linter](#ci-python-linter)
     - [JSHint](#jshint)
