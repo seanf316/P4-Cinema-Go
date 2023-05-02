@@ -170,16 +170,21 @@ def moviedetails(request, movie_id):
 
     trailer_key = trailer["key"] if trailer is not None else None
 
-    Movie.objects.get_or_create(
-        Name=movie_data["original_title"],
-        Overview=movie_data["overview"],
-        Director=director_name,
-        Released=movie_data["release_date"],
-        Runtime=movie_data["runtime"],
-        MovieId=movie_data["id"],
-    )
+    try:
+        # Try to retrieve the movie from the database using its MovieId
+        movie = Movie.objects.get(MovieId=movie_id)
+    except Movie.DoesNotExist:
+        # If the movie does not exist, create a new movie object and save it to the database
+        movie = Movie(
+            Name=movie_data["original_title"],
+            Overview=movie_data["overview"],
+            Director=director_name,
+            Released=movie_data["release_date"],
+            Runtime=movie_data["runtime"],
+            MovieId=movie_data["id"],
+        )
+        movie.save()
 
-    movie = Movie.objects.get(MovieId=movie_id)
     user = request.user
     profile = Profile.objects.get(user=user)
     user_review = Review.objects.filter(movie=movie, user=user)

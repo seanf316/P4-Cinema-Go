@@ -11,7 +11,9 @@ class Movie(models.Model):
     Director = models.CharField(max_length=50, null=True, blank=True)
     Released = models.CharField(max_length=25, null=True, blank=True)
     Runtime = models.CharField(max_length=25, null=True, blank=True)
-    MovieId = models.CharField(max_length=25, null=True, blank=True)
+    MovieId = models.CharField(
+        max_length=25, null=True, blank=True, unique=True
+    )
 
     class Meta:
         """
